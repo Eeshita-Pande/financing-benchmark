@@ -1,0 +1,2852 @@
+{
+ "benchmark": "icip-cas/DocOps",
+ "docops_commit": "ccf7a75",
+ "date": "2026-10-13",
+ "agent": "Claude Code CLI 2.1.296 (headless --print, bypassPermissions)",
+ "execution": "outside Docker; see README caveats",
+ "runs": [
+  {
+   "task": "atomic__ppt_004_slide_reorder_seed",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 9.3,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 3,
+   "n_tool_uses": 2,
+   "tools": {
+    "Bash": 2
+   },
+   "cost_usd": 0.018784000000000002,
+   "is_error": false,
+   "agent_final_text": "I reordered the slides to Executive Summary, Root Cause, Implementation Plan, Appendix. I reopened the saved file and confirmed that order from the slide titles.\n\nI only changed the slide order. The original file is untouched, and the revised deck is saved at `/home/user/bench/live/atomic__ppt_004_slide_reorder_seed__skill_off/work/submission/ppt_004_slide_reorder_seed.pptx`.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/atomic__ppt_004_slide_reorder_seed__skill_off/work/submission/ppt_004_slide_reorder_seed.pptx",
+     "exists": true,
+     "size": 31907,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 1,
+   "pytest_exit": 0,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/ppt_004_slide_reorder_seed.pptx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/atomic__ppt_004_slide_reorder_seed__skill_off/work/ppt_004_slide_reorder_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/atomic__ppt_004_slide_reorder_seed__skill_off/work/submission/ppt_004_slide_reorder_seed.pptx",
+    "TASK_ID": "ppt_004",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "atomic__ppt_004_slide_reorder_seed__skill_off",
+   "level": "L1",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 3
+   },
+   "tests_passed": 1,
+   "tests_total": 1,
+   "submission_files": {
+    "ppt_004_slide_reorder_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "atomic__ppt_004_slide_reorder_seed",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 9.6,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 3,
+   "n_tool_uses": 2,
+   "tools": {
+    "Bash": 2
+   },
+   "cost_usd": 0.0159564,
+   "is_error": false,
+   "agent_final_text": "I reordered the slides to Executive Summary, Root Cause, Implementation Plan, Appendix. I reopened the saved file and checked that the titles come out in that order. I didn't render the slides to look at them.\n\nThe slides were not changed, only their order. The original file is untouched.\n\nThe revised deck is at `/home/user/bench/live/atomic__ppt_004_slide_reorder_seed__skill_on/work/submission/ppt_004_slide_reorder_seed.pptx`.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/atomic__ppt_004_slide_reorder_seed__skill_on/work/submission/ppt_004_slide_reorder_seed.pptx",
+     "exists": true,
+     "size": 31907,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 1,
+   "pytest_exit": 0,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/ppt_004_slide_reorder_seed.pptx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/atomic__ppt_004_slide_reorder_seed__skill_on/work/ppt_004_slide_reorder_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/atomic__ppt_004_slide_reorder_seed__skill_on/work/submission/ppt_004_slide_reorder_seed.pptx",
+    "TASK_ID": "ppt_004",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "atomic__ppt_004_slide_reorder_seed__skill_on",
+   "level": "L1",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 3
+   },
+   "tests_passed": 1,
+   "tests_total": 1,
+   "submission_files": {
+    "ppt_004_slide_reorder_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "atomic__ppt_005_table_structure_seed",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 11.8,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 3,
+   "n_tool_uses": 2,
+   "tools": {
+    "Bash": 2
+   },
+   "cost_usd": 0.036189700000000005,
+   "is_error": false,
+   "agent_final_text": "I added the `Owner` column between `Milestone` and `Due Date`. The Owner cells in the three data rows are empty because the deck doesn't say who owns each milestone.\n\nI reloaded the saved file with python-pptx and the table reads as expected:\n\n| Milestone | Owner | Due Date | Status |\n|---|---|---|---|\n| Variation order approved | | 22 Apr | Open |\n| Shutdown calendar sent | | 24 Apr | Draft |\n| Site kickoff call | | 26 Apr | Planned |\n\nI set each of the four columns to 2,400,300 EMU so the table keeps its original total width. I didn't render the slide, so I haven't checked how the narrower columns look. The rows, their order and the other columns are unchanged.\n\nThe revised deck is at `/home/user/bench/live/atomic__ppt_005_table_structure_seed__skill_off/work/submission/ppt_005_table_structure_seed.pptx`. The source file is untouched.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/atomic__ppt_005_table_structure_seed__skill_off/work/submission/ppt_005_table_structure_seed.pptx",
+     "exists": true,
+     "size": 107368,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 1,
+   "pytest_exit": 0,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/ppt_005_table_structure_seed.pptx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/atomic__ppt_005_table_structure_seed__skill_off/work/ppt_005_table_structure_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/atomic__ppt_005_table_structure_seed__skill_off/work/submission/ppt_005_table_structure_seed.pptx",
+    "TASK_ID": "ppt_005",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "atomic__ppt_005_table_structure_seed__skill_off",
+   "level": "L1",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 4
+   },
+   "tests_passed": 1,
+   "tests_total": 1,
+   "submission_files": {
+    "ppt_005_table_structure_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "atomic__ppt_005_table_structure_seed",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 14.8,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 6,
+   "n_tool_uses": 4,
+   "tools": {
+    "Skill": 1,
+    "Bash": 3
+   },
+   "cost_usd": 0.059012999999999996,
+   "is_error": false,
+   "agent_final_text": "I added the `Owner` column between `Milestone` and `Due Date`. The table now reads `Milestone | Owner | Due Date | Status`. I checked the structure by reading the saved file back, but I didn't render the slide, so I haven't looked at it visually.\n\n- **Owner cells:** The three data rows have empty Owner cells, because the task gave no owner names to fill in.\n- **Widths:** I kept the table's overall width the same and made all four columns equal (2400300 EMU each, about 2.6\"), so each column is narrower than before.\n- **Other content:** The existing rows, dates and statuses are unchanged and in their original order.\n\nThe revised deck is saved at `/home/user/bench/live/atomic__ppt_005_table_structure_seed__skill_on/work/submission/ppt_005_table_structure_seed.pptx`. The source file wasn't modified.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/atomic__ppt_005_table_structure_seed__skill_on/work/submission/ppt_005_table_structure_seed.pptx",
+     "exists": true,
+     "size": 32671,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 1,
+   "pytest_exit": 0,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/ppt_005_table_structure_seed.pptx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/atomic__ppt_005_table_structure_seed__skill_on/work/ppt_005_table_structure_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/atomic__ppt_005_table_structure_seed__skill_on/work/submission/ppt_005_table_structure_seed.pptx",
+    "TASK_ID": "ppt_005",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "atomic__ppt_005_table_structure_seed__skill_on",
+   "level": "L1",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 6
+   },
+   "tests_passed": 1,
+   "tests_total": 1,
+   "submission_files": {
+    "ppt_005_table_structure_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 23.7,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 4,
+   "n_tool_uses": 3,
+   "tools": {
+    "Bash": 3
+   },
+   "cost_usd": 0.117199,
+   "is_error": false,
+   "agent_final_text": "I refreshed the metrics and action table, and added a `Decision Snapshot` slide before `Closing`. I checked the saved file by opening it and listing each slide's text. I haven't looked at the slides rendered, so the layout is unchecked visually.\n\n- **Metric tiles:** Open Actions is 5, Late Items is 2 and Completed is 8, taken from `metrics.xlsx`.\n- **Action table:** it now has Mia Torres, Release FAQ, 2025-02-14 and Devin Park, Post packet, 2025-02-15, from `action_log.xlsx`.\n- **Decision Snapshot:** it is a copy of the reference slide, with the same layout, logo and three cards. The cards read \"Release the revised FAQ.\", \"Approve the corrected attendance count.\" and \"Post the packet by Friday.\" from `decision_note.docx`. I changed the footer to \"Source: decision_note.docx\", since the old one said it was the reference slide. The new slide has no speaker notes.\n- **Reference slide:** it is untouched and still has its `[Fill]` placeholders, as you asked.\n\nThe deck already put the reference slide after `Closing`, and I left it there. The file also contains an unlinked `slide6.xml` (a second \"Closing\" slide that is not in the slide order). I left that as it was.\n\nThe revised deck is at `/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_off/work/submission/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx`.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_off/work/submission/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+     "exists": true,
+     "size": 48039,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "failed",
+     "message": "AssertionError: Unexpected slide order: ['Monthly Board Pack', 'Metrics', 'Action Tracker', 'Decision Snapshot', 'Closing', 'Layout Reference - Decision Card']\nassert ['Monthly Boa...ecision Card'] == ['Monthly Boa...ecision Card']\n  \n  At index 2 diff: 'Action Tracker' != 'Decision Snapshot'\n  \n  Full diff:\n    [\n        'Monthly Board Pack',\n        'Metrics',...\n  \n  ...Full output truncated (6 lines hidden), use '-vv' to show"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+    "/root/metrics.xlsx",
+    "/root/decision_note.docx",
+    "/root/action_log.xlsx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_off/work/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_off/work/submission/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+    "TASK_ID": "pptxr_001",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_off",
+   "level": "L4",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 6
+   },
+   "tests_passed": 0,
+   "tests_total": 1,
+   "submission_files": {
+    "pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed",
+   "mode": "skill_off",
+   "model_requested": "claude-opus-5-5",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "wall_seconds": 54.5,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 7,
+   "n_tool_uses": 6,
+   "tools": {
+    "Bash": 6
+   },
+   "cost_usd": 0.2931852,
+   "is_error": false,
+   "agent_final_text": "I've written the revised deck to `submission/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx`. I reopened it with python-pptx to check the content and confirmed the reference slide is byte-for-byte unchanged.\n\n- **Metric tiles:** Open Actions is now 5, Late Items 2 and Completed 8, taken from `metrics.xlsx`.\n- **Action table:** the two placeholder rows are now Mia Torres / Release FAQ / 2025-02-14 and Devin Park / Post packet / 2025-02-15, from `action_log.xlsx`. The table's shape, size and styling are as they were.\n- **Decision Snapshot slide:** I copied the \"Layout Reference \u2013 Decision Card\" slide exactly, including the logo, the three cards, their colours and positions, and its notes page. Only the text changed: the title is \"Decision Snapshot\", and cards A, B and C hold the three decisions from `decision_note.docx`.\n- **Slide order:** Title, Metrics, Action Tracker, Decision Snapshot, Closing, then the reference slide.\n\n**Text I wrote:** the copied slide still had the reference slide's instruction (\"Reference slide; duplicate this layout\u2026\") as its footer and in its notes. I replaced it with my own short source line, \"Decisions sourced from the decision note.\" The notes now say the slide was copied from the Decision Card layout.\n\n**Placement:** the note on the Action Tracker slide says to \"keep this live table after the inserted decision slide\", which would put the new slide before the table. I followed the task's \"place it before Closing\" instead, so the new ",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_off__claude-opus-5-5/work/submission/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+     "exists": true,
+     "size": 46261,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "failed",
+     "message": "AssertionError: Unexpected slide order: ['Monthly Board Pack', 'Metrics', 'Action Tracker', 'Decision Snapshot', 'Closing', 'Layout Reference - Decision Card']\nassert ['Monthly Boa...ecision Card'] == ['Monthly Boa...ecision Card']\n  \n  At index 2 diff: 'Action Tracker' != 'Decision Snapshot'\n  \n  Full diff:\n    [\n        'Monthly Board Pack',\n        'Metrics',...\n  \n  ...Full output truncated (6 lines hidden), use '-vv' to show"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+    "/root/metrics.xlsx",
+    "/root/decision_note.docx",
+    "/root/action_log.xlsx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_off__claude-opus-5-5/work/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_off__claude-opus-5-5/work/submission/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+    "TASK_ID": "pptxr_001",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_off__claude-opus-5-5",
+   "level": "L4",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-opus-5-5",
+   "assistant_messages_by_model": {
+    "claude-opus-5-5": 13
+   },
+   "tests_passed": 0,
+   "tests_total": 1,
+   "submission_files": {
+    "pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 25.1,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 7,
+   "n_tool_uses": 5,
+   "tools": {
+    "Skill": 1,
+    "Bash": 4
+   },
+   "cost_usd": 0.14715740000000002,
+   "is_error": false,
+   "agent_final_text": "I refreshed the deck and wrote it to the required output path. I only checked that it opens in python-pptx and that the slide order and text are right. I didn't render the slides to images, so the layout hasn't been checked visually.\n\n- **Metric tiles:** Open Actions is 5, Late Items is 2 and Completed is 8, matching `metrics.xlsx`.\n- **Action table:** The two rows now read Mia Torres, Release FAQ, 2025-02-14 and Devin Park, Post packet, 2025-02-15, from `action_log.xlsx`.\n- **Decision Snapshot:** I duplicated the reference slide, including its layout and logo, and titled the copy \"Decision Snapshot\". Decisions A, B and C read \"Release the revised FAQ.\", \"Approve the corrected attendance count.\" and \"Post the packet by Friday.\" from `decision_note.docx`. It sits after Action Tracker and before Closing.\n- **Reference slide:** The original \"Layout Reference - Decision Card\" slide is untouched and still last.\n\nOn the new slide I changed the footer to \"Source: decision note.\" because the original footer said it was a reference slide to duplicate. I also didn't copy the reference slide's speaker notes, so the new slide has none.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_on/work/submission/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+     "exists": true,
+     "size": 47011,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "failed",
+     "message": "AssertionError: Unexpected slide order: ['Monthly Board Pack', 'Metrics', 'Action Tracker', 'Decision Snapshot', 'Closing', 'Layout Reference - Decision Card']\nassert ['Monthly Boa...ecision Card'] == ['Monthly Boa...ecision Card']\n  \n  At index 2 diff: 'Action Tracker' != 'Decision Snapshot'\n  \n  Full diff:\n    [\n        'Monthly Board Pack',\n        'Metrics',...\n  \n  ...Full output truncated (6 lines hidden), use '-vv' to show"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+    "/root/metrics.xlsx",
+    "/root/decision_note.docx",
+    "/root/action_log.xlsx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_on/work/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_on/work/submission/pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx",
+    "TASK_ID": "pptxr_001",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "cross_doc_docops__pptxr_001_monthly_board_pack_refresh_locked_layout_seed__skill_on",
+   "level": "L4",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 7
+   },
+   "tests_passed": 0,
+   "tests_total": 1,
+   "submission_files": {
+    "pptxr_001_monthly_board_pack_refresh_locked_layout_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 21.6,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 5,
+   "n_tool_uses": 4,
+   "tools": {
+    "Bash": 4
+   },
+   "cost_usd": 0.0711404,
+   "is_error": false,
+   "agent_final_text": "I've written the revised deck to the `submission/` folder under the output name you gave. I re-opened the saved file and checked the text on every slide. I didn't render the slides, so I haven't seen how they look.\n\n- **Handover Status:** Open Items is 6, Late Items is 2 and Completed is 14, taken from `handover_metrics.xlsx`.\n- **Outstanding Items:** the blocker table now lists the three entries from `blocker_log.xlsx`:\n  - Startup Letter, Mia Torres, Late\n  - Warranty Table, Ravi Shah, Open\n  - O&M Signoff, Devin Park, Open\n- **Owner Escalations:** this is a copy of the reference matrix slide, with the same table layout and the same three rows. It sits before Closing, as `owner_note.docx` asks.\n- **Order and reference slide:** the slides now run Title, Handover Status, Outstanding Items, Owner Escalations, Closing, Layout Reference. The reference slide is unchanged.\n\nThe task didn't say what the Owner Escalations rows or footnote should say. I reused the three blocker rows and wrote the footnote myself: \"Escalate late and open items to the named owners before closeout.\" Change either if you want different content.\n\nThe copied slide doesn't carry over the reference slide's speaker notes.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed__skill_off/work/submission/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+     "exists": true,
+     "size": 43793,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 1,
+   "pytest_exit": 0,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+    "/root/handover_metrics.xlsx",
+    "/root/blocker_log.xlsx",
+    "/root/owner_note.docx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed__skill_off/work/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed__skill_off/work/submission/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+    "TASK_ID": "pptxr_004",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed__skill_off",
+   "level": "L4",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 7
+   },
+   "tests_passed": 1,
+   "tests_total": 1,
+   "submission_files": {
+    "pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 28.8,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 8,
+   "n_tool_uses": 6,
+   "tools": {
+    "Skill": 1,
+    "Bash": 5
+   },
+   "cost_usd": 0.1134547,
+   "is_error": false,
+   "agent_final_text": "I've written the revised deck to `submission/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx`. It renders to PDF, but I only checked the slide text after saving. I made six small preview images and never opened them, so I haven't seen the layout.\n\n- **Handover Status:** the counts now match `handover_metrics.xlsx`: Open Items 6, Late Items 2, Completed 14.\n- **Outstanding Items:** the table now holds the three entries from `blocker_log.xlsx`:\n\n  | Item | Owner | Status |\n  |---|---|---|\n  | Startup Letter | Mia Torres | Late |\n  | Warranty Table | Ravi Shah | Open |\n  | O&M Signoff | Devin Park | Open |\n\n- **Owner Escalations:** this new slide is a copy of the reference matrix slide, with the same table layout. I gave it the title \"Owner Escalations\" and filled it with the same three rows. The caption is my wording (\"Owners with late or open handover items.\"), since the note didn't specify one.\n- **Order:** Title, Handover Status, Outstanding Items, Owner Escalations, Closing, then the Layout Reference slide. The reference slide is unchanged.\n\nThe reference matrix's first column holds the placeholders A, B and C. On the new slide I put the item names there instead, so it differs from the reference in that column's contents. Say so if you'd rather keep A, B and C.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed__skill_on/work/submission/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+     "exists": true,
+     "size": 43778,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 1,
+   "pytest_exit": 0,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+    "/root/handover_metrics.xlsx",
+    "/root/blocker_log.xlsx",
+    "/root/owner_note.docx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed__skill_on/work/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed__skill_on/work/submission/pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx",
+    "TASK_ID": "pptxr_004",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "cross_doc_docops__pptxr_004_handover_owner_matrix_from_closeout_logs_seed__skill_on",
+   "level": "L4",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 9
+   },
+   "tests_passed": 1,
+   "tests_total": 1,
+   "submission_files": {
+    "pptxr_004_handover_owner_matrix_from_closeout_logs_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 30.5,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 3,
+   "n_tool_uses": 2,
+   "tools": {
+    "Bash": 2
+   },
+   "cost_usd": 0.0761192,
+   "is_error": false,
+   "agent_final_text": "I built the nine-slide public deck and saved it to `submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx`. I haven't opened it in PowerPoint or rendered the slides, so layout and text fit are unchecked. A search of the slide and notes XML found no `draft`, `private`, `internal`, `scratch` or `Sato`.\n\n- **Slides:** I removed all twelve source slides and built the nine you listed, in order. That removes the internal slides and their confidential notes. The original file is unchanged.\n- **Corrections:** Scope 2 is 13,480, renewable electricity is 48%, base year is 2024, the owner is Kara Saito, and the status is Submitted. These appear on the boundary, inventory and assurance slides.\n- **Table:** The inventory table covers Scope 1 (8,940 tCO2e), Scope 2 location-based (13,480 tCO2e), renewable electricity, base year and status. The 8,940 comes from the source deck.\n- **Chart:** It is a clustered column chart with categories 2024, 2025 and 2026. It has one series, `Total emissions tCO2e`, with values 42800, 39750 and 36220.\n- **Style:** I applied the backgrounds, Aptos Display bold titles, title colors, green accent rectangle, footer text and `166534` table headers as specified, on every slide.\n- **Notes:** Each slide has a one-line public speaker note.\n\nThe source gave no public content for the transition actions, supplier register or board actions. I wrote those three slides as short, generic items, such as continuing to raise renewable share and reques",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_off/work/submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx",
+     "exists": true,
+     "size": 59834,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_output_exists_and_is_pptx": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_slide_order_and_private_material_removed": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_required_public_content_and_tables": {
+     "outcome": "failed",
+     "message": "AssertionError: Transition Action Plan: expected a rebuilt native table\nassert False\n +  where False = has_table(<pptx.slide.Slide object at 0x7f262416c870>)"
+    },
+    "test_clustered_column_chart_rebuilt_from_corrected_values": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_speaker_notes_cleaned_and_preserved": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_style_migration_applied": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_source_artifact_was_not_modified": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_input.pptx",
+    "/root/original_task_description.txt",
+    "/root/task_metadata.json"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_off/work/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_off/work/submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx",
+    "TASK_ID": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild",
+    "DOC_TYPE": "pptx"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_off",
+   "level": "L3",
+   "doc_type": "pptx",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 5
+   },
+   "tests_passed": 6,
+   "tests_total": 7,
+   "submission_files": {
+    "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild",
+   "mode": "skill_off",
+   "model_requested": "claude-opus-5-5",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "wall_seconds": 883.2,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 11,
+   "n_tool_uses": 9,
+   "tools": {
+    "Bash": 7,
+    "Read": 2
+   },
+   "cost_usd": 2.9434561999999995,
+   "is_error": false,
+   "agent_final_text": "I've built the public briefing deck: it has the nine required slides in the specified order, and a forbidden-phrase scan of every slide, table and speaker note came back clean. I rendered it to PDF and checked each slide by eye.\n\nSaved to: `work/submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx`. The source file is unchanged.\n\n- **Removed material:** I deleted all 12 original slides and their notes, including the correction log, the analyst transcript, the appendix and the assurance-findings slide. Nothing from them remains in the output: no draft, private, internal or scratch markers, forecast, closure rumor, supplier dispute, phone number, legal hold, do-not-publish line or assurance finding.\n- **Corrections:** I applied all five before rebuilding anything: Scope 2 location-based is 13,480 tCO2e, renewable electricity is 48%, the base year is 2024, the assurance owner is Kara Saito, and the status is Submitted.\n- **Where the content came from:** the source deck didn't contain enough public content to fill most slides. I took the exact table rows, slide text and speaker notes from `task_metadata.json`, which ships with the task. That covers the emissions inventory, assurance status, transition action plan, supplier engagement register, board actions, style guide tables and the boundary statements.\n- **Chart:** it's a new clustered column chart with categories 2024, 2025 and 2026 and one series, \"Total emissions tCO2e\", with values 42,800, 39,750 a",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_off__claude-opus-5-5/work/submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx",
+     "exists": true,
+     "size": 61406,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_output_exists_and_is_pptx": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_slide_order_and_private_material_removed": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_required_public_content_and_tables": {
+     "outcome": "failed",
+     "message": "AssertionError: Publication Style Guide: missing required public terms ['Aptos']\nassert not ['Aptos']"
+    },
+    "test_clustered_column_chart_rebuilt_from_corrected_values": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_speaker_notes_cleaned_and_preserved": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_style_migration_applied": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_source_artifact_was_not_modified": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 2,
+   "inputs_materialised": [
+    "/root/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_input.pptx",
+    "/root/original_task_description.txt",
+    "/root/task_metadata.json"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_off__claude-opus-5-5/work/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_off__claude-opus-5-5/work/submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx",
+    "TASK_ID": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild",
+    "DOC_TYPE": "pptx"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_off__claude-opus-5-5",
+   "level": "L3",
+   "doc_type": "pptx",
+   "agent_model_from_transcript": "claude-opus-5-5",
+   "assistant_messages_by_model": {
+    "claude-opus-5-5": 15
+   },
+   "tests_passed": 6,
+   "tests_total": 7,
+   "submission_files": {
+    "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 39.1,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 7,
+   "n_tool_uses": 5,
+   "tools": {
+    "Skill": 1,
+    "Bash": 3,
+    "Read": 1
+   },
+   "cost_usd": 0.1524409,
+   "is_error": false,
+   "agent_final_text": "I saved the revised nine-slide deck to `submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx`. The source file is unchanged. I checked it by rendering the slides and by scanning the unpacked file for leftover internal wording, but I haven't opened it in PowerPoint.\n\n- **Slides:** all 12 original slides are gone, and the deck has the nine public slides in the order you specified. A scan of the output found no `DRAFT`, `PRIVATE`, `INTERNAL`, `scratch`, `confidential`, `Kara Sato` or `Submittd` anywhere in the file, including notes.\n- **Corrections:**\n  - Scope 2 location-based is 13,480 tCO2e.\n  - Renewable electricity is 48%.\n  - Base year is 2024.\n  - The assurance owner is Kara Saito.\n  - Status reads Submitted.\n- **Chart:** a clustered column chart on `Emissions Trend Chart`, with categories 2024, 2025 and 2026, one series named `Total emissions tCO2e`, and values 42800, 39750 and 36220.\n- **Style:**\n  - The title slide background is `0F172A` with white titles. Content slides use `F8FAFC` with `0F172A` titles.\n  - Titles are Aptos Display bold.\n  - Every slide has a `22C55E` accent bar down the left edge and the footer `Northline Public Climate Disclosure | FY2026`.\n  - Every table has a `166534` header with white bold text.\n- **Notes:** each slide has one short public speaker note.\n- **Invented content:** the source gave no usable public content for the transition actions, supplier register, board actions or style guide, so I wrote those slides mys",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_on/work/submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx",
+     "exists": true,
+     "size": 60701,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_output_exists_and_is_pptx": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_slide_order_and_private_material_removed": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_required_public_content_and_tables": {
+     "outcome": "failed",
+     "message": "AssertionError: Publication Style Guide: missing required public terms ['accent']\nassert not ['accent']"
+    },
+    "test_clustered_column_chart_rebuilt_from_corrected_values": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_speaker_notes_cleaned_and_preserved": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_style_migration_applied": {
+     "outcome": "passed",
+     "message": ""
+    },
+    "test_source_artifact_was_not_modified": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_input.pptx",
+    "/root/original_task_description.txt",
+    "/root/task_metadata.json"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_on/work/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_on/work/submission/docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx",
+    "TASK_ID": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild",
+    "DOC_TYPE": "pptx"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild__skill_on",
+   "level": "L3",
+   "doc_type": "pptx",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 8
+   },
+   "tests_passed": 6,
+   "tests_total": 7,
+   "submission_files": {
+    "docops_v2_l3_026_pptx_climate_disclosure_chart_rebuild_output.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "docops_v2_l3_029_pptx_qbr_release_deck",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 30.3,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 4,
+   "n_tool_uses": 3,
+   "tools": {
+    "Bash": 3
+   },
+   "cost_usd": 0.08182880000000001,
+   "is_error": false,
+   "agent_final_text": "I built the release deck and saved it as a 9-slide `.pptx`. I checked the slide text and notes by reading the file back. I didn't render the slides, so I haven't seen the table layout visually.\n\n- **Output:** `/home/user/bench/live/docops_v2_l3_029_pptx_qbr_release_deck__skill_off/work/submission/docops_v2_l3_029_pptx_qbr_release_deck_output.pptx`. The input file is unchanged.\n- **Deletions and cleanup:** `Scratch Backup` and `Deprecated Roadmap` are gone. All `Draft:` prefixes, working-copy wording and internal escalation text are removed.\n- **Order:** Title, Agenda, Market Context, KPI Snapshot, Customer Risks, Mitigation Plan, Decision Request, Appendix - Data Notes, Reference - Locked Legal.\n- **Tables:** I rebuilt the Agenda, KPI, Customer Risks and new Mitigation Plan tables with the content you specified. The agenda slide numbers match the final deck.\n- **Footers:** `QBR Release | 2026-06-05 | Slide X of 9` is on slides 3\u20138 only, so not on Title, Agenda or the locked legal slide.\n- **Text and notes:** The Decision Request statements and speaker note, and the Appendix source sentence, are exactly as specified. The locked legal slide is untouched, including its note and shape count.\n\nI also made a few small choices the brief didn't specify. The Title slide has the subtitle \"QBR Release Deck\". I removed the old stale text boxes on the Agenda, Customer Risks and Mitigation Plan slides, since the new tables replace them. The KPI slide keeps a text list of the four updated v",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/docops_v2_l3_029_pptx_qbr_release_deck__skill_off/work/submission/docops_v2_l3_029_pptx_qbr_release_deck_output.pptx",
+     "exists": true,
+     "size": 44420,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_qbr_release_deck_longflow": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 1,
+   "pytest_exit": 0,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l3_029_pptx_qbr_release_deck_input.pptx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l3_029_pptx_qbr_release_deck__skill_off/work/docops_v2_l3_029_pptx_qbr_release_deck_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l3_029_pptx_qbr_release_deck__skill_off/work/submission/docops_v2_l3_029_pptx_qbr_release_deck_output.pptx",
+    "TASK_ID": "docops_v2_l3_029_pptx_qbr_release_deck",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "docops_v2_l3_029_pptx_qbr_release_deck__skill_off",
+   "level": "L3",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 6
+   },
+   "tests_passed": 1,
+   "tests_total": 1,
+   "submission_files": {
+    "docops_v2_l3_029_pptx_qbr_release_deck_output.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "docops_v2_l3_029_pptx_qbr_release_deck",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 33.3,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 7,
+   "n_tool_uses": 5,
+   "tools": {
+    "Skill": 1,
+    "Bash": 3,
+    "Read": 1
+   },
+   "cost_usd": 0.1341001,
+   "is_error": false,
+   "agent_final_text": "I saved the release deck as a 9-slide `.pptx`. I checked the extracted text of every slide and a render of the Customer Risks slide. I didn't review the other slides' renders or run a separate review pass.\n\nThe slide order, agenda numbers (3\u20138) and \"of 9\" footers all match your spec. The footer `QBR Release | 2026-06-05    Slide X of 9` is on slides 3\u20138 only, not Title, Agenda or the legal slide.\n\n- **Deleted:** `Scratch Backup` and `Deprecated Roadmap`.\n- **Title slide:** renamed to `Title`. I replaced its draft and working-copy text with \"Quarterly Business Review\" and `QBR Release | 2026-06-05`.\n- **Rebuilt tables:** agenda, KPI Snapshot, Customer Risks and Mitigation Plan use the content you specified. The old agenda, KPI and risk tables were replaced rather than edited.\n- **Decision Request and Appendix:** the three decision statements, the speaker note and the public source sentence are in as written.\n- **Cleanup:** all `Draft:` prefixes and the internal escalation text are gone. I also replaced the subtitle text on the KPI, risk and mitigation slides with short neutral lines, such as \"Q2 metrics for executive review\", since the old text was draft wording.\n- **Locked legal slide:** its text, notes and shape count are unchanged from the input.\n\nOn the Customer Risks render, the title and subtitle sit oddly (title centred, subtitle offset). The cause is the original text-box layout, which I left alone.\n\nThe source file was not modified. The output is at `/home/user/bench/",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/docops_v2_l3_029_pptx_qbr_release_deck__skill_on/work/submission/docops_v2_l3_029_pptx_qbr_release_deck_output.pptx",
+     "exists": true,
+     "size": 44245,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_qbr_release_deck_longflow": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 1,
+   "pytest_exit": 0,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l3_029_pptx_qbr_release_deck_input.pptx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l3_029_pptx_qbr_release_deck__skill_on/work/docops_v2_l3_029_pptx_qbr_release_deck_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l3_029_pptx_qbr_release_deck__skill_on/work/submission/docops_v2_l3_029_pptx_qbr_release_deck_output.pptx",
+    "TASK_ID": "docops_v2_l3_029_pptx_qbr_release_deck",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "docops_v2_l3_029_pptx_qbr_release_deck__skill_on",
+   "level": "L3",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 8
+   },
+   "tests_passed": 1,
+   "tests_total": 1,
+   "submission_files": {
+    "docops_v2_l3_029_pptx_qbr_release_deck_output.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 43.2,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 5,
+   "n_tool_uses": 4,
+   "tools": {
+    "Bash": 4
+   },
+   "cost_usd": 0.11535589999999998,
+   "is_error": false,
+   "agent_final_text": "I've built `capa_audit_tracker.xlsx` and refreshed the deck, and the two agree on the public CAPAs. I checked both files by reading them back, and the workbook also opened and rendered cleanly in LibreOffice. I didn't view the slides as rendered images.\n\n**Workbook**\n- **Tracker:** `CAPA Tracker` has the native table `capa_audit_tracker` (A1:K5), with CAPA-21, D-226 and E-21A kept in it. Owners are expanded to Priya Shah, Mateo Cruz, Noah Patel and Lena Ortiz. Statuses are CAPA-17 At Risk, CAPA-18 Ready, CAPA-21 Closed and CAPA-24 Blocked.\n- **Formulas and validation:** Columns J and K are formulas (evidence verified count and deck visibility). G2:G5 and H2:H5 have list validation.\n- **Evidence and rules:** `Evidence Readiness` has the native table `evidence_readiness` (A1:F6), with a readiness formula in F2:F6. The hidden `Rules` sheet and the defined names `public_status_choices` and `publish_choices` are in place.\n- **Highlighting:** The CAPA-17 and CAPA-24 rows are highlighted.\n- **Built from scratch:** No tracker workbook was supplied, so I created it from the source files. The column layout, the Publish values and the formula logic are my own design.\n\n**Deck**\n- **Slides:** I removed the internal root-cause slide and kept the matrix template reference slide unchanged. Four slides remain after the title slide.\n- **Public content:** The matrix now lists only CAPA-17, CAPA-18 and CAPA-24, with canonical owner names and the statuses above. The evidence readiness and executi",
+   "files": {
+    "tracker": {
+     "path": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: Missing deck output: /home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx\nassert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx').exists"
+    },
+    "test_deck_order_public_boundary_and_tables": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx'"
+    },
+    "test_tracker_workbook_structure_values_and_controls": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx'"
+    },
+    "test_cross_output_public_capa_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx",
+    "/root/capa_deviation_log.xlsx",
+    "/root/audit_scope_note.docx",
+    "/root/regulation_excerpt.pdf",
+    "/root/evidence_index.xlsx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx",
+    "TASK_ID": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack",
+    "DOC_TYPE": "xlsx+ppt"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx": "/home/user/bench/runs/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/capa_audit_tracker.xlsx",
+     "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx": "/home/user/bench/runs/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_deck_order_public_boundary_and_tables": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_tracker_workbook_structure_values_and_controls": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_cross_output_public_capa_consistency": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 1
+   },
+   "run_dir": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off",
+   "level": "L4",
+   "doc_type": "xlsx+ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 8
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "capa_audit_tracker.xlsx": true,
+    "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack",
+   "mode": "skill_off",
+   "model_requested": "claude-opus-5-5",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "wall_seconds": 123.1,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 12,
+   "n_tool_uses": 11,
+   "tools": {
+    "Bash": 10,
+    "Read": 1
+   },
+   "cost_usd": 0.5567595,
+   "is_error": false,
+   "agent_final_text": "I've created the tracker workbook and refreshed the deck; both are in `work/submission/`. I checked them by reloading each file, scanning the deck's internal files for leaked terms, and rendering the deck to images. Excel itself wasn't opened.\n\n**`capa_audit_tracker.xlsx`**\n- **CAPA Tracker** has native table `capa_audit_tracker` (A1:K5) with all four CAPAs. CAPA-21 / D-226 / E-21A stay in the workbook, marked `Closed` and Publish `No`.\n- **Owners** are expanded to their full names: Priya Shah, Mateo Cruz, Noah Patel and Lena Ortiz.\n- **Statuses:** CAPA-17 `At Risk`, CAPA-18 `Ready`, CAPA-21 `Closed`, CAPA-24 `Blocked`. The CAPA-17 row is highlighted amber and the CAPA-24 row red.\n- **Formulas:**\n  - J2:J5 counts each CAPA's publishable evidence.\n  - K2:K5 sets the deck action: Include, Highlight or Exclude.\n  - Evidence Readiness F2:F6 classifies each item as Publishable, Not ready or Internal only.\n  - I stored the current results with the formulas, so tools that read values without recalculating still get them.\n- **Drop-downs** on G2:G5 and H2:H5 use the defined names `public_status_choices` and `publish_choices`, which point at the hidden `Rules` sheet.\n- **Evidence Readiness** has native table `evidence_readiness` (A1:F6).\n- **One wording change from the source:** I relabelled the E-21A description as \"Internal investigation record (internal only)\". The original wording mentioned the unblinded lot notes, which would have put internal root-cause detail into the workbook.\n",
+   "files": {
+    "tracker": {
+     "path": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: Missing deck output: /home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx\nassert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx').exists"
+    },
+    "test_deck_order_public_boundary_and_tables": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx'"
+    },
+    "test_tracker_workbook_structure_values_and_controls": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx'"
+    },
+    "test_cross_output_public_capa_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx",
+    "/root/capa_deviation_log.xlsx",
+    "/root/audit_scope_note.docx",
+    "/root/regulation_excerpt.pdf",
+    "/root/evidence_index.xlsx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx",
+    "TASK_ID": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack",
+    "DOC_TYPE": "xlsx+ppt"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx": "/home/user/bench/runs/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/capa_audit_tracker.xlsx",
+     "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx": "/home/user/bench/runs/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_deck_order_public_boundary_and_tables": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_tracker_workbook_structure_values_and_controls": {
+      "outcome": "failed",
+      "message": "AssertionError: E-21A: wrong evidence\nassert 'Internal inv...nternal only)' == 'Unblinded lo...igation notes'\n  \n  - Unblinded lot investigation notes\n  + Internal investigation record (internal only)"
+     },
+     "test_cross_output_public_capa_consistency": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 0
+   },
+   "run_dir": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_off__claude-opus-5-5",
+   "level": "L4",
+   "doc_type": "xlsx+ppt",
+   "agent_model_from_transcript": "claude-opus-5-5",
+   "assistant_messages_by_model": {
+    "claude-opus-5-5": 20
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "capa_audit_tracker.xlsx": true,
+    "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 49.3,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 5,
+   "n_tool_uses": 4,
+   "tools": {
+    "Bash": 4
+   },
+   "cost_usd": 0.1546558,
+   "is_error": false,
+   "agent_final_text": "I created `capa_audit_tracker.xlsx` and refreshed the deck. Both are in `submission/`, and they agree on the three public CAPAs. I haven't rendered the deck visually. I only checked its text and tables.\n\n**Workbook**\n- **CAPA Tracker:** it has all four CAPAs in the native table `capa_audit_tracker` (A1:K5). Owners are expanded to Priya Shah, Mateo Cruz, Noah Patel and Lena Ortiz. Statuses are CAPA-17 `At Risk`, CAPA-18 `Ready`, CAPA-21 `Closed` and CAPA-24 `Blocked`.\n- **Highlighting:** the CAPA-17 and CAPA-24 rows are highlighted in yellow and bold.\n- **Formulas:** J2:K5 are live. J shows how many of a CAPA's evidence items are ready, for example \"2 of 2\". K shows \"Include in public deck\" or \"Workbook only\".\n- **Evidence Readiness:** it has the native table `evidence_readiness` (A1:F6). Formulas in F2:F6 give Ready, Not ready or Internal only. CAPA-21, D-226 and E-21A stay in the workbook.\n- **Validation and rules:** G2:G5 and H2:H5 have list validation. The hidden `Rules` sheet and the names `public_status_choices` and `publish_choices` are in place. A recalculation run reported no errors. After that run I confirmed the table, the hidden sheet, the defined names and the G2:G5 validation. I did not separately check the H2:H5 validation.\n\n**Deck**\n- The internal root-cause slide is removed.\n- The matrix keeps only CAPA-17, CAPA-18 and CAPA-24, with full owner names and the new statuses. CAPA-17 now lists both E-17A and E-17B.\n- The evidence slide no longer mentions CAPA-21, D",
+   "files": {
+    "tracker": {
+     "path": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: Missing deck output: /home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx\nassert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx').exists"
+    },
+    "test_deck_order_public_boundary_and_tables": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx'"
+    },
+    "test_tracker_workbook_structure_values_and_controls": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx'"
+    },
+    "test_cross_output_public_capa_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx",
+    "/root/capa_deviation_log.xlsx",
+    "/root/audit_scope_note.docx",
+    "/root/regulation_excerpt.pdf",
+    "/root/evidence_index.xlsx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx",
+    "TASK_ID": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack",
+    "DOC_TYPE": "xlsx+ppt"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_tracker.xlsx": "/home/user/bench/runs/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/capa_audit_tracker.xlsx",
+     "/home/user/bench/live/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_deck.pptx": "/home/user/bench/runs/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on/work/submission/docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_deck_order_public_boundary_and_tables": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_tracker_workbook_structure_values_and_controls": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_cross_output_public_capa_consistency": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 1
+   },
+   "run_dir": "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack__skill_on",
+   "level": "L4",
+   "doc_type": "xlsx+ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 8
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "capa_audit_tracker.xlsx": true,
+    "docops_v2_l4_043_xlsx_ppt_capa_audit_response_pack_input.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 30.5,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 4,
+   "n_tool_uses": 3,
+   "tools": {
+    "Bash": 3
+   },
+   "cost_usd": 0.0669083,
+   "is_error": false,
+   "agent_final_text": "Both files are written to `submission/`: the refreshed deck, `docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx`, and the new workbook, `renewal_action_register.xlsx`. I checked the slide order and titles by reloading the deck. I didn't open either file in PowerPoint or Excel, and I didn't recalculate the `G2:G4` formulas, so their values are unchecked.\n\n**Deck**\n- **Order:** QBR Renewal Readout, Executive Summary, Renewal Risk Table, Action Register, Risk Callout, Reference - Risk Callout, Reference - Action Table.\n- **Scratch slide:** removed.\n- **Risk Callout slide:** this slide didn't exist in the draft. I made it as a copy of the reference callout slide, so the reference slide is unchanged. It covers Zenith Foods.\n- **Finance overrides:** Northstar Bank is `Watch` and Zenith Foods ARR is `$1.40M`.\n- **Owners and actions:** owner aliases are expanded to Priya Shah, Mateo Cruz and Lena Ortiz. Actions use the required wording from the owner notes.\n- **Extra edits:** I rewrote the summary bullets, and the title slide and the live slides' \"Draft\" labels now say \"Final\". None of that was in your request.\n- **Matching:** the risk table, action table and workbook carry identical account, owner, action and status values.\n\n**Zenith Foods status:** I set it to `Hold`, which is the base risk in the source workbook. The draft deck said `Watch`, and the finance notice only changes Northstar's status, so that looks like a draft error. If you want `Watch`, say so and ",
+   "files": {
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "register": {
+     "path": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: Missing deck output: /home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx\nassert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx').exists"
+    },
+    "test_deck_content_and_order": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx'"
+    },
+    "test_register_workbook_structure_and_values": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx'"
+    },
+    "test_cross_output_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+    "/root/renewal_risk_source.xlsx",
+    "/root/account_owner_notes.docx",
+    "/root/finance_exception_notice.pdf",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx",
+    "TASK_ID": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register",
+    "DOC_TYPE": "ppt+xlsx"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx": "/home/user/bench/runs/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+     "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx": "/home/user/bench/runs/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off/work/submission/renewal_action_register.xlsx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_deck_content_and_order": {
+      "outcome": "failed",
+      "message": "AssertionError: Renewal Risk Table Northstar Bank status: expected 'Watch', found ''; row={'account': 'Northstar Bank', 'arr': '$2.10M', 'renewal window': '2026-08-15', 'risk': 'Watch', 'owner': 'Priya Shah'}\nassert '' == 'Watch'\n  \n  - Watch"
+     },
+     "test_register_workbook_structure_and_values": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_cross_output_consistency": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 0
+   },
+   "run_dir": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off",
+   "level": "L4",
+   "doc_type": "ppt+xlsx",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 5
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "renewal_action_register.xlsx": true,
+    "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register",
+   "mode": "skill_off",
+   "model_requested": "claude-opus-5-5",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "wall_seconds": 86.1,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 7,
+   "n_tool_uses": 6,
+   "tools": {
+    "Bash": 5,
+    "Read": 1
+   },
+   "cost_usd": 0.3192774,
+   "is_error": false,
+   "agent_final_text": "Both files are written to `work/submission/`:\n\n- `docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx`\n- `renewal_action_register.xlsx`\n\nI checked the contents of both files and rendered the slides to look at them. I didn't open the workbook in Excel, so the \"OK\" check formulas haven't been calculated yet.\n\n**Deck**\n- **Slide order:** The scratch slide is gone and the slides are in the order you asked for. The new \"Risk Callout\" slide is a copy of the reference callout layout. Both reference slides are unchanged.\n- **Finance overrides:** Northstar Bank is `Watch` and Zenith Foods ARR is `$1.40M` on every slide where they appear.\n- **Owner names:** The short names in the draft (P. Shah, M. Cruz, L. Ortiz) are now the full names from the owner notes: Priya Shah, Mateo Cruz and Lena Ortiz.\n- **Actions:** Each action now uses the wording from the owner notes. Action IDs A-17, A-23 and A-31 are kept.\n- **Executive Summary:** The placeholder text is replaced with three bullets.\n- **Draft labels:** The \"Draft\" labels on the live slides now say \"Final\", and the title slide's status line is updated.\n- **Risk table:** I added an Action column and renamed the \"Risk\" header to \"Risk Status\". This lets the risk table, action table and workbook all match on account, owner, action and status.\n\n**Decision for you:** The draft deck showed Zenith Foods as `Watch`, but the risk source says `Hold`, and the finance notice only changes Zenith's ARR. I used `Hold` everywhere. If Ze",
+   "files": {
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "register": {
+     "path": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: Missing deck output: /home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx\nassert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx').exists"
+    },
+    "test_deck_content_and_order": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx'"
+    },
+    "test_register_workbook_structure_and_values": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx'"
+    },
+    "test_cross_output_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+    "/root/renewal_risk_source.xlsx",
+    "/root/account_owner_notes.docx",
+    "/root/finance_exception_notice.pdf",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx",
+    "TASK_ID": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register",
+    "DOC_TYPE": "ppt+xlsx"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx": "/home/user/bench/runs/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+     "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx": "/home/user/bench/runs/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5/work/submission/renewal_action_register.xlsx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_deck_content_and_order": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_register_workbook_structure_and_values": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_cross_output_consistency": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 1
+   },
+   "run_dir": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_off__claude-opus-5-5",
+   "level": "L4",
+   "doc_type": "ppt+xlsx",
+   "agent_model_from_transcript": "claude-opus-5-5",
+   "assistant_messages_by_model": {
+    "claude-opus-5-5": 12
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "renewal_action_register.xlsx": true,
+    "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 36.4,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 4,
+   "n_tool_uses": 3,
+   "tools": {
+    "Bash": 3
+   },
+   "cost_usd": 0.10491379999999999,
+   "is_error": false,
+   "agent_final_text": "I've written the refreshed deck and the new `renewal_action_register.xlsx` to the submission folder. I rendered the deck to PDF and the text came out as expected. I didn't open the workbook in Excel or recalculate its formulas.\n\n- **Scratch slide:** it's removed, and the slides are in your required order. The titles come back as QBR Renewal Readout, Executive Summary, Renewal Risk Table, Action Register, Risk Callout, Reference - Risk Callout, Reference - Action Table.\n- **Overrides:** Northstar Bank is now `Watch` and Zenith Foods ARR is `$1.40M`.\n- **Owners and actions:** owner aliases are expanded to Priya Shah, Mateo Cruz and Lena Ortiz. Actions use the wording from the owner notes. The risk table, the action table and the workbook register all list the same account, owner, action and status.\n- **Zenith status:** I set Zenith Foods to `Hold`. The draft deck had `Watch`, but the risk source says `Hold` and the finance notice only changes Northstar's status and Zenith's ARR. Tell me if you want `Watch` instead.\n- **Risk Callout slide:** I made it by copying the reference callout slide, so I wrote its text myself. It reads \"Zenith Foods: Hold \u2014 ARR $1.40M | Executive pricing review (Mateo Cruz) before 2026-08-22 renewal\".\n- **Other text I changed:** I rewrote the three Executive Summary bullets to match the corrected facts. I also changed the title slide's status line to \"Final - refreshed from source files\".\n- **Reference slides:** both are kept with their original text.\n- ",
+   "files": {
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "register": {
+     "path": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: Missing deck output: /home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx\nassert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx').exists"
+    },
+    "test_deck_content_and_order": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx'"
+    },
+    "test_register_workbook_structure_and_values": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx'"
+    },
+    "test_cross_output_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+    "/root/renewal_risk_source.xlsx",
+    "/root/account_owner_notes.docx",
+    "/root/finance_exception_notice.pdf",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx",
+    "TASK_ID": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register",
+    "DOC_TYPE": "ppt+xlsx"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_deck.pptx": "/home/user/bench/runs/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx",
+     "/home/user/bench/live/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_register.xlsx": "/home/user/bench/runs/docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on/work/submission/renewal_action_register.xlsx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_deck_content_and_order": {
+      "outcome": "failed",
+      "message": "AssertionError: Renewal Risk Table Northstar Bank status: expected 'Watch', found ''; row={'account': 'Northstar Bank', 'arr': '$2.10M', 'renewal window': '2026-08-15', 'risk': 'Watch', 'owner': 'Priya Shah'}\nassert '' == 'Watch'\n  \n  - Watch"
+     },
+     "test_register_workbook_structure_and_values": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_cross_output_consistency": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 0
+   },
+   "run_dir": "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register__skill_on",
+   "level": "L4",
+   "doc_type": "ppt+xlsx",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 5
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "renewal_action_register.xlsx": true,
+    "docops_v2_l4_058_ppt_xlsx_qbr_readout_and_action_register_input.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 37.7,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 5,
+   "n_tool_uses": 4,
+   "tools": {
+    "Bash": 4
+   },
+   "cost_usd": 0.09146460000000001,
+   "is_error": false,
+   "agent_final_text": "I've built both files in `submission/`. I haven't looked at the rendered slides, so the layout is unchecked. I did extract the slide text to check content, and recalculate the workbook formulas, which gave the expected results.\n\n**Deck:**\n- It has 5 slides: a cover, SIG-01 Lobby Rotation (08:00), SIG-02 Breakout Wayfinding (09:30), SIG-03 Evening Departures (17:15), and a locked screen-safe reference slide.\n- They use the Midnight #102A43 and Cyber #00B8A9 palette with large type.\n- The text check found no OPS-99, VIP, green room route, staff radio, or scratch content. I replaced all of the draft's slide content.\n\n**Workbook:**\n- OPS-99 stays in the Run of Show sheet as Do Not Publish.\n- The sheet has a native table, `Table_RunOfShow`, with a Publish Status column and a Screen-Safe Check column. That check shows OPS-99 as \"Blocked - internal\".\n- The formulas count public slots (3) and Do Not Publish rows (1).\n- It has freeze panes, a print area, a data-validation list on Publish Status, and conditional formatting.\n- The Rules sheet is hidden. It holds SIG-01, SIG-02 and SIG-03 as the only public slots, and the defined names `PublicSlots`, `PublishStatusList` and `RunOfShowData` point to it.\n\nThe deck and workbook agree that SIG-01, SIG-02 and SIG-03 are the only public slots.\n\nFiles are in `/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission`:\n- `docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pp",
+   "files": {
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "workbook": {
+     "path": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: assert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx').exists\n +      where PosixPath('/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx') = _ppt_path()"
+    },
+    "test_ppt_public_signage_deck": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx'"
+    },
+    "test_workbook_run_of_show_controls": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx'"
+    },
+    "test_cross_output_slot_boundary": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+    "/root/screen_schedule_source.xlsx",
+    "/root/digital_signage_operations_note.docx",
+    "/root/digital_signage_screen_standard.pdf",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx",
+    "TASK_ID": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow",
+    "DOC_TYPE": "ppt+xlsx"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx": "/home/user/bench/runs/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+     "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx": "/home/user/bench/runs/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off/work/submission/digital_signage_run_of_show.xlsx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_ppt_public_signage_deck": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_workbook_run_of_show_controls": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_cross_output_slot_boundary": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 1
+   },
+   "run_dir": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off",
+   "level": "L4",
+   "doc_type": "ppt+xlsx",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 6
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx": true,
+    "digital_signage_run_of_show.xlsx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow",
+   "mode": "skill_off",
+   "model_requested": "claude-opus-5-5",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "wall_seconds": 127.0,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 10,
+   "n_tool_uses": 9,
+   "tools": {
+    "Bash": 8,
+    "Read": 1
+   },
+   "cost_usd": 0.45338940000000005,
+   "is_error": false,
+   "agent_final_text": "Both files are in `work/submission/`. I opened them back up after saving and checked what they contain, and rendered the deck to images to check how it looks.\n\n**Deck** (`docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx`, 5 slides, 16:9). All four draft slides came out completely, since every one of them held internal ops text.\n1. Cover: \"Welcome to the Conference\".\n2. SIG-01, Lobby Rotation, 08:00: Welcome / badge pickup / keynote hall.\n3. SIG-02, Breakout Wayfinding, 09:30: Tracks A-C room directions.\n4. SIG-03, Evening Departures, 17:15: Shuttle bays and reception notice.\n5. Screen-safe reference slide. Every shape on it is locked against moving, resizing and text editing.\n\nThe slides use a Midnight #102A43 background with Cyber #00B8A9 accents. Titles are 44 pt and messages 30 pt. I searched every file inside the deck for OPS-, VIP, green room, radio, staff, escort and scratch, and nothing came up. I also cleared the draft's leftover author and description details.\n\n**Workbook** (`digital_signage_run_of_show.xlsx`): The source spreadsheet had none of the required features (no table, formulas, validation or named ranges), so I built them new rather than copying them over.\n- **Rows:** a \"Run of Show\" sheet with a native table holding all four rows. OPS-99 is kept for staff with Publish Status set to Do Not Publish.\n- **Formulas:**\n  - \"Public Screen\" shows Yes or No for each row.\n  - \"Screen-Safe Check\" marks published rows as Screen Safe, unless th",
+   "files": {
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "workbook": {
+     "path": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: assert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx').exists\n +      where PosixPath('/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx') = _ppt_path()"
+    },
+    "test_ppt_public_signage_deck": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx'"
+    },
+    "test_workbook_run_of_show_controls": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx'"
+    },
+    "test_cross_output_slot_boundary": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+    "/root/screen_schedule_source.xlsx",
+    "/root/digital_signage_operations_note.docx",
+    "/root/digital_signage_screen_standard.pdf",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx",
+    "TASK_ID": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow",
+    "DOC_TYPE": "ppt+xlsx"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx": "/home/user/bench/runs/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+     "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx": "/home/user/bench/runs/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5/work/submission/digital_signage_run_of_show.xlsx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_ppt_public_signage_deck": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_workbook_run_of_show_controls": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_cross_output_slot_boundary": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 1
+   },
+   "run_dir": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_off__claude-opus-5-5",
+   "level": "L4",
+   "doc_type": "ppt+xlsx",
+   "agent_model_from_transcript": "claude-opus-5-5",
+   "assistant_messages_by_model": {
+    "claude-opus-5-5": 19
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx": true,
+    "digital_signage_run_of_show.xlsx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 50.6,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 12,
+   "n_tool_uses": 9,
+   "tools": {
+    "Bash": 6,
+    "Skill": 2,
+    "Read": 1
+   },
+   "cost_usd": 0.201408,
+   "is_error": false,
+   "agent_final_text": "I've built both files, and they agree that SIG-01, SIG-02 and SIG-03 are the only public slots. I checked the rendered slides and the workbook's formulas, which recalculate with no errors.\n\n**Deck** (same filename as the input)\n- It has five slides: a cover, three public signage screens, and the screen-safe reference slide marked LOCKED.\n- The three signage screens are Lobby Rotation at 08:00, Breakout Wayfinding at 09:30 and Evening Departures at 17:15.\n- The slides use the standard's Midnight #102A43 and Cyber #00B8A9 palette.\n- The draft's internal slides are gone. I rebuilt the deck on the same file, so none of the old content carries over.\n- The new slides and speaker notes contain no OPS-99, VIP, green room, staff radio or scratch content.\n\n**Workbook** (`digital_signage_run_of_show.xlsx`)\n- The \"Run of Show\" sheet is a native table with the four schedule rows.\n- OPS-99 stays in the workbook with its status set to Do Not Publish.\n- Two formula columns drive the publish gate. \"Public Slot\" checks each slot against the three allowed IDs. \"Screen-Safe Check\" gives PASS, FAIL or \"Internal only\", and fails any published row that contains a forbidden term.\n- Summary cells at the top count published slots (3) and screen-safe failures (0).\n- It also has a print area, frozen panes, a status dropdown, conditional formatting, and a hidden Rules sheet with defined names (ForbiddenTerms, PublicSlots, StatusList, RunOfShowTable).\n\nFiles are in `/home/user/bench/live/docops_v2_l4_060_",
+   "files": {
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "workbook": {
+     "path": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: assert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx').exists\n +      where PosixPath('/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx') = _ppt_path()"
+    },
+    "test_ppt_public_signage_deck": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx'"
+    },
+    "test_workbook_run_of_show_controls": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx'"
+    },
+    "test_cross_output_slot_boundary": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+    "/root/screen_schedule_source.xlsx",
+    "/root/digital_signage_operations_note.docx",
+    "/root/digital_signage_screen_standard.pdf",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx",
+    "TASK_ID": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow",
+    "DOC_TYPE": "ppt+xlsx"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_deck.pptx": "/home/user/bench/runs/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx",
+     "/home/user/bench/live/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_workbook.xlsx": "/home/user/bench/runs/docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on/work/submission/digital_signage_run_of_show.xlsx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_ppt_public_signage_deck": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_workbook_run_of_show_controls": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_cross_output_slot_boundary": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 1
+   },
+   "run_dir": "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow__skill_on",
+   "level": "L4",
+   "doc_type": "ppt+xlsx",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 14
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "docops_v2_l4_060_ppt_xlsx_conference_digital_signage_runofshow_input.pptx": true,
+    "digital_signage_run_of_show.xlsx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 73.7,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 8,
+   "n_tool_uses": 7,
+   "tools": {
+    "Bash": 6,
+    "Read": 1
+   },
+   "cost_usd": 0.1859623,
+   "is_error": false,
+   "agent_final_text": "I built the six-slide deck and the calculation workbook. The workbook's formulas recalculated correctly in LibreOffice. The deck rendered cleanly, but I changed one table cell on slide 2 after the check and didn't re-render it.\n\n**Results (eligible measures only)**\n\n| Measure | Annual kWh saved | Installed cost | Gross incentive | 50% cap | Approved incentive | Net cost |\n|---|---|---|---|---|---|---|\n| L-101 north lobby LED | 32,140.8 | $24,180 | $2,571.26 | $12,090 | $2,571.26 | $21,608.74 |\n| H-202 pump VFD (30 hp) | not in audit | $18,900 | $3,600.00 | $9,450 | $3,600.00 | $15,300.00 |\n| L-102 loading dock LED | 6,770.4 | $7,140 | $541.63 | $3,570 | $541.63 | $6,598.37 |\n| **Total** | 38,911.2 | $50,220 | $6,712.89 | $25,110 | **$6,712.89** | $43,507.11 |\n\nThe 50% cap doesn't limit any measure. The VFD is paid per horsepower, so I didn't invent a kWh figure for it.\n\nThe garage stairwell sensors (controls-only, $5,600) and the east wing BAS scheduling (code-required) are excluded. They show on an Exclusions sheet and in the deck.\n\n**Workbook**\n- **Tables and formulas:** it has native Excel tables, with the calculated columns driven by formulas.\n- **Rules and names:** the rates, cap and VFD hours minimum sit on a hidden Rules sheet and are referenced through defined names. The baseline usage is on a hidden Raw_Baseline sheet.\n- **Validation and printing:** drop-down validation covers eligibility and measure type, and every visible sheet has a print area.\n\n**Deck**\nThe slide",
+   "files": {
+    "summary_deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "calculation_tracker": {
+     "path": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: assert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx').exists\n +      where PosixPath('/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx') = _path('pptx')"
+    },
+    "test_pptx_structure_content_and_privacy": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx'"
+    },
+    "test_workbook_structure_formulas_controls": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx'"
+    },
+    "test_workbook_values_and_privacy": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx'"
+    },
+    "test_cross_output_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_input.docx",
+    "/root/energy_audit_report.docx",
+    "/root/brightgrid_rebate_guide.pdf",
+    "/root/vendor_quote_and_cutsheets.pdf",
+    "/root/baseline_utility_usage.xlsx",
+    "/root/internal_pricing_strategy.docx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_input.docx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx",
+    "TASK_ID": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet",
+    "DOC_TYPE": "pptx+xlsx"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx": "/home/user/bench/runs/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/utility_rebate_mv_summary.pptx",
+     "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx": "/home/user/bench/runs/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off/work/submission/rebate_measure_calculation_tracker.xlsx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_pptx_structure_content_and_privacy": {
+      "outcome": "failed",
+      "message": "AssertionError: assert ['Eligible me...e submission'] == ['Utility Reb...acy Boundary']\n  \n  At index 0 diff: 'Eligible measures qualify for $6,712.89 in BrightGrid incentives' != 'Utility Rebate M&V Summary'\n  \n  Full diff:\n    [\n  -     'Utility Rebate M&V Summary',\n  -     'Eligible Measures',...\n  \n  ...Full output truncated (11 lines hidden), use '-vv' to show"
+     },
+     "test_workbook_structure_formulas_controls": {
+      "outcome": "failed",
+      "message": "AssertionError: assert ['Summary', '...Raw_Baseline'] == ['Project Sum... Inputs', ...]\n  \n  At index 0 diff: 'Summary' != 'Project Summary'\n  Right contains 2 more items, first extra item: 'Raw Inputs'\n  \n  Full diff:\n    [\n  -     'Project Summary',...\n  \n  ...Full output truncated (14 lines hidden), use '-vv' to show"
+     },
+     "test_workbook_values_and_privacy": {
+      "outcome": "failed",
+      "message": "KeyError: 'Worksheet Project Summary does not exist.'"
+     },
+     "test_cross_output_consistency": {
+      "outcome": "failed",
+      "message": "KeyError: 'Worksheet Project Summary does not exist.'"
+     }
+    },
+    "reward": 0
+   },
+   "run_dir": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off",
+   "level": "L4",
+   "doc_type": "pptx+xlsx",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 11
+   },
+   "tests_passed": 0,
+   "tests_total": 5,
+   "submission_files": {
+    "rebate_measure_calculation_tracker.xlsx": true,
+    "utility_rebate_mv_summary.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet",
+   "mode": "skill_off",
+   "model_requested": "claude-opus-5-5",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "wall_seconds": 243.0,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 13,
+   "n_tool_uses": 12,
+   "tools": {
+    "Bash": 8,
+    "Write": 2,
+    "Read": 2
+   },
+   "cost_usd": 0.9561816999999999,
+   "is_error": false,
+   "agent_final_text": "I've built both files: a six-slide summary deck for the owner and utility reviewer, and the calculation tracker workbook. Three measures qualify, earning a $6,712.89 incentive on $50,220 of installed cost, which leaves a net cost of $43,507.11. I rendered the deck to images and checked every slide, and the workbook was recalculated in LibreOffice to confirm the totals below.\n\n**One thing to act on:** BrightGrid's rebate guide sets 2026-08-14 as the due date for the customer signature and final M&V worksheet. That date has passed, so check whether the packet was already submitted or ask BrightGrid for an extension. Slide 6 carries a warning about this.\n\n| Measure | Annual kWh | Installed cost | Gross incentive | 50% cap | Approved | Net cost |\n|---|---|---|---|---|---|---|\n| L-101 North lobby LED | 32,140.8 | $24,180 | $2,571.26 | $12,090 | $2,571.26 | $21,608.74 |\n| H-202 Pump VFD (30 hp) | not claimed | $18,900 | $3,600.00 | $9,450 | $3,600.00 | $15,300.00 |\n| L-102 South loading dock LED | 6,770.4 | $7,140 | $541.63 | $3,570 | $541.63 | $6,598.37 |\n| **Total** | **38,911.2** | **$50,220** | **$6,712.89** | **$25,110** | **$6,712.89** | **$43,507.11** |\n\n- **Cap:** the 50% installed-cost cap doesn't reduce any of the three measures; each incentive is well below its cap.\n- **VFD kWh savings:** the source documents give no basis for the pump's kWh savings, and BrightGrid pays this incentive per horsepower. I left that number out rather than invent one; the tracker and deck bot",
+   "files": {
+    "summary_deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "calculation_tracker": {
+     "path": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: assert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx').exists\n +      where PosixPath('/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx') = _path('pptx')"
+    },
+    "test_pptx_structure_content_and_privacy": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx'"
+    },
+    "test_workbook_structure_formulas_controls": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx'"
+    },
+    "test_workbook_values_and_privacy": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx'"
+    },
+    "test_cross_output_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_input.docx",
+    "/root/energy_audit_report.docx",
+    "/root/brightgrid_rebate_guide.pdf",
+    "/root/vendor_quote_and_cutsheets.pdf",
+    "/root/baseline_utility_usage.xlsx",
+    "/root/internal_pricing_strategy.docx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_input.docx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx",
+    "TASK_ID": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet",
+    "DOC_TYPE": "pptx+xlsx"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx": "/home/user/bench/runs/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/utility_rebate_mv_summary.pptx",
+     "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx": "/home/user/bench/runs/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5/work/submission/rebate_measure_calculation_tracker.xlsx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_pptx_structure_content_and_privacy": {
+      "outcome": "failed",
+      "message": "AssertionError: assert ['Utility Reb...d Next Steps'] == ['Utility Reb...acy Boundary']\n  \n  At index 1 diff: 'Executive Summary' != 'Eligible Measures'\n  \n  Full diff:\n    [\n        'Utility Rebate M&V Summary',\n  +     'Executive Summary',...\n  \n  ...Full output truncated (13 lines hidden), use '-vv' to show"
+     },
+     "test_workbook_structure_formulas_controls": {
+      "outcome": "failed",
+      "message": "AssertionError: assert ['Summary', '... 'Raw_Inputs'] == ['Project Sum... Inputs', ...]\n  \n  At index 0 diff: 'Summary' != 'Project Summary'\n  Right contains one more item: 'Program Rules'\n  \n  Full diff:\n    [\n  -     'Project Summary',...\n  \n  ...Full output truncated (18 lines hidden), use '-vv' to show"
+     },
+     "test_workbook_values_and_privacy": {
+      "outcome": "failed",
+      "message": "KeyError: 'Worksheet Project Summary does not exist.'"
+     },
+     "test_cross_output_consistency": {
+      "outcome": "failed",
+      "message": "KeyError: 'Worksheet Project Summary does not exist.'"
+     }
+    },
+    "reward": 0
+   },
+   "run_dir": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_off__claude-opus-5-5",
+   "level": "L4",
+   "doc_type": "pptx+xlsx",
+   "agent_model_from_transcript": "claude-opus-5-5",
+   "assistant_messages_by_model": {
+    "claude-opus-5-5": 22
+   },
+   "tests_passed": 0,
+   "tests_total": 5,
+   "submission_files": {
+    "rebate_measure_calculation_tracker.xlsx": true,
+    "utility_rebate_mv_summary.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 86.8,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 12,
+   "n_tool_uses": 9,
+   "tools": {
+    "Bash": 5,
+    "Skill": 2,
+    "Read": 2
+   },
+   "cost_usd": 0.27841940000000004,
+   "is_error": false,
+   "agent_final_text": "I built both files. The workbook recalculates with zero formula errors, and I checked the rendered deck slides by eye. The approved incentive is **$6,712.90** on $50,220 of eligible installed cost, which leaves a net cost of **$43,507.10**.\n\n| Measure | kWh saved | Gross incentive | 50% cap | Approved |\n|---|---|---|---|---|\n| L-101 north lobby LED | 32,140.8 | $2,571.26 | $12,090 | $2,571.26 |\n| L-102 south loading dock LED | 6,770.4 | $541.63 | $3,570 | $541.63 |\n| H-202 chilled water pump VFD (30 hp) | not claimed | $3,600.00 | $9,450 | $3,600.00 |\n\n- **Cap:** The 50% installed-cost cap does not bind on any measure.\n- **Excluded:** The garage stairwell sensors (controls-only, $5,600 quoted) and the east wing BAS scheduling (code-required) carry $0 incentive. Neither is counted in eligible cost.\n- **VFD kWh:** The audit gives no verified VFD kWh, so none is claimed and the VFD incentive is per hp only.\n- **Due date:** The BrightGrid signature and final M&V worksheet were due 2026-08-14, which has already passed. The deck flags this as an open item to confirm with BrightGrid.\n- **Privacy:** The pricing-strategy notes (inflated hours, invoice splitting, margin) appear in neither file.\n\n**Workbook:**\n- It has native tables, formulas, data validation and print areas, with the rates and cap percentage held in a hidden Rules sheet and defined names.\n- The raw baseline usage is on a second hidden sheet and is context only.\n- Editing the Eligible? dropdown or any input recalculates",
+   "files": {
+    "summary_deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "calculation_tracker": {
+     "path": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: assert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx').exists\n +      where PosixPath('/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx') = _path('pptx')"
+    },
+    "test_pptx_structure_content_and_privacy": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx'"
+    },
+    "test_workbook_structure_formulas_controls": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx'"
+    },
+    "test_workbook_values_and_privacy": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx'"
+    },
+    "test_cross_output_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_input.docx",
+    "/root/energy_audit_report.docx",
+    "/root/brightgrid_rebate_guide.pdf",
+    "/root/vendor_quote_and_cutsheets.pdf",
+    "/root/baseline_utility_usage.xlsx",
+    "/root/internal_pricing_strategy.docx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_input.docx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx",
+    "TASK_ID": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet",
+    "DOC_TYPE": "pptx+xlsx"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_summary_deck.pptx": "/home/user/bench/runs/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/utility_rebate_mv_summary.pptx",
+     "/home/user/bench/live/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet_calculation_tracker.xlsx": "/home/user/bench/runs/docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on/work/submission/rebate_measure_calculation_tracker.xlsx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_pptx_structure_content_and_privacy": {
+      "outcome": "failed",
+      "message": "AssertionError: assert ['Utility Reb...d next steps'] == ['Utility Reb...acy Boundary']\n  \n  At index 1 diff: 'Three above-code measures earn $6,713 in incentives' != 'Eligible Measures'\n  \n  Full diff:\n    [\n        'Utility Rebate M&V Summary',\n  -     'Eligible Measures',...\n  \n  ...Full output truncated (12 lines hidden), use '-vv' to show"
+     },
+     "test_workbook_structure_formulas_controls": {
+      "outcome": "failed",
+      "message": "AssertionError: assert ['Summary', '... 'Exclusions'] == ['Project Sum... Inputs', ...]\n  \n  At index 0 diff: 'Summary' != 'Project Summary'\n  Right contains 2 more items, first extra item: 'Raw Inputs'\n  \n  Full diff:\n    [\n  -     'Project Summary',...\n  \n  ...Full output truncated (15 lines hidden), use '-vv' to show"
+     },
+     "test_workbook_values_and_privacy": {
+      "outcome": "failed",
+      "message": "KeyError: 'Worksheet Project Summary does not exist.'"
+     },
+     "test_cross_output_consistency": {
+      "outcome": "failed",
+      "message": "KeyError: 'Worksheet Project Summary does not exist.'"
+     }
+    },
+    "reward": 0
+   },
+   "run_dir": "docops_v2_l4_061_pptx_xlsx_utility_rebate_mv_packet__skill_on",
+   "level": "L4",
+   "doc_type": "pptx+xlsx",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 14
+   },
+   "tests_passed": 0,
+   "tests_total": 5,
+   "submission_files": {
+    "rebate_measure_calculation_tracker.xlsx": true,
+    "utility_rebate_mv_summary.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 41.9,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 4,
+   "n_tool_uses": 3,
+   "tools": {
+    "Bash": 3
+   },
+   "cost_usd": 0.09683240000000001,
+   "is_error": false,
+   "agent_final_text": "I wrote both files to the submission folder. I converted both to PDF and checked the Word text, but I didn't look at the rendered pages or slides.\n\n**Word leave-behind**\n- It has a live TOC field, 0.7\" margins, and a header and footer with page numbers in graphite and copper.\n- The TOC shows placeholder text until you update the field, because I couldn't refresh it here. I also set Word to prompt for a field update on open, so it may ask first.\n- The team role table lists ROLE-01 Principal-in-Charge, ROLE-02 Design Lead and ROLE-03 Delivery Lead.\n- A landscape section holds the project sheets for PX-18 Civic Library Renewal and PX-24 Harbor Resilience Center.\n- I removed the draft notes and the old blue theme.\n\n**Deck**\n- The slide order is title, agenda, team, project proof points, then a locked interview grid reference slide.\n- The tables are native PowerPoint tables in graphite and copper.\n- The grid slide is a 12-column grid, and each column has lock attributes set. Those only stop moving, resizing and selecting in PowerPoint's UI.\n\n**Exclusion:** PX-31 appears in neither file.\n\n**Check before sending:**\n- **Names:** The source matrix has no names, so I took M. Lin and T. Vega from the draft's Principal and Designer rows. I assigned them to ROLE-01 and ROLE-02, which is my inference. ROLE-03 reads \"To be confirmed\".\n- **Slide order:** The brief doesn't specify one, so the order above is my choice.\n- **Project sheets:** They contain only the project ID, name and an \"Includ",
+   "files": {
+    "document": {
+     "path": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: assert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx').exists\n +      where PosixPath('/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx') = _doc_path()"
+    },
+    "test_word_package_format_and_boundary": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx'"
+    },
+    "test_ppt_interview_deck_format_and_tables": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx'"
+    },
+    "test_cross_output_role_project_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+    "/root/interview_source_matrix.xlsx",
+    "/root/interview_agenda_confidentiality_note.docx",
+    "/root/shortlist_interview_style_brief.pdf",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx",
+    "TASK_ID": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style",
+    "DOC_TYPE": "word+ppt"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx": "/home/user/bench/runs/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+     "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx": "/home/user/bench/runs/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off/work/submission/shortlist_interview_deck.pptx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_word_package_format_and_boundary": {
+      "outcome": "failed",
+      "message": "AssertionError: Missing or out-of-order required headings: ['Shortlist Interview Leave-Behind', 'Team', 'Projects', 'Project Sheets', 'PX-18 \u2013 Civic Library Renewal', 'PX-24 \u2013 Harbor Resilience Center']\nassert 1 == 5\n +  where 5 = len(['shortlistinterviewleavebehind', 'interviewstoryline', 'coreteamroles', 'landscapeprojectsheets', 'closeoutandhandoff'])"
+     },
+     "test_ppt_interview_deck_format_and_tables": {
+      "outcome": "failed",
+      "message": "AssertionError: Missing PPT slide terms ['shortlist', 'interview', 'deck']\nassert False\n +  where False = _has_terms('Shortlist Interview\\nTeam and proof-point projects', ['shortlist', 'interview', 'deck'])"
+     },
+     "test_cross_output_role_project_consistency": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 0
+   },
+   "run_dir": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off",
+   "level": "L4",
+   "doc_type": "word+ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 6
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx": true,
+    "shortlist_interview_deck.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style",
+   "mode": "skill_off",
+   "model_requested": "claude-opus-5-5",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "wall_seconds": 68.6,
+   "timed_out": false,
+   "exit_code": 1,
+   "num_turns": 4,
+   "n_tool_uses": 3,
+   "tools": {
+    "Bash": 3
+   },
+   "cost_usd": 0.2188663,
+   "is_error": true,
+   "agent_final_text": "You've hit your org's monthly spend limit \u00b7 ask your admin to raise it at https://claude.ai/admin-settings/usage \u00b7 your session limit resets 4:10pm (UTC)",
+   "files": {
+    "document": {
+     "path": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: assert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx').exists\n +      where PosixPath('/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx') = _doc_path()"
+    },
+    "test_word_package_format_and_boundary": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx'"
+    },
+    "test_ppt_interview_deck_format_and_tables": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx'"
+    },
+    "test_cross_output_role_project_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 1,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+    "/root/interview_source_matrix.xlsx",
+    "/root/interview_agenda_confidentiality_note.docx",
+    "/root/shortlist_interview_style_brief.pdf",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5/work/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx",
+    "TASK_ID": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style",
+    "DOC_TYPE": "word+ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "status": "not_run: Claude Code returned \"You've hit your org's monthly spend limit\"; no output written",
+   "transcript_verifier_mentions_note": "the single flagged line is a Python traceback path in a tool result, not a verifier read",
+   "run_dir": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_off__claude-opus-5-5",
+   "level": "L4",
+   "doc_type": "word+ppt",
+   "agent_model_from_transcript": "claude-opus-5-5",
+   "assistant_messages_by_model": {
+    "claude-opus-5-5": 4,
+    "<synthetic>": 1
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {},
+   "outputs_open": false,
+   "expected_names_present": false
+  },
+  {
+   "task": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 51.5,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 12,
+   "n_tool_uses": 9,
+   "tools": {
+    "Bash": 6,
+    "Skill": 2,
+    "Read": 1
+   },
+   "cost_usd": 0.1908656,
+   "is_error": false,
+   "agent_final_text": "I've built both files in the `submission` folder. I checked the rendered pages once, but I didn't re-render after my last small fix to the Word title and TOC settings.\n\nThe Word leave-behind starts from the draft file, with the draft notes, manual TOC placeholder, old blue theme and PX-31 removed.\n- **Layout:** It has a live TOC field, 0.7\" margins, and a header and footer with page numbers. The footer reads \"Final - for interview use\".\n- **Content:** The team role table is in the portrait section. PX-18 and PX-24 are in a separate landscape project-sheet section.\n- **TOC:** The TOC shows placeholder text until Word updates it. I set the document to update fields on open, so Word may ask to do that.\n\nThe deck is 16:9 in graphite and copper, with native tables. I was not given a slide order, so this is the one I chose:\n1. Title\n2. Interview team table\n3. Project proof points table\n4. Interview grid reference slide (ROLE-01, ROLE-02, ROLE-03, PX-18, PX-24)\n5. Discussion\n\nI could not find a \"locked grid\" definition in the inputs. If you have a specific order or grid layout, tell me and I'll match it.\n\nBoth outputs use the same roles and projects, and PX-31 appears in neither.\n\nThe source matrix has no people names. I took M. Lin for ROLE-01 and T. Vega for ROLE-02 from the draft's \"Principal\" and \"Designer\" rows. That mapping is my inference, so please confirm it. ROLE-03 shows \"To be confirmed\" because the draft has no name for it. I added no project details beyond the ID and t",
+   "files": {
+    "document": {
+     "path": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    },
+    "deck": {
+     "path": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx",
+     "exists": false,
+     "size": 0,
+     "opens": null
+    }
+   },
+   "tests": {
+    "test_outputs_exist": {
+     "outcome": "failed",
+     "message": "AssertionError: assert False\n +  where False = exists()\n +    where exists = PosixPath('/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx').exists\n +      where PosixPath('/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx') = _doc_path()"
+    },
+    "test_word_package_format_and_boundary": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx'"
+    },
+    "test_ppt_interview_deck_format_and_tables": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx'"
+    },
+    "test_cross_output_role_project_consistency": {
+     "outcome": "failed",
+     "message": "FileNotFoundError: [Errno 2] No such file or directory: '/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx'"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+    "/root/interview_source_matrix.xlsx",
+    "/root/interview_agenda_confidentiality_note.docx",
+    "/root/shortlist_interview_style_brief.pdf",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+    "OUTPUT_PATH": "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx",
+    "TASK_ID": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style",
+    "DOC_TYPE": "word+ppt"
+   },
+   "lenient": {
+    "applied": true,
+    "remap": {
+     "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_document.docx": "/home/user/bench/runs/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx",
+     "/home/user/bench/live/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/docops_v2_l4_065_word_ppt_shortlist_interview_package_style_deck.pptx": "/home/user/bench/runs/docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on/work/submission/shortlist_interview_deck.pptx"
+    },
+    "tests": {
+     "test_outputs_exist": {
+      "outcome": "passed",
+      "message": ""
+     },
+     "test_word_package_format_and_boundary": {
+      "outcome": "failed",
+      "message": "AssertionError: Missing or out-of-order required headings: ['Shortlist Interview Leave-Behind', 'Contents', 'Team', 'Projects']\nassert 1 == 5\n +  where 5 = len(['shortlistinterviewleavebehind', 'interviewstoryline', 'coreteamroles', 'landscapeprojectsheets', 'closeoutandhandoff'])"
+     },
+     "test_ppt_interview_deck_format_and_tables": {
+      "outcome": "failed",
+      "message": "AssertionError: Missing PPT slide terms ['shortlist', 'interview', 'deck']\nassert False\n +  where False = _has_terms('Shortlist Interview\\nTeam and project proof points', ['shortlist', 'interview', 'deck'])"
+     },
+     "test_cross_output_role_project_consistency": {
+      "outcome": "passed",
+      "message": ""
+     }
+    },
+    "reward": 0
+   },
+   "run_dir": "docops_v2_l4_065_word_ppt_shortlist_interview_package_style__skill_on",
+   "level": "L4",
+   "doc_type": "word+ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 14
+   },
+   "tests_passed": 0,
+   "tests_total": 4,
+   "submission_files": {
+    "docops_v2_l4_065_word_ppt_shortlist_interview_package_style_input.docx": true,
+    "shortlist_interview_deck.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": false
+  },
+  {
+   "task": "single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed",
+   "mode": "skill_off",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 19.1,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 5,
+   "n_tool_uses": 4,
+   "tools": {
+    "Bash": 4
+   },
+   "cost_usd": 0.06026240000000001,
+   "is_error": false,
+   "agent_final_text": "The file opens with six slides (first-shape text is empty, which is fine).\n\nI finalized the deck and saved it to the required path in `submission/`. I only confirmed that it opens with six slides. I didn't render the slides to look at them.\n\n- **Draft prefixes:** I removed every `Draft:` prefix from the titles and bullets and left the rest of the wording as it was.\n- **Parking Lot slide:** I deleted the Draft Parking Lot slide.\n- **Slide order:** Board Memo, Metrics, Decision Snapshot, the locked Layout Reference \u2013 Decision Card, Action Tracker, Closing.\n- **Action Tracker table:** The owner, action and due-date values are unchanged, apart from dropping `Draft:` from the owner and action cells. The table layout was already fine, so I didn't touch it.\n- **Locked reference slide:** I didn't edit it. I only moved it in the order.\n\nYour instructions don't say exactly where the locked reference slide goes, so I took \"from Board Memo through the locked reference slide\" to mean it follows Decision Snapshot. The Action Tracker note, \"Keep this live table after the inserted decision slide\", fits that. If you meant it to come last in that run, or somewhere else, the order is easy to change.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_off/work/submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+     "exists": true,
+     "size": 45905,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "failed",
+     "message": "AssertionError: Expected slide title containing 'Action Tracker', found ['Board Memo', 'Metrics', 'Decision Snapshot', 'Layout Reference - Decision Card', 'Action Tracker', 'Closing']\nassert 'action tracker' in 'layout reference - decision card'\n +  where 'action tracker' = normalize_text('Action Tracker')\n +  and   'layout reference - decision card' = normalize_text('Layout Reference - Decision Card')"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_off/work/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_off/work/submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+    "TASK_ID": "pptwf_001",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_off",
+   "level": "L3",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 7
+   },
+   "tests_passed": 0,
+   "tests_total": 1,
+   "submission_files": {
+    "pptwf_001_board_deck_locked_layout_finalize_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed",
+   "mode": "skill_off",
+   "model_requested": "claude-opus-5-5",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-opus-5-5"
+   ],
+   "wall_seconds": 37.3,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 6,
+   "n_tool_uses": 5,
+   "tools": {
+    "Bash": 5
+   },
+   "cost_usd": 0.1792339,
+   "is_error": false,
+   "agent_final_text": "I've finalized the deck and saved it to `submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx`. I checked the saved file and the locked reference slide's XML is byte-identical to the original. I haven't opened the deck in PowerPoint to look at it.\n\n- **Slide order:** Board Memo \u2192 Metrics \u2192 Decision Snapshot \u2192 Action Tracker \u2192 Closing \u2192 Layout Reference - Decision Card.\n  - Your note said \"from Board Memo through the locked reference slide\", so I put the reference slide last, after Closing. It isn't part of the presentation itself, so Closing still ends the slides the board will see.\n- **Draft prefixes:** I removed every visible `Draft:` from titles, bullets and table cells. The rest of the wording is unchanged and no slides were renamed.\n- **Draft Parking Lot:** deleted.\n- **Action Tracker table:** apart from the `Draft:` prefixes, the values are unchanged (Mia Torres / Release FAQ / 2025-02-14; Devin Park / Post packet / 2025-02-15).\n  - I shortened the text box above the table, which was set to extend down over it, so the table is no longer covered. Its position, columns and values were not changed.\n- **Locked reference slide:** not modified.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_off__claude-opus-5-5/work/submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+     "exists": true,
+     "size": 34168,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "passed",
+     "message": ""
+    }
+   },
+   "reward": 1,
+   "pytest_exit": 0,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_off__claude-opus-5-5/work/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_off__claude-opus-5-5/work/submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+    "TASK_ID": "pptwf_001",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_off__claude-opus-5-5",
+   "level": "L3",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-opus-5-5",
+   "assistant_messages_by_model": {
+    "claude-opus-5-5": 9
+   },
+   "tests_passed": 1,
+   "tests_total": 1,
+   "submission_files": {
+    "pptwf_001_board_deck_locked_layout_finalize_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  },
+  {
+   "task": "single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed",
+   "mode": "skill_on",
+   "model_requested": "cli-default",
+   "models_used": [
+    "claude-haiku-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "wall_seconds": 15.0,
+   "timed_out": false,
+   "exit_code": 0,
+   "num_turns": 3,
+   "n_tool_uses": 2,
+   "tools": {
+    "Bash": 2
+   },
+   "cost_usd": 0.03583800000000001,
+   "is_error": false,
+   "agent_final_text": "I saved the finalized deck to `submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx`. I re-opened it and checked the slide titles, the order and the Action Tracker values. I didn't render the slides to look at them.\n\n- **Draft prefixes:** I removed every `Draft:` prefix from titles, bullets and table cells. The rest of the wording is unchanged.\n- **Parking Lot slide:** The Draft Parking Lot slide is deleted.\n- **Slide order:** The deck now runs Board Memo, Metrics, Decision Snapshot, Action Tracker, Layout Reference - Decision Card (locked), Closing. I put Closing after the locked reference slide because your instruction ended the live run at that slide.\n- **Action Tracker:** The table values are the same apart from the removed prefixes: Mia Torres / Release FAQ / 2025-02-14 and Devin Park / Post packet / 2025-02-15. I made no other changes to the table, since it was already readable.\n- **Locked reference slide:** I did not touch it. It was the first slide in the draft and now sits fifth.\n\nI left the Action Tracker body line \"Keep this live table after the inserted decision slide.\" as it was, because you asked to keep live wording unchanged.",
+   "files": {
+    "main": {
+     "path": "/home/user/bench/live/single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_on/work/submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+     "exists": true,
+     "size": 34175,
+     "opens": true
+    }
+   },
+   "tests": {
+    "test_semantic_verifier": {
+     "outcome": "failed",
+     "message": "AssertionError: Expected slide title containing 'Closing', found ['Board Memo', 'Metrics', 'Decision Snapshot', 'Action Tracker', 'Layout Reference - Decision Card', 'Closing']\nassert 'closing' in 'layout reference - decision card'\n +  where 'closing' = normalize_text('Closing')\n +  and   'layout reference - decision card' = normalize_text('Layout Reference - Decision Card')"
+    }
+   },
+   "reward": 0,
+   "pytest_exit": 1,
+   "transcript_verifier_mentions": 0,
+   "inputs_materialised": [
+    "/root/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+    "/root/original_task_description.txt"
+   ],
+   "task_env_exported": {
+    "INPUT_PATH": "/home/user/bench/live/single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_on/work/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+    "OUTPUT_PATH": "/home/user/bench/live/single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_on/work/submission/pptwf_001_board_deck_locked_layout_finalize_seed.pptx",
+    "TASK_ID": "pptwf_001",
+    "DOC_TYPE": "ppt"
+   },
+   "lenient": {
+    "applied": false
+   },
+   "run_dir": "single_doc_workflow__pptwf_001_board_deck_locked_layout_finalize_seed__skill_on",
+   "level": "L3",
+   "doc_type": "ppt",
+   "agent_model_from_transcript": "claude-sonnet-5-5",
+   "assistant_messages_by_model": {
+    "claude-sonnet-5-5": 4
+   },
+   "tests_passed": 0,
+   "tests_total": 1,
+   "submission_files": {
+    "pptwf_001_board_deck_locked_layout_finalize_seed.pptx": true
+   },
+   "outputs_open": true,
+   "expected_names_present": true
+  }
+ ]
+}
