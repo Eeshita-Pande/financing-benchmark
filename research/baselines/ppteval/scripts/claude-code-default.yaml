@@ -1,0 +1,16 @@
+# Claude Code CLI agent config used for this baseline.
+# Same shape as ppteval/configs/claude-code.yaml but with no --model pin:
+# the CLI's default model is used and recorded from the run telemetry.
+agent_type: "cli"
+cli_name: "claude-code"
+binary: "claude"
+model: null
+max_turns: 40
+send_max_turns: false
+timeout_s: 900          # 15 min cap per task
+extra_args: []
+env: {}
+customization_dir: "claude-workspace"
+display_size:
+  width: 1024
+  height: 768

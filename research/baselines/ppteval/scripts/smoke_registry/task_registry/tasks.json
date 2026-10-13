@@ -1,0 +1,9 @@
+{
+  "SMOKE-001": {
+    "goal": "Change the lecture number from 'Lecture 3' to 'Lecture 1' in the presentation title on slide 1, and change every footer of the form 'Lec 3.<n>' on the remaining slides to 'Lec 1.<n>'.",
+    "rubric_path": "task_registry/rubrics/SMOKE-001.json",
+    "tags": ["powerpoint", "smoke-test"],
+    "misc": {"difficulty": "Synthetic"},
+    "file_path": "data/files/PowerPoint/synthetic.pptx"
+  }
+}
