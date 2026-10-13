@@ -1,0 +1,1558 @@
+{
+  "total_runs": 51,
+  "groups": [
+    {
+      "instance": "i1_case4",
+      "condition": "anchor",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "per_check_pass": {
+        "agenda_updated": 5,
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 34.0,
+      "runs": [
+        {
+          "tag": "i1_case4__anchor__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 30.0,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1767067,
+          "num_turns": 6,
+          "final_text": "I've added the Case 4 slide and saved the deck, and it opens and lists correctly. I haven't rendered it to check how it looks.\n\n- **New slide:** It's a copy of the Case 2 slide, which has the same structure as the reference card. The title is `Case 4 — Renewal without credit transfer`. The tiles show 1.18x, 1.25x, USD 410k and 10.4%. The table rows show USD 58.2m, USD 16.4m and USD 8.1m. It carries the same source line as the other case slides.\n- **Placement:** It sits right after Case 1, so the order is Case 1, 4, 2, 3, then the \"Financing and covenant\" divider. I chose that because the \"Cases\" divider says a renewal variant comes immediately after its base case. If you'd rather have it last, before the divider, say so.\n- **Agenda:** I added Case 4 under \"Cases\", in the same position after Case 1.\n- **Other slides:** I didn't change the \"Layout reference: Case card\" slide or any other slide. I also gave the new slide a speaker note, like the other case slides.\n\nThe deck is saved in place as `inputs/ic_deck_base.pptx`."
+        },
+        {
+          "tag": "i1_case4__anchor__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 28.2,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1536335,
+          "num_turns": 5,
+          "final_text": "I added the Case 4 slide to `inputs/ic_deck_base.pptx`, saved in place under the same filename. I checked the saved file by re-opening it and listing the slide titles and agenda lines. I didn't render the slides, so I haven't seen how it looks.\n\n**Case 4 slide**\n- **Build:** I duplicated an existing case slide, not the reference slide, so it has the same layout and styling as the others. It also has a speaker note matching theirs.\n- **Title:** `Case 4 — Renewal without credit transfer`.\n- **Tiles:**\n\n  | Tile | Value |\n  |---|---|\n  | Min operating DSCR | 1.18x |\n  | Min post-cure DSCR | 1.25x |\n  | Sponsor support used | USD 410k |\n  | Sponsor IRR | 10.4% |\n\n- **Table rows:**\n\n  | Row | Value |\n  |---|---|\n  | Total service receipts | USD 58.2m |\n  | Total debt service | USD 16.4m |\n  | Closing cash, 31 Dec 2031 | USD 8.1m |\n\n- **Source line:** it reads `Source: model_outputs.xlsx, tab 'Case summary'`, the same as the other case slides.\n\n**Placement:** the new slide is slide 6, directly after Case 1 and before Case 2, not just before the \"Financing and covenant\" divider. The \"Cases\" divider slide says a renewal variant is presented immediately after its base case. Putting it there"
+        },
+        {
+          "tag": "i1_case4__anchor__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 34.3,
+          "timed_out": false,
+          "tool_calls": 6,
+          "tools": {
+            "Bash": 6
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1769956,
+          "num_turns": 7,
+          "final_text": "I added the Case 4 slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. I checked the result only by reloading the file in python-pptx, which lists 17 slides in the order below. I did not render the slides or open the deck in PowerPoint.\n\n- **Content:** I copied the \"Layout reference: Case card\" slide and titled the copy `Case 4 — Renewal without credit transfer`. The tiles are 1.18x, 1.25x, USD 410k and 10.4%. The table rows are USD 58.2m receipts, USD 16.4m debt service and USD 8.1m closing cash, all taken from the `Case summary` tab. The bottom note is now the standard source line, `Source: model_outputs.xlsx, tab 'Case summary'`.\n- **Placement:** The new slide is slide 6, directly after Case 1, not after Case 3. The \"Cases\" divider says a renewal variant goes immediately after its base case, so I followed that. It is still ahead of the \"Financing and covenant\" divider.\n- **Agenda:** It now lists Case 1, Case 4, Case 2, Case 3, matching the slide order.\n- **Other slides:** The reference slide and every other slide are unchanged. I also gave the new slide a speaker note in the same wording as the other case slides.\n\nIf you'd rather have Case 4 last, among the"
+        },
+        {
+          "tag": "i1_case4__anchor__default__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 41.2,
+          "timed_out": false,
+          "tool_calls": 6,
+          "tools": {
+            "Bash": 6
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.16584749999999998,
+          "num_turns": 7,
+          "final_text": "I added the Case 4 slide to `inputs/ic_deck_base.pptx`, saved in place under the same filename. I checked that the file opens and the slides come out in the order below. I haven't rendered the slide to see how it looks.\n\n- **New slide:** It is a copy of the Case card layout, titled `Case 4 — Renewal without credit transfer`. The four tiles show 1.18x, 1.25x, USD 410k and 10.4%. The three table rows show USD 58.2m, USD 16.4m and USD 8.1m. The bottom note is now the standard line, `Source: model_outputs.xlsx, tab 'Case summary'`.\n- **Placement:** The deck's own \"Cases\" divider says a renewal variant comes right after its base case. So the slide sits after Case 1, ahead of the Case 2 and Case 3 slides, and before the \"Financing and covenant\" divider. The order is Case 1, Case 4, Case 2, Case 3.\n- **Agenda:** Case 4 is listed under \"2. Cases\", right after Case 1, to match the slide order.\n- **Untouched:** The \"Layout reference: Case card\" slide and every other slide are unchanged."
+        },
+        {
+          "tag": "i1_case4__anchor__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 36.2,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1833332,
+          "num_turns": 6,
+          "final_text": "I added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. The file opens and the slide order checks out, but I haven't rendered the slides to look at them.\n\n- **Slide:** I built it from the \"Layout reference: Case card\" slide, so it has the same tiles, table and source note as the other case slides. The title is exactly `Case 4 — Renewal without credit transfer`.\n- **Values:**\n\n  | Item | Value |\n  |---|---|\n  | Min operating DSCR | 1.18x |\n  | Min post-cure DSCR | 1.25x |\n  | Sponsor support used | USD 410k |\n  | Sponsor IRR | 10.4% |\n  | Total service receipts | USD 58.2m |\n  | Total debt service | USD 16.4m |\n  | Closing cash, 31 Dec 2031 | USD 8.1m |\n\n  The bottom line reads \"Source: model_outputs.xlsx, tab 'Case summary'\".\n- **Placement:** The new slide is slide 6, right after Case 1 and before Case 2. The brief only said \"before the Financing and covenant divider\". The existing \"Cases\" slide says the renewal variant goes right after the base case, so I followed that. If you'd rather have it after Case 3, say so and I'll move it.\n- **Agenda:** Case 4 is listed in that same position, between Case 1 and Case 2.\n- **Other slides:** I changed no other sli"
+        }
+      ]
+    },
+    {
+      "instance": "i1_case4",
+      "condition": "artefact",
+      "model": "claude-opus-5-5",
+      "n": 3,
+      "strict_pass": 3,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 3,
+      "all_non_placement_pass": 3,
+      "literal_default_placement": 0,
+      "per_check_pass": {
+        "agenda_updated": 3,
+        "existing_slides_order_preserved": 3,
+        "file_opens": 3,
+        "new_slide_no_placeholders_left": 3,
+        "new_slide_present": 3,
+        "new_slide_structure": 3,
+        "new_slide_values": 3,
+        "other_slides_unchanged": 3,
+        "reference_unchanged": 3,
+        "slide_count": 3,
+        "title_order": 3
+      },
+      "rule_seen_in_tool_output": 3,
+      "rendered_thumbnails": 1,
+      "mean_wall_seconds": 72.1,
+      "runs": [
+        {
+          "tag": "i1_case4__artefact__claude-opus-5-5__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 38.3,
+          "timed_out": false,
+          "tool_calls": 6,
+          "tools": {
+            "Bash": 6
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.3553445,
+          "num_turns": 7,
+          "final_text": "I've added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked it by reading the saved file back; I didn't open it in PowerPoint.\n\n**Where it goes:** Case 4 is slide 6, directly after Case 1 and before Cases 2 and 3. It isn't in number order because the deck's \"Cases\" divider slide says a renewal variant is shown right after its base case. If you'd rather have it after Case 3, it's a simple move.\n\n**The new slide:** I built it as a copy of the \"Case card\" reference slide, so its layout and formatting are the same as the Case 1 slide. Only the text differs. The figures come from the Case 4 row of the `Case summary` tab:\n\n| | Value |\n|---|---|\n| Min operating DSCR | 1.18x |\n| Min post-cure DSCR | 1.25x |\n| Sponsor support used | USD 410k |\n| Sponsor IRR | 10.4% |\n| Total service receipts | USD 58.2m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 8.1m |\n\nThe note at the bottom now reads `Source: model_outputs.xlsx, tab 'Case summary'`, the same as the other case slides. I also gave the slide a speaker note in the same style as theirs (\"Case 4 headline metrics from the Case summary tab.\").\n\n**Agenda:** \"Case 4 — Renewal without "
+        },
+        {
+          "tag": "i1_case4__artefact__claude-opus-5-5__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 127.7,
+          "timed_out": false,
+          "tool_calls": 14,
+          "tools": {
+            "Skill": 1,
+            "Bash": 10,
+            "Read": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": true,
+          "read_notes": true,
+          "cost_usd": 0.6372183000000001,
+          "num_turns": 16,
+          "final_text": "I added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. It now has 17 slides. The file passes the format check, and the reference slide and every other slide except the agenda are unchanged.\n\n**New slide 6, \"Case 4 — Renewal without credit transfer\"**\n- It's a copy of the \"Layout reference: Case card\" slide, so it has the same four tiles, table and source line as the other case slides.\n- **Tiles:** Min operating DSCR 1.18x, Min post-cure DSCR 1.25x, Sponsor support used USD 410k, Sponsor IRR 10.4%.\n- **Table:** Total service receipts USD 58.2m, Total debt service USD 16.4m, Closing cash, 31 Dec 2031 USD 8.1m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Case summary'`.\n- **Speaker notes:** I added \"Case 4 headline metrics from the Case summary tab.\", following the pattern of the other case slides, which all have a note like this.\n\n**Placement:** The slide sits between Case 1 and Case 2, not after Case 3. The \"Cases\" divider slide says a renewal variant comes straight after its base case, before the delayed-receipt and operating-incident cases.\n\n**Agenda:** Case 4 is listed under \"2. Cases\" in the same position (Case 1, Case 4, Case 2, Case 3). Th"
+        },
+        {
+          "tag": "i1_case4__artefact__claude-opus-5-5__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 50.2,
+          "timed_out": false,
+          "tool_calls": 6,
+          "tools": {
+            "Bash": 6
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.3681717,
+          "num_turns": 7,
+          "final_text": "I added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked it by reading the saved file back: the new slide's XML matches Case 1's except for the figures and title, and the reference slide and all other slides are byte-identical to before, apart from the agenda.\n\n**New slide 6, \"Case 4 — Renewal without credit transfer\"**\n- I made it by copying the \"Layout reference: Case card\" slide, so it has the same layout, shapes, formatting and table as the other case slides.\n- Figures from the `Case summary` tab:\n\n  | Item | Value |\n  |---|---|\n  | Min operating DSCR | 1.18x |\n  | Min post-cure DSCR | 1.25x |\n  | Sponsor support used | USD 410k |\n  | Sponsor IRR | 10.4% |\n  | Total service receipts | USD 58.2m |\n  | Total debt service | USD 16.4m |\n  | Closing cash, 31 Dec 2031 | USD 8.1m |\n\n- The bottom note now reads `Source: model_outputs.xlsx, tab 'Case summary'`, the same as the other case slides.\n- I also added a speaker note in the same style as the others: \"Case 4 headline metrics from the Case summary tab.\"\n\n**Where it sits:** right after Case 1 and before Case 2, not after Case 3. The \"Cases\" section slide says a renewal variant comes immediately "
+        }
+      ]
+    },
+    {
+      "instance": "i1_case4",
+      "condition": "artefact",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "per_check_pass": {
+        "agenda_updated": 5,
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 30.1,
+      "runs": [
+        {
+          "tag": "i1_case4__artefact__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 30.9,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.185138,
+          "num_turns": 6,
+          "final_text": "I added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked the saved file by reading the slide order and text back, but I haven't opened it in PowerPoint to look at the layout.\n\n- **Placement:** The Case 4 slide is slide 6, right after Case 1 and before Case 2. The \"Cases\" divider slide says a renewal variant comes immediately after its base case, so I followed that rather than putting it after Case 3.\n- **Slide content:** It reuses the structure of the existing case slides. The title is exactly `Case 4 — Renewal without credit transfer`.\n- **Tiles:** 1.18x, 1.25x, USD 410k and 10.4%.\n- **Table rows:** USD 58.2m receipts, USD 16.4m debt service and USD 8.1m closing cash.\n- **Source line:** It is the same one the other case slides use, in place of the reference note.\n- **Speaker notes:** The new slide has a notes page that follows the other case slides.\n- **Agenda:** Case 4 is listed under \"2. Cases\", right after Case 1, to match the slide order.\n- **Unchanged slides:** I copied the new slide from the Case 1 slide instead of the reference slide, which would have brought over its `[Fill]` placeholders. The \"Layout reference: Case card\" slide is unto"
+        },
+        {
+          "tag": "i1_case4__artefact__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 32.4,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1476938,
+          "num_turns": 5,
+          "final_text": "I added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I confirmed that the file reopens and that the slide order is correct. I didn't render the slides, so I haven't checked how the new one looks.\n\n- **Slide:** I duplicated Case 1's slide, which has the same structure as the reference card, and filled in Case 4's numbers from the `Case summary` tab. It is titled `Case 4 — Renewal without credit transfer` and keeps the usual source line.\n- **Values:**\n\n  | Item | Value |\n  |---|---|\n  | Min operating DSCR | 1.18x |\n  | Min post-cure DSCR | 1.25x |\n  | Sponsor support used | USD 410k |\n  | Sponsor IRR | 10.4% |\n  | Total service receipts | USD 58.2m |\n  | Total debt service | USD 16.4m |\n  | Closing cash, 31 Dec 2031 | USD 8.1m |\n\n- **Placement:** The \"Cases\" divider slide says a renewal variant goes immediately after its base case. So Case 4 sits right after Case 1, before Cases 2 and 3.\n- **Agenda:** Case 4 is listed under \"2. Cases\" in the same position, after Case 1.\n- **Other slides:** The \"Layout reference: Case card\" slide and every other slide are unchanged.\n\nOne thing I noticed and left alone: the deck file contains a stray, unused copy of the s"
+        },
+        {
+          "tag": "i1_case4__artefact__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 27.8,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1780256,
+          "num_turns": 5,
+          "final_text": "I added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I haven't opened it in PowerPoint. I only checked that python-pptx loads it and lists the slides in the right order.\n\n- **New slide:** It's titled `Case 4 — Renewal without credit transfer`. I duplicated an existing filled case slide, which has the same structure as the reference layout. Its values come from the `Case summary` tab and use the same labels and formats as the other case slides:\n  - Min operating DSCR: 1.18x\n  - Min post-cure DSCR: 1.25x\n  - Sponsor support used: USD 410k\n  - Sponsor IRR: 10.4%\n  - Total service receipts: USD 58.2m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 8.1m\n- **Source line:** The bottom note is the same one the other case slides use: \"Source: model_outputs.xlsx, tab 'Case summary'\".\n- **Placement:** It sits right after Case 1, so it is now slide 6. The \"Cases\" divider slide says a renewal variant is presented immediately after its base case, before the delayed-receipt and incident cases. I followed that rather than putting it last by case number.\n- **Agenda:** Case 4 is listed under \"2. Cases\", directly after Case 1, matching the slide ord"
+        },
+        {
+          "tag": "i1_case4__artefact__default__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 31.0,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1788416,
+          "num_turns": 6,
+          "final_text": "I've added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I confirmed the new slide order by reloading the file. I haven't rendered the slides, so I haven't checked how the slide looks.\n\n- **Placement:** the new slide is slide 6, right after Case 1. Slide 4 (\"Cases\") says a renewal variant goes immediately after its base case, before the delayed-receipt and incident cases. The order is now Case 1, Case 4, Case 2, Case 3.\n- **Build:** I copied the Case card layout, so the tiles, table and source note match the other case slides. The title is `Case 4 — Renewal without credit transfer`. The notes read \"Case 4 headline metrics from the Case summary tab.\"\n- **Values:**\n  - Min operating DSCR is 1.18x and min post-cure DSCR is 1.25x.\n  - Sponsor support used is USD 410k and sponsor IRR is 10.4%.\n  - Total service receipts are USD 58.2m, total debt service USD 16.4m and closing cash USD 8.1m.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Case summary'\", the same as the other case slides.\n- **Agenda:** Case 4 is listed under \"2. Cases\", right after Case 1, to match the slide order.\n- **Other slides:** the \"Layout reference: Case card\" slide is unchanged "
+        },
+        {
+          "tag": "i1_case4__artefact__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 28.3,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.17993569999999998,
+          "num_turns": 6,
+          "final_text": "I added the Case 4 slide to `inputs/ic_deck_base.pptx` and saved it in place under the same filename. I checked that python-pptx opens the file and lists the slides in the right order. I didn't render the slides visually.\n\n- **New slide:** It's a copy of the Case card layout with the title `Case 4 — Renewal without credit transfer`.\n  - **Tiles:** 1.18x, 1.25x, USD 410k and 10.4%.\n  - **Table rows:** USD 58.2m, USD 16.4m and USD 8.1m.\n  - **Source note:** It uses the same \"Source: model_outputs.xlsx, tab 'Case summary'\" line as the other case slides.\n- **Placement:** It sits at slide 6, directly after Case 1 and before Case 2. The \"Cases\" divider slide says a renewal variant goes immediately after its base case, so I followed that instead of numeric order.\n- **Agenda:** Case 4 is listed under \"2. Cases\", right after Case 1.\n- **Unchanged:** \"Layout reference: Case card\" is still the last slide, and no other slide was touched.\n- **Leftover slide:** The file already contained an unlinked Case 4 slide that no one could see. I rebuilt the new slide from the reference layout and it came out identical, so I registered that one rather than keep two copies."
+        }
+      ]
+    },
+    {
+      "instance": "i1_case4",
+      "condition": "control",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "per_check_pass": {
+        "agenda_updated": 5,
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 28.5,
+      "runs": [
+        {
+          "tag": "i1_case4__control__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 19.8,
+          "timed_out": false,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.09404299999999999,
+          "num_turns": 3,
+          "final_text": "I added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked the slide order and the agenda text by reading the saved file back. I didn't render the slides, so I haven't looked at the new slide's layout.\n\n- **Slide:** I duplicated the Case 1 slide, so it has the same structure as the other case slides. The title is `Case 4 — Renewal without credit transfer`.\n- **Tiles:** Min operating DSCR 1.18x, Min post-cure DSCR 1.25x, Sponsor support used USD 410k, Sponsor IRR 10.4%.\n- **Table rows:** Total service receipts USD 58.2m, Total debt service USD 16.4m, Closing cash 31 Dec 2031 USD 8.1m.\n- **Source line:** It is the same as on the other case slides: `Source: model_outputs.xlsx, tab 'Case summary'`.\n- **Placement:** The deck groups case slides by scenario family. The new slide is slide 6, right after Case 1 and before Case 2 and Case 3.\n- **Agenda:** Case 4 is listed under \"2. Cases\" right after Case 1, matching the slide order.\n\nI didn't touch the \"Layout reference: Case card\" slide or any other slide. I also didn't update the Executive summary or Recommendation text, which still describe only the earlier cases."
+        },
+        {
+          "tag": "i1_case4__control__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 31.3,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.16782160000000002,
+          "num_turns": 6,
+          "final_text": "I added the Case 4 slide to `inputs/ic_deck_base.pptx`, saved in place with the same filename. I checked by reopening the saved file with python-pptx and reading the slide titles in order, but I haven't looked at it rendered.\n\n- **New slide:** it's a copy of the Case 1 slide, which has the same structure as the reference card. The title is exactly `Case 4 — Renewal without credit transfer`.\n- **Values:** the figures are taken from the `Case summary` tab, in the same units and formats as the other case slides.\n\n  | Metric | Value |\n  |---|---|\n  | Min operating DSCR | 1.18x |\n  | Min post-cure DSCR | 1.25x |\n  | Sponsor support used | USD 410k |\n  | Sponsor IRR | 10.4% |\n  | Total service receipts | USD 58.2m |\n  | Total debt service | USD 16.4m |\n  | Closing cash, 31 Dec 2031 | USD 8.1m |\n\n- **Source line:** the bottom note reads `Source: model_outputs.xlsx, tab 'Case summary'`, like the other case slides.\n- **Placement:** the new slide sits right after Case 1 and before Cases 2 and 3, following the grouping rule on the \"Cases\" divider slide.\n- **Agenda:** it now lists Case 1, Case 4, Case 2, Case 3 in that order.\n- **Untouched:** the \"Layout reference: Case card\" slide is still la"
+        },
+        {
+          "tag": "i1_case4__control__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 30.3,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.164802,
+          "num_turns": 6,
+          "final_text": "I've added the Case 4 slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I only checked it by reloading the file and listing the slide titles. I haven't rendered the slides or opened the file in PowerPoint.\n\n- **New slide:** it's a copy of the Case card layout, titled `Case 4 — Renewal without credit transfer`. It's now slide 6, right after Case 1 and before Case 2, following the \"Cases\" divider's rule that a renewal variant comes straight after its base case.\n- **Tiles:** Min operating DSCR 1.18x, Min post-cure DSCR 1.25x, Sponsor support used USD 410k, Sponsor IRR 10.4%.\n- **Table rows:** Total service receipts USD 58.2m, Total debt service USD 16.4m, Closing cash USD 8.1m.\n- **Source line:** the reference note is replaced with `Source: model_outputs.xlsx, tab 'Case summary'`.\n- **Speaker notes:** the new slide also has a speaker note, copied from the Case 2 slide's wording, reading \"Case 4 headline metrics from the Case summary tab.\"\n- **Agenda:** Case 4 is listed under \"2. Cases\" between Case 1 and Case 2, matching the slide order.\n- **Unchanged:** the Case card reference slide is still the last slide and untouched, and no other slide was edited."
+        },
+        {
+          "tag": "i1_case4__control__default__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 35.6,
+          "timed_out": false,
+          "tool_calls": 7,
+          "tools": {
+            "Bash": 7
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1921411,
+          "num_turns": 8,
+          "final_text": "I added the Case 4 slide to `inputs/ic_deck_base.pptx` and saved it in place. I checked that the file reopens and that the slide order is correct. I didn't render the slides, so the layout hasn't been checked by eye.\n\n- **Placement:** The new slide sits right after Case 1 (slide 6), ahead of Case 2 and Case 3, as the \"Cases\" divider slide requires. The agenda now lists Case 4 between Case 1 and Case 2.\n- **Build:** I copied the Case 2 slide, which already has the Case card structure, rather than the layout reference slide. The title is exactly `Case 4 — Renewal without credit transfer`.\n- **Tiles:** 1.18x, 1.25x, USD 410k, 10.4%.\n- **Table rows:** USD 58.2m for service receipts, USD 16.4m for debt service, and USD 8.1m for closing cash on 31 Dec 2031.\n- **Source line:** It's the same one the other case slides use: \"Source: model_outputs.xlsx, tab 'Case summary'\". This replaces the reference note.\n- **Speaker notes:** I gave the new slide its own notes in the same pattern as the other case slides: \"Case 4 headline metrics from the Case summary tab.\"\n\nI didn't edit the \"Layout reference: Case card\" slide (now slide 17) or any other slide besides the agenda. I did not recalculate any "
+        },
+        {
+          "tag": "i1_case4__control__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 5,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 25.4,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1327978,
+          "num_turns": 5,
+          "final_text": "I added the Case 4 slide to `inputs/ic_deck_base.pptx` and saved the deck in place under the same filename. I re-opened the saved file to check the slide order and the agenda text, but I didn't render the slides to look at them.\n\n- **Placement:** The new slide is slide 6, right after Case 1 — Base and before Case 2 and Case 3. The \"Cases\" divider says a renewal variant goes immediately after its base case, so I followed that rather than case-number order.\n- **Build:** I made it by copying the Case 1 slide's shapes, which have the same structure as the Case card layout, so the formatting matches the other case slides.\n- **Title:** The title is `Case 4 — Renewal without credit transfer`.\n- **Tiles and table:** The figures come from the `Case summary` tab, in the same formats as the other case slides:\n\n  | Item | Value |\n  |---|---|\n  | Min operating DSCR | 1.18x |\n  | Min post-cure DSCR | 1.25x |\n  | Sponsor support used | USD 410k |\n  | Sponsor IRR | 10.4% |\n  | Total service receipts | USD 58.2m |\n  | Total debt service | USD 16.4m |\n  | Closing cash, 31 Dec 2031 | USD 8.1m |\n\n- **Source line:** The note reads `Source: model_outputs.xlsx, tab 'Case summary'`, the same as the other "
+        }
+      ]
+    },
+    {
+      "instance": "i2_schedule",
+      "condition": "artefact",
+      "model": "claude-opus-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 3,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 34.5,
+      "runs": [
+        {
+          "tag": "i2_schedule__artefact__claude-opus-5-5__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 33.0,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.25814040000000005,
+          "num_turns": 5,
+          "final_text": "I added the support-cap schedule to `inputs/ic_deck_base.pptx` and saved it under the same filename.\n\n- **Where it sits:** it's slide 15, between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\". That matches the tab order in the workbook. \"Layout reference: Case card\" is still the last slide.\n- **How I built it:** I copied the DSCR summary slide on the \"Schedule\" layout, so the title, the 5×4 table and the source line keep the same positions, fonts and table style. The title is `Appendix: Support-cap utilisation`.\n- **Table contents,** from the `Support cap` tab in workbook order:\n\n  | Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n  |---|---|---|---|\n  | Base | 0 | 0 | 0.0% |\n  | Delayed usage receipt | 250 | 320 | 32.0% |\n  | Major operating incident | 250 | 1,000 | 100.0% |\n  | Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`.\n- **Something you didn't ask for:** the other schedule slides each have a one-line speaker note, so I gave this one \"Support-cap schedule per case.\"\n\nI didn't edit any other slide. I checked the new slide by reading the saved "
+        },
+        {
+          "tag": "i2_schedule__artefact__claude-opus-5-5__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 31.2,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.253197,
+          "num_turns": 5,
+          "final_text": "I added the slide \"Appendix: Support-cap utilisation\" to `inputs/ic_deck_base.pptx` and saved it under the same filename. I reopened the saved deck to check the new slide's table and source line, and the slide order. I didn't compare the other slides line by line, but the edit only adds this slide and moves it into position.\n\n- **Structure:** it's a copy of the \"Appendix: DSCR summary\" slide, using the \"Schedule\" layout. It has the same title, one 5-row by 4-column table in the same table style, position and font sizes, and the same source line.\n- **Table:** the header row is the workbook's own column headings, and the cases follow in workbook order:\n\n  | Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n  |---|---|---|---|\n  | Base | 0 | 0 | 0.0% |\n  | Delayed usage receipt | 250 | 320 | 32.0% |\n  | Major operating incident | 250 | 1,000 | 100.0% |\n  | Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n- **Position:** it's now slide 15, between \"DSCR summary\" and \"Sponsor return\". The Appendix slide's speaker notes say schedules follow the workbook tab order and t"
+        },
+        {
+          "tag": "i2_schedule__artefact__claude-opus-5-5__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 37.7,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2919119,
+          "num_turns": 6,
+          "final_text": "I've added the support-cap utilisation schedule to the appendix of `inputs/ic_deck_base.pptx` and saved it under the same name. I checked the saved file: the only changes are the new slide (plus its speaker note) and the deck's slide list. The other 16 slides, including the \"Layout reference: Case card\" slide, are byte-for-byte the same as before.\n\n- **Where it sits:** it is now slide 15, between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\". That matches the tab order in the workbook. The case-card reference slide stays last, as its note asks.\n- **How it's built:** I copied the existing \"Sponsor return\" schedule slide, so it uses the same \"Schedule\" layout, with the title, the 5-row by 4-column table, and the source line in the same positions and fonts.\n- **Title:** `Appendix: Support-cap utilisation`\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n- **Speaker"
+        },
+        {
+          "tag": "i2_schedule__artefact__claude-opus-5-5__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 34.6,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.26341590000000004,
+          "num_turns": 5,
+          "final_text": "I added the support-cap schedule to `inputs/ic_deck_base.pptx` and saved it under the same filename. I checked the saved file: the other 16 slides match the original XML exactly, and the new slide has the same structure as the existing schedule slides.\n\n- **Position:** it is slide 15, between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\". That follows the workbook tab order, which the appendix divider's speaker notes say is the rule for new schedules. \"Layout reference: Case card\" is still the last slide.\n- **Build:** I copied the DSCR summary schedule slide onto the \"Schedule\" layout and changed only the text. It keeps the title, one 5×4 table and the source line, with the same table style, sizes and bold header.\n- **Title:** `Appendix: Support-cap utilisation`\n- **Table:** filled from the `Support cap` tab, with the workbook headings and cases in workbook order:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line"
+        },
+        {
+          "tag": "i2_schedule__artefact__claude-opus-5-5__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 36.0,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.27935860000000007,
+          "num_turns": 6,
+          "final_text": "I added the support-cap schedule as slide 15 and saved it back to `inputs/ic_deck_base.pptx`. I checked the saved file afterwards: the XML of all 16 original slides is byte-for-byte unchanged, including \"Layout reference: Case card\", which is now slide 17 and still the last slide.\n\n- **Structure:** I copied the \"Appendix: DSCR summary\" slide, so the new slide uses the \"Schedule\" layout with the same title, the same 5×4 table (same position, size, style and fonts) and the same grey source line.\n- **Title:** `Appendix: Support-cap utilisation`\n- **Table** (from the `Support cap` tab, rows in workbook order):\n\n  | Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n  |---|---|---|---|\n  | Base | 0 | 0 | 0.0% |\n  | Delayed usage receipt | 250 | 320 | 32.0% |\n  | Major operating incident | 250 | 1,000 | 100.0% |\n  | Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n- **Position:** The speaker notes on the Appendix divider say schedules follow the workbook's tab order. `Support cap` sits between `DSCR summary` and `Sponsor return` in the workbook, so the new slide goes be"
+        }
+      ]
+    },
+    {
+      "instance": "i2_schedule",
+      "condition": "artefact",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 0,
+      "strict_pass_rate": 0.0,
+      "placement_pass": 0,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 5,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 0
+      },
+      "rule_seen_in_tool_output": 0,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 29.7,
+      "runs": [
+        {
+          "tag": "i2_schedule__artefact__default__r1",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "new_slide_index": 15,
+          "matches_literal_placement": true,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 25.9,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1277605,
+          "num_turns": 5,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" slide to `inputs/ic_deck_base.pptx`, saved under the same filename. I checked that the file reopens and that the new slide's shapes and title match the other schedule slides. I haven't rendered the slides, so I haven't seen how it looks.\n\n- **Structure:** I duplicated the \"Appendix: Sponsor return\" slide, so it uses the same \"Schedule\" layout with a title, one 5×4 table and a source line.\n- **Table:** The header row is the four workbook headings from the `Support cap` tab, followed by the four cases in workbook order. The USD k columns are whole numbers (for example 250 and 1,000). Utilisation shows as 0.0%, 32.0%, 100.0% and 41.0%.\n- **Percentages:** The workbook stores them as 32, 100 and so on (not 0.32), so I added the % sign without scaling them.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Support cap'\".\n- **Position:** It comes after \"Appendix: Sponsor return\" and before the \"Layout reference: Case card\" slide. That slide and the other existing slides are untouched.\n- **Speaker notes:** I also gave the new slide a notes page, copied from the Sponsor return slide's, reading \"Support-cap utilisation schedule per case.\""
+        },
+        {
+          "tag": "i2_schedule__artefact__default__r2",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "new_slide_index": 15,
+          "matches_literal_placement": true,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 34.8,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1685717,
+          "num_turns": 6,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. I read the slide back with python-pptx to check the text, but I haven't opened or rendered the deck in PowerPoint.\n\n- **Position:** it is slide 16, directly after \"Appendix: Sponsor return\". The \"Layout reference: Case card\" slide is now slide 17 and is unchanged.\n- **Structure:** it is a copy of the existing DSCR summary slide on the \"Schedule\" layout, with the same title, 5-row by 4-column table and source line. I gave it its own notes slide, copied from the DSCR slide's notes with the text changed to \"Support-cap utilisation per case.\"\n- **Table:** the header row uses the workbook headings from the `Support cap` tab, followed by the four cases in workbook order:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Number format:** USD k values are whole numbers with a thousands separator, so 1,000 matches \"7,560\" o"
+        },
+        {
+          "tag": "i2_schedule__artefact__default__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "new_slide_index": 15,
+          "matches_literal_placement": true,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 37.4,
+          "timed_out": false,
+          "tool_calls": 7,
+          "tools": {
+            "Bash": 7
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.18712079999999998,
+          "num_turns": 8,
+          "final_text": "I added the new slide to `inputs/ic_deck_base.pptx` and saved it in place under the same filename. I reopened the saved file with python-pptx and it loads. I haven't rendered the slide to look at it.\n\n- **Position:** it is slide 16, the last schedule in the appendix. It comes after \"Appendix: Sponsor return\" and before \"Layout reference: Case card\".\n- **Structure:** I copied the \"Appendix: Sponsor return\" slide, so it uses the \"Schedule\" layout with a title, a 5×4 table and a source line. I also copied its speaker notes, edited to read \"Support-cap utilisation schedule per case.\"\n- **Title:** \"Appendix: Support-cap utilisation\".\n- **Table:** the header row uses the workbook headings from the `Support cap` tab, followed by the four cases in workbook order.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Percentages:** the workbook stores them as whole numbers (32 means 32%), so I formatted them with one decimal and a % sign and did n"
+        },
+        {
+          "tag": "i2_schedule__artefact__default__r4",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "new_slide_index": 15,
+          "matches_literal_placement": true,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 32.9,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.17152119999999998,
+          "num_turns": 6,
+          "final_text": "I added the support-cap schedule to `inputs/ic_deck_base.pptx` and saved it under the same filename. I reopened the saved file and its 17 slides and new table read back correctly, but I haven't rendered it, so I haven't checked how it looks.\n\n- **Slide:** \"Appendix: Support-cap utilisation\" is slide 16, right after \"Appendix: Sponsor return\". It was copied from the existing Sponsor return schedule slide, so it uses the same \"Schedule\" layout, a 5-row by 4-column table and the same source-line style.\n- **Order:** \"Layout reference: Case card\" is still the last slide, now slide 17, and its content is unchanged. No other slide was edited.\n- **Table:** The header row uses the workbook headings. The four cases follow in workbook order:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Percentages:** The workbook stores utilisation as whole numbers (32, 100), so I formatted them with one decimal and a % sign without rescaling.\n- **Source li"
+        },
+        {
+          "tag": "i2_schedule__artefact__default__r5",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "new_slide_index": 15,
+          "matches_literal_placement": true,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 17.7,
+          "timed_out": false,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": false,
+          "cost_usd": 0.0812892,
+          "num_turns": 3,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" slide to `inputs/ic_deck_base.pptx`, saved in place. I re-opened the saved file and checked the slide order, title and table text. I haven't rendered the slide to check how it looks.\n\nIt is slide 16, directly after \"Appendix: Sponsor return\" and before \"Layout reference: Case card\". It is a copy of the existing schedule slides, so the layout, table and source line match.\n\nThe table has the workbook headings as the header row, then one row per case in workbook order:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\nThe source line reads `Source: model_outputs.xlsx, tab 'Support cap'`.\n\n- **Percentages:** The workbook stores them as whole numbers (32, not 0.32), so I printed them as 32.0% rather than multiplying.\n- **Speaker notes:** The existing schedule slides have speaker notes. The new slide has none, because I didn't copy them.\n\nI didn't change any other slide."
+        }
+      ]
+    },
+    {
+      "instance": "i2_schedule",
+      "condition": "control",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 27.0,
+      "runs": [
+        {
+          "tag": "i2_schedule__control__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 28.0,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.16545800000000002,
+          "num_turns": 5,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" slide to `inputs/ic_deck_base.pptx` and saved it in place under the same filename. I checked the result by re-opening the deck and listing the slide titles. I haven't rendered the slides, so the layout hasn't been checked visually.\n\n- **Position:** it is slide 15, between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\". That follows the workbook tab order, as the Appendix divider's speaker notes require. \"Layout reference: Case card\" is still the last slide.\n- **Structure:** I copied the DSCR summary slide, so it uses the same \"Schedule\" layout, 5×4 table and source line. I gave it its own speaker note (\"Support-cap utilisation schedule per case.\").\n- **Header row:** it uses the four workbook headings: Case, Peak monthly draw (USD k), Lifetime support used (USD k), Lifetime cap utilisation (%).\n- **Rows:** the four cases are in workbook order.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 |"
+        },
+        {
+          "tag": "i2_schedule__control__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 21.0,
+          "timed_out": false,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.08687670000000002,
+          "num_turns": 3,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" slide to `inputs/ic_deck_base.pptx`, saved in place under the same filename. I read the saved file back and checked the slide order, title, table and source line. I haven't opened the deck in PowerPoint or rendered the slide.\n\n- **Placement:** it is slide 15, between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\". That follows the workbook tab order (DSCR summary, Support cap, Sponsor return) from the Appendix divider's speaker notes. \"Layout reference: Case card\" is still the last slide.\n- **Structure:** I copied the DSCR summary slide, so it has the same \"Schedule\" layout, one 5-row by 4-column table and a source line. I also gave it a speaker note: \"Support-cap utilisation schedule per case.\"\n- **Table:** the header row is the workbook's four column headings, followed by the four cases in workbook order. The utilisation column shows one decimal and a % sign:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit tra"
+        },
+        {
+          "tag": "i2_schedule__control__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 23.7,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.14427220000000002,
+          "num_turns": 5,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" slide and saved it in place to `inputs/ic_deck_base.pptx`. I haven't rendered the deck to look at it. I only checked the slide order and the table text after saving.\n\n- **Position:** it is slide 15, between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\". That follows the workbook tab order (DSCR summary, Support cap, Sponsor return) set out in the Appendix divider's speaker notes. \"Layout reference: Case card\" is still the last slide, and no other slide was changed.\n- **Structure:** I copied the DSCR summary slide, so it uses the Schedule layout with the same 5×4 table and source line. I gave it a speaker note in the style of the other schedules: \"Support-cap utilisation schedule per case.\"\n- **Table:** the header row uses the workbook's `Support cap` headings, and the four cases follow in workbook order.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\nThe source line reads \"Sourc"
+        },
+        {
+          "tag": "i2_schedule__control__default__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 28.4,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.17337249999999998,
+          "num_turns": 6,
+          "final_text": "I added the `Appendix: Support-cap utilisation` slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. I re-opened the saved deck and checked the slide order and layouts. I did not render the slides to look at them.\n\n- **Position:** it is slide 15, between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\". This follows the workbook tab order (DSCR summary, Support cap, Sponsor return) set out in the Appendix divider's notes. \"Layout reference: Case card\" is still the last slide.\n- **Structure:** it is a copy of the DSCR summary slide on the \"Schedule\" layout. It has a title, one 5-row by 4-column table and a source line.\n- **Content:** the header row uses the `Support cap` tab's four column headings. The four case rows are in workbook order. USD k values are whole numbers with a thousands separator, so 1,000 for the incident case. Percentages show one decimal and a % sign: 0.0%, 32.0%, 100.0% and 41.0%.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`.\n- **Speaker notes:** I gave the slide its own notes, \"Support-cap utilisation schedule per case.\", in the style of the other schedule slides. You didn't ask for notes, so change or delete th"
+        },
+        {
+          "tag": "i2_schedule__control__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 14,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 34.1,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1913144,
+          "num_turns": 6,
+          "final_text": "I added the support-cap slide to `inputs/ic_deck_base.pptx` and saved the deck in place under the same filename. I confirmed the slide order by loading the saved file. I haven't rendered the slide to check how it looks.\n\n- **Position:** the slide sits between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\". That matches the workbook tab order (DSCR summary, Support cap, Sponsor return) and the Appendix divider's note about inserting at that position. The \"Layout reference: Case card\" slide stays last.\n- **Structure:** I copied the DSCR summary slide, which uses the same \"Schedule\" layout and the same 4-column, 5-row table. It has a title, the table and a source line. The speaker notes read \"Support-cap utilisation schedule per case.\"\n- **Title:** `Appendix: Support-cap utilisation`.\n- **Header row:** the workbook headings, which are Case, Peak monthly draw (USD k), Lifetime support used (USD k) and Lifetime cap utilisation (%).\n- **Rows, in workbook order:**\n\n  | Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n  |---|---|---|---|\n  | Base | 0 | 0 | 0.0% |\n  | Delayed usage receipt | 250 | 320 | 32.0% |\n  | Major operating in"
+        }
+      ]
+    },
+    {
+      "instance": "i3_sensitivity",
+      "condition": "anchor",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 3,
+      "strict_pass_rate": 0.6,
+      "placement_pass": 3,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 2,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 3
+      },
+      "rule_seen_in_tool_output": 5,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 25.7,
+      "runs": [
+        {
+          "tag": "i3_sensitivity__anchor__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 22.2,
+          "timed_out": false,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.11190350000000002,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. I checked it by re-opening the saved file and reading back the slide order and the new slide's contents. I haven't rendered it, so I haven't looked at how it displays.\n\n**Placement.** It is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". That sits inside the financing section and ahead of Recommendation. The agenda footnote says a sensitivity slide goes directly after the slide it sensitises, so I took the covenant DSCR slide as the one being sensitised. If you meant Case 2, say so and I'll move it.\n\n**Content.** I copied the layout reference slide, so the structure matches the existing case slides. The values come from the `Sensitivity` tab, formatted as on the case slides:\n\n| Item | Value |\n|---|---|\n| Title | `Sensitivity: DSCR with support cap minus 20%` |\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n| Source line | `Source: model_o"
+        },
+        {
+          "tag": "i3_sensitivity__anchor__default__r2",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "new_slide_index": 10,
+          "matches_literal_placement": true,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 29.8,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1636212,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. It opens and lists correctly in python-pptx, but I haven't rendered it to check how it looks.\n\n- **Position:** it is slide 11, after \"Funding: sources and uses\" and directly before Recommendation. I didn't put it right after the \"Covenant: monthly DSCR and sponsor support\" slide. That would also follow the agenda's rule that a sensitivity slide sits directly after the slide it sensitises, but your brief said to put it before Recommendation.\n- **Build:** I duplicated the Case card layout, so it has the same four tiles and three-row table as the case slides. The notes page is copied from the Case 2 slide with the wording changed to the Sensitivity tab.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table:**\n  - Total service receipts: USD 59.4m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 9.3m\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the case slides.\n\nThe \"Layout reference: Case card\" s"
+        },
+        {
+          "tag": "i3_sensitivity__anchor__default__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "new_slide_index": 10,
+          "matches_literal_placement": true,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 23.1,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.10340620000000002,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` (same filename). It's slide 11, between \"Funding: sources and uses\" and \"Recommendation\". I read the file back to check the text. I didn't render the slide visually.\n\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table rows:**\n  - Total service receipts: USD 59.4m.\n  - Total debt service: USD 16.4m.\n  - Closing cash, 31 Dec 2031: USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the other case slides.\n\nThe slide is a copy of the \"Layout reference: Case card\" slide. That slide is still the last one, now slide 17, and I didn't change it or any other slide.\n\nI also gave the new slide its own speaker note, since the other case slides have one: \"Sensitivity headline metrics (support cap minus 20%) from the Sensitivity tab.\"\n\nThe values come straight from the `Sensitivity` tab, with nothing recalculated."
+        },
+        {
+          "tag": "i3_sensitivity__anchor__default__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 30.5,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.11410070000000001,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I haven't rendered the slide to check it visually. I read the saved file back and confirmed the new slide's title, the slide order and the contents of the other slides.\n\n- **Placement:** The new slide is slide 10 of 17. It sits directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\" and \"Recommendation\". The agenda note says a sensitivity slide goes directly after the slide it sensitises, and this one sensitises the covenant DSCR slide. That also puts it in the financing section, ahead of Recommendation.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, min post-cure DSCR 1.14x, sponsor support used USD 270k, sponsor IRR 11.1%.\n- **Table rows:**\n  - Total service receipts: USD 59.4m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 9.3m\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Sensitivity'\", in the same style as the case slides.\n- **Method:** I copied the Case card layout slide, then replaced only the text, keeping the shapes and formatting. The \"Layout reference: Case car"
+        },
+        {
+          "tag": "i3_sensitivity__anchor__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 23.0,
+          "timed_out": false,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.09835530000000002,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I only checked the slide order and titles by script. I didn't render the slides, so I haven't looked at how the new one displays.\n\nIt is now slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". That is in the financing section and ahead of the Recommendation slide. It also follows the deck's own convention that a sensitivity slide sits directly after the slide it sensitises, which is the covenant slide.\n\nThe title is exactly `Sensitivity: DSCR with support cap minus 20%`. I built the slide as a copy of the Case 2 card, since that is a filled version of the same layout. Its values come from the `Sensitivity` tab:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe source line reads `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n\nI didn't touch the \"Layout reference: Case card\" slide or any other slide. The copied slide has "
+        }
+      ]
+    },
+    {
+      "instance": "i3_sensitivity",
+      "condition": "artefact",
+      "model": "claude-opus-5-5",
+      "n": 3,
+      "strict_pass": 3,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 3,
+      "all_non_placement_pass": 3,
+      "literal_default_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 3,
+        "file_opens": 3,
+        "new_slide_no_placeholders_left": 3,
+        "new_slide_present": 3,
+        "new_slide_structure": 3,
+        "new_slide_values": 3,
+        "other_slides_unchanged": 3,
+        "reference_unchanged": 3,
+        "slide_count": 3,
+        "title_order": 3
+      },
+      "rule_seen_in_tool_output": 3,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 56.9,
+      "runs": [
+        {
+          "tag": "i3_sensitivity__artefact__claude-opus-5-5__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 45.2,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.38939429999999997,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same name. Opening the saved file with python-pptx shows the new slide with the values below, and no other slide changed.\n\n**Where it sits:** it's slide 10, in the financing section, straight after \"Covenant: monthly DSCR and sponsor support\". I put it there because the agenda footnote says a sensitivity slide goes directly after the slide it sensitises. Recommendation still comes directly before Closing, and \"Layout reference: Case card\" is still the last slide.\n\n**How I built it:** it's an exact copy of the reference slide's structure, with only the text filled in. It has the same Case card layout, shape names, sizes, colours and fonts as the case slides.\n\n**Content:**\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`\n- **Tiles:** Min operating DSCR **0.62x**, Min post-cure DSCR **1.14x**, Sponsor support used **USD 270k**, Sponsor IRR **11.1%**\n- **Table:** Total service receipts **USD 59.4m**, Total debt service **USD 16.4m**, Closing cash, 31 Dec 2031 **USD 9.3m**\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the case slides\n\nThe case slides e"
+        },
+        {
+          "tag": "i3_sensitivity__artefact__claude-opus-5-5__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 58.2,
+          "timed_out": false,
+          "tool_calls": 7,
+          "tools": {
+            "Bash": 7
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.4618699,
+          "num_turns": 8,
+          "final_text": "I've added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it in place. It is now slide 10 of 17. I checked the saved file: all 16 original slides are byte-identical to before, including \"Layout reference: Case card\", which is still last.\n\n- **Built from:** a copy of the \"Layout reference: Case card\" slide. Compared with the Case 2 slide, the new slide's XML differs only in its text: same shapes, positions and formatting.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`\n- **Values (`Sensitivity` tab, formatted like the case slides):**\n\n  | Item | Value |\n  |---|---|\n  | Min operating DSCR | 0.62x |\n  | Min post-cure DSCR | 1.14x |\n  | Sponsor support used | USD 270k |\n  | Sponsor IRR | 11.1% |\n  | Total service receipts | USD 59.4m |\n  | Total debt service | USD 16.4m |\n  | Closing cash, 31 Dec 2031 | USD 9.3m |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, replacing the reference note.\n- **Placement:** in the financing section, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". The agenda says a sensitivity slide goes straight after the slide it tests, and this one tests the covenant D"
+        },
+        {
+          "tag": "i3_sensitivity__artefact__claude-opus-5-5__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 67.4,
+          "timed_out": false,
+          "tool_calls": 10,
+          "tools": {
+            "Bash": 10
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.44574949999999997,
+          "num_turns": 11,
+          "final_text": "I've added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. I checked the result by reading the saved file and comparing it with the original: all 16 existing slides, including the layout reference slide and their speaker notes, are unchanged. I haven't opened it in PowerPoint to check it visually.\n\n**Placement:** it's slide 10, in the financing section, directly after \"Covenant: monthly DSCR and sponsor support\". The agenda slide's footnote says a sensitivity slide goes directly after the slide it tests, and this one tests the covenant DSCR.\n\n**Build:** it's an exact copy of the \"Layout reference: Case card\" slide with only the text changed, so the layout, shapes and formatting match the case slides.\n\n**Content:** the title is exactly `Sensitivity: DSCR with support cap minus 20%`. The values come from the `Sensitivity` tab, formatted like the case slides:\n\n| Field | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe reference note at "
+        }
+      ]
+    },
+    {
+      "instance": "i3_sensitivity",
+      "condition": "artefact",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 25.9,
+      "runs": [
+        {
+          "tag": "i3_sensitivity__artefact__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 26.0,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1616869,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it in place. I haven't rendered it or opened it in PowerPoint; I only checked that the file loads and the slide order is right.\n\nThe new slide is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\". That puts it in the financing section. It also follows the deck convention (stated on the agenda slide) that a sensitivity slide goes directly after the slide it sensitises.\n\nI built it by duplicating the Case card layout (same layout, tiles, table and source-line style) with the exact title you gave. Values come from the `Sensitivity` tab, formatted as on the case slides:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe bottom line reads \"Source: model_outputs.xlsx, tab 'Sensitivity'\".\n\nI also gave the new slide a speaker note describing the sensitivity, since the other case slides have one. The \"Layout reference: Case card\" slide is unchanged and still the last slide. No other slid"
+        },
+        {
+          "tag": "i3_sensitivity__artefact__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 28.5,
+          "timed_out": false,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1603484,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide as slide 10 of `inputs/ic_deck_base.pptx`, saved in place. I only checked the slide order and titles after saving. I didn't render the slide or compare the formatting by eye.\n\n- **Placement:** it sits in the financing section, directly after \"Covenant: monthly DSCR and sponsor support\". That follows the agenda footnote, which says a sensitivity slide goes directly after the slide it sensitises.\n- **Layout:** I copied the Case card layout shape for shape from the reference slide, so the structure matches the existing case slides.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table rows:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the other case slides.\n- **Speaker notes:** I added a one-line note, as the other case slides have one. You didn't ask for this.\n- **Other slides:** I didn't edit any other slide, including the reference slide, which is now slide 17. The agenda doesn't "
+        },
+        {
+          "tag": "i3_sensitivity__artefact__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 21.8,
+          "timed_out": false,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1153147,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it in place under the same filename. I checked it by re-opening the saved file and reading back the slide order and the new slide's text. I haven't looked at it rendered.\n\nThe new slide is slide 10, titled exactly `Sensitivity: DSCR with support cap minus 20%`. It uses the Case card layout and has the same structure as the case slides.\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe source line reads `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n\n**Placement:** it sits in the financing section, directly after \"Covenant: monthly DSCR and sponsor support\". The deck's own convention on the Agenda slide says a sensitivity goes directly after the slide it sensitises.\n\nI didn't edit any existing slide, including \"Layout reference: Case card\", which is now slide 17. The new slide has no speaker notes, unlike the case slides."
+        },
+        {
+          "tag": "i3_sensitivity__artefact__default__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 26.0,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1515977,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` as slide 10, in the financing section. I saved the deck in place under the same filename. I checked the result by reading the saved file back, but I didn't render the slide to look at it.\n\n**Position:** It sits directly after \"Covenant: monthly DSCR and sponsor support\" (slide 9), the slide it sensitises. The agenda footnote says a sensitivity slide goes directly after the slide it sensitises. \"Layout reference: Case card\" is still the last slide.\n\n**Structure:** It is a duplicate of the Case card layout, titled exactly `Sensitivity: DSCR with support cap minus 20%`. I also gave it a speaker note in the style of the other case slides, saying the figures come from the Sensitivity tab.\n\n**Values, from the `Sensitivity` tab:**\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\n**Source line:** It reads `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the other case slides.\n\nI left every other s"
+        },
+        {
+          "tag": "i3_sensitivity__artefact__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 27.4,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1330239,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. I checked the slide order and text by reading the saved file back. I didn't render the slides to look at them.\n\n- **Placement:** it is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" in the financing section. The agenda footnote says a sensitivity slide goes directly after the slide it sensitises, and this one sensitises the covenant DSCR. It sits before \"Funding: sources and uses\", so Recommendation still comes immediately before Closing.\n- **Build:** I copied the Case card layout from the reference slide, so the structure matches the case slides. The title is exactly `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table rows:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash, 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the case slides.\n- **Speaker notes:** I wrote a one-line note for the slide, since the case slides each have one.\n- **Unchanged:** the"
+        }
+      ]
+    },
+    {
+      "instance": "i3_sensitivity",
+      "condition": "control",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rendered_thumbnails": 0,
+      "mean_wall_seconds": 47.7,
+      "runs": [
+        {
+          "tag": "i3_sensitivity__control__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 20.8,
+          "timed_out": false,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": false,
+          "cost_usd": 0.0966236,
+          "num_turns": 3,
+          "final_text": "I added the sensitivity slide and saved it in place as `inputs/ic_deck_base.pptx`. I only read back the slide text after saving; I haven't rendered the deck.\n\n- **Placement:** it's slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" in the financing section. That's the covenant slide, so I took it as the slide being sensitised. The `Sensitivity` tab labels its row \"Case 2 basis\", but the Case 2 slide sits in the Cases section, so putting the new slide after it would break the brief's \"financing section\" instruction. If you meant it to follow Case 2, say so and I'll move it.\n- **Layout:** it's a copy of the Case card, with the title `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash 31 Dec 2031 USD 9.3m.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Sensitivity'\" replaces the reference note.\n\nThe layout-reference slide and every other slide are unchanged. The deck convention (Recommendation immediately before Closing) still holds."
+        },
+        {
+          "tag": "i3_sensitivity__control__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 150.0,
+          "timed_out": false,
+          "tool_calls": 6,
+          "tools": {
+            "Bash": 5,
+            "TaskStop": 1
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1424815,
+          "num_turns": 7,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx`, saved in place under the same filename. I didn't render it to check how it looks, only read the saved file back to confirm the content.\n\n- **Placement:** it is slide 10 in the financing section, directly after \"Covenant: monthly DSCR and sponsor support\". That covenant slide is the one it sensitises. Following the deck convention (a sensitivity slide goes directly after the slide it sensitises), I did not put it with the case slides.\n- **Build:** I copied the layout and shapes of the Case 1 slide (slide 5) rather than the reference slide, so the reference slide is untouched. No other slide was changed.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** values come from the `Sensitivity` tab and use the same labels and formats as the case slides.\n\n| Tile | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n\n- **Table rows:** Total service receipts is USD 59.4m, Total debt service is USD 16.4m, and Closing cash, 31 Dec 2031 is USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the sam"
+        },
+        {
+          "tag": "i3_sensitivity__control__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 22.3,
+          "timed_out": false,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1036278,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide and saved it in place as `inputs/ic_deck_base.pptx`. I only read the text back from the saved file; I haven't rendered the slide or checked it visually.\n\n**Placement:** it is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\", in the financing section. I chose that slide as the one it sensitises because the sensitivity is on the covenant DSCR and the support cap. That satisfies both your \"financing section\" instruction and the Agenda footnote's rule that a sensitivity goes directly after the slide it sensitises. The workbook labels this row \"Case 2 basis\", so it could instead sit after the Case 2 slide, but that is in the Cases section.\n\n**Content:** the title is exactly `Sensitivity: DSCR with support cap minus 20%`. I built it as a copy of the Case card layout and filled it from the `Sensitivity` tab, in the same formats as the case slides:\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash, 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'` r"
+        },
+        {
+          "tag": "i3_sensitivity__control__default__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 20.0,
+          "timed_out": false,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": false,
+          "cost_usd": 0.09321850000000001,
+          "num_turns": 3,
+          "final_text": "I added the sensitivity slide as slide 10 of `inputs/ic_deck_base.pptx`, saved in place under the same filename. I re-opened the saved file and checked the slide order and the new slide's text, but I haven't rendered the deck to look at it.\n\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:**\n  - Min operating DSCR: 0.62x\n  - Min post-cure DSCR: 1.14x\n  - Sponsor support used: USD 270k\n  - Sponsor IRR: 11.1%\n- **Table rows:**\n  - Total service receipts: USD 59.4m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 9.3m\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, replacing the reference note.\n- **Build:** I copied the structure of an existing case slide, so the layout matches. I copied slide 5 (Case 1) rather than the reference slide, and the reference slide is unchanged.\n\n**Placement:** I put it directly after \"Covenant: monthly DSCR and sponsor support\", in the Financing and covenant section. The workbook labels the row \"Case 2 basis\", but the deck convention says to place a sensitivity directly after the slide it sensitises, and the brief says the financing section. Case 2 sits in the Cases section, so I treated the c"
+        },
+        {
+          "tag": "i3_sensitivity__control__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "new_slide_index": 9,
+          "matches_literal_placement": false,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 25.5,
+          "timed_out": false,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1299166,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I haven't opened it in PowerPoint to check how it looks. I did re-open the saved file and confirm the slide order and the filled-in text.\n\nThe new slide is slide 10, titled `Sensitivity: DSCR with support cap minus 20%`. It sits in the financing section, directly after \"Covenant: monthly DSCR and sponsor support\". I chose that slide as the one it sensitises, because the sensitivity changes the support cap and DSCR. The workbook row is labelled \"Case 2 basis\", so a placement after the Case 2 slide would also be defensible, but the brief says to put it in the financing section.\n\nIt's a copy of the Case card layout, filled from the `Sensitivity` tab in the same formats as the case slides:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe bottom note now reads `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n\nI also gave the slide a one-line speaker note, as the other case slides ha"
+        }
+      ]
+    }
+  ]
+}
