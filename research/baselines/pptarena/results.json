@@ -1,0 +1,1154 @@
+{
+ "meta": {
+  "benchmark": "PPTArena (michaelofengenden/PPTArena, cloned 2026-10-13, depth 1)",
+  "agent_under_test": "Claude Code subagents of a Claude Code cloud session (general-purpose agent, tools Bash/Read/Write/Edit; same TASK_PROMPT text as agent_bench/run_agents.py)",
+  "judge": "Claude Code subagent reading LibreOffice-rendered PNGs plus a python-pptx structural diff; rubric text copied from src/llm/judge.py arena mode. NOT the official judge.",
+  "date": "2026-10-13"
+ },
+ "cases": [
+  {
+   "case": "Case 7: Update Quarter Two Data (B)",
+   "slug": "case_007",
+   "edit_type": "Charts",
+   "category": [
+    "Content"
+   ],
+   "in_hard_subset": true,
+   "prompt": "Please replace all instances of 'Q2' with 'Second Quarter' throughout the presentation. Also, on slide 9, change the title font size to 32pt. Finally, on slides 6, 7, and 9, please un-bold the text below the charts.",
+   "original": "Original/QuarterTwoTestB_7302020.pptx",
+   "ground_truth": "GroundTruth/QuarterTwoGroundTruthB.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 253,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 12,
+    "n_slides": {
+     "orig": 12,
+     "gt": 12,
+     "pred": 12
+    },
+    "slide_size_in": {
+     "orig": [
+      13.33,
+      7.5
+     ],
+     "gt": [
+      13.33,
+      7.5
+     ],
+     "pred": [
+      13.33,
+      7.5
+     ]
+    },
+    "n_charts": {
+     "orig": 11,
+     "gt": 11,
+     "pred": 11
+    },
+    "n_tables": {
+     "orig": 2,
+     "gt": 2,
+     "pred": 2
+    }
+   },
+   "agent_report": "Case 007 done. Edited deck.pptx in place.\n1. Replaced every \"Q2\" with \"Second Quarter\" in all slide text (titles, subtitles, slide 5 table header, slide 7 \"Q1 & Q2 YOY Activity Variance\" label, the axis-label text boxes on slides 6 and 9), in all chart caches (chart1 categories, \"Q2 YOY Var\" series names in charts 3/5/6/8/10) and in the embedded workbook sharedStrings of chart1. Literal replacement, so slide 5's title reads \"Second Quarter (Second Quarter) NOI\". No \"Q2\" remains in any XML part or embedded xlsx.\n2. Slide 9 title set to 32pt on all runs (was 40pt).\n3. Un-bolded the text below the charts: slide 6 and slide 9 x-axis label text boxes, and slide 7 \"-60% YTD\" / \"-56% YTD\" labels under the two line charts.\nSide fixes because the longer text broke layout: slide 6/9 axis-label text boxes widened and given centered tab stops so the three labels still sit under their bars; slide 6 title box widened so the 38pt title stays on one line.\nVerification: loads with python-pptx (12 slides), converts with soffice; rendered slides 5-9 before/after and inspected.\nNote: in the LibreOffice render of slides 7/8 the bottom chart legends now show only the \"Second Quarter YOY Var\" entry (longer name no longer fits LO's auto legend width); chart layouts not altered.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 3,
+    "instruction_following_reason": "Q2 replacements, the 32pt slide-9 title, and the un-bolding of the slide 6/9 x-axis label boxes match ground truth, but on slide 7 the prediction left TextBox 14 ('Q1 & Second Quarter YOY Activity Variance') bold (bold_runs: 1) while ground truth un-bolded it, and instead un-bolded the '-60% YTD'/'-56% YTD' labels that ground truth kept bold; it also used 'Second Quarter' mid-sentence on slides 6 and 9 where ground truth used contextual lowercase 'second quarter'.",
+    "visual_quality_score": 2,
+    "visual_quality_reason": "Slides 1-6 and 9-12 render essentially identically to ground truth, but on slides 7 and 8 the prediction's bar-chart legends lost the 'Q1 YOY Var' entry (only 'Second Quarter YOY Var' remains) in all four charts, a clear unintended change to non-requested chart content, and the slide-7 YTD callout labels were un-bolded where ground truth kept them bold."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 1.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 1.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 1.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 1.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 1.0,
+     "VQ": 4.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Charts / cross-slide text replace. All three requested edits were applied, including inside chart caches and the embedded workbook, which is where most recorded agents stopped short (leaderboard IF 1-2). Two misses: a literal find-and-replace produced 'Second Quarter (Second Quarter) NOI' and mid-sentence capitalisation, and the agent un-bolded the wrong text under the slide-7 charts (the YTD callouts instead of the 'Q1 & Q2 YOY' label). The visible regression is a layout-reflow miss: lengthening the series name made the bar-chart legends overflow their manual legend box, so LibreOffice drops the 'Q1 YOY Var' entry on slides 7-8; the ground truth widened the legend box. Series data are intact (verified via python-pptx), so this is a perception/verification failure, not a tooling one: the agent saw the clipped legend in its own render and attributed it to LibreOffice instead of fixing the legend layout.",
+   "leaderboard_mean_combined": 1.56,
+   "leaderboard_best_combined": 2.5
+  },
+  {
+   "case": "Case 30: Convert Text Data to a Line Chart",
+   "slug": "case_030",
+   "edit_type": "Charts",
+   "category": [
+    "Content"
+   ],
+   "in_hard_subset": true,
+   "prompt": "On slide 8, convert the text data showing uninsured rates into a line chart with markers. Also, create a custom legend for the chart on the right.",
+   "original": "Original/LineGraph_TestA.pptx",
+   "ground_truth": "GroundTruth/LineGraph_GroundTruthA.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 177,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 9,
+    "n_slides": {
+     "orig": 9,
+     "gt": 9,
+     "pred": 9
+    },
+    "slide_size_in": {
+     "orig": [
+      10.0,
+      7.5
+     ],
+     "gt": [
+      10.0,
+      7.5
+     ],
+     "pred": [
+      10.0,
+      7.5
+     ]
+    },
+    "n_charts": {
+     "orig": 7,
+     "gt": 8,
+     "pred": 8
+    },
+    "n_tables": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    }
+   },
+   "agent_report": "Changes to deck.pptx (slide 8):\n- Removed the plain-text data box (\"TextBox 17\") listing uninsured rates by year, replaced with a native line chart with markers (XL LINE_MARKERS) carrying the same data: categories 2013-2017; series NHOPI (18,14,10,11,11), Asian (16,11,8,7,7), White (12,10,8,7,7).\n- Chart styling matches the deck's blue palette, circle/square/triangle markers, 2.5pt lines, value data labels \"N%\", value axis 0-20% with light gridlines, built-in chart legend disabled, Arial 12pt. Chart at left 0.67in / top 1.82in, width 6.6in, above the footnote placeholder.\n- Added a custom legend on the right as a group shape \"Custom Legend\": heading \"Uninsured rate (%)\" plus three entries, each a coloured line connector with a matching marker shape and an Arial 14pt label (NHOPI, Asian, White).\n- Title, subtitle text box, footnote placeholder, layout and all other slides left untouched.\nVerification: python-pptx loads (9 slides, chart LINE_MARKERS, legend off, series values correct), zip integrity passes, LibreOffice converts to PDF; rendered slide 8 shows chart with markers, data labels and custom legend.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 4,
+    "instruction_following_reason": "Prediction removed the original uninsured-rate text box on slide 8 and replaced it with a LINE_MARKERS chart whose categories (2013-2017) and three series (NHOPI, Asian, White) exactly match the original text values, hid the built-in legend (has_legend false) and added a 'Custom Legend' group to the right of the chart as the ground truth does, with all other slides untouched; only tiny divergences remain (an extra 'Uninsured rate (%)' legend title and a smaller chart footprint than the ground truth's full-width chart).",
+    "visual_quality_score": 3,
+    "visual_quality_reason": "Slides 1-7 and 9 render identically to ground truth, and slide 8 shows a clean, non-overlapping line chart with markers and a right-side custom legend, but it visibly differs from the ground truth's styling (smaller chart with a 0-20% vertical axis and gridlines, missing the '*' significance markers on data labels, and slightly crowded 18%/16% labels at 2013)."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 4.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 3.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 4.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 3.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 4.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 4.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 3.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 3.0,
+     "VQ": 3.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Charts: text-to-chart conversion. The agent built a native LINE_MARKERS chart from the text box with exactly the right categories and series values, disabled the built-in legend and drew a custom legend from shapes, which is what the ground truth does. Recorded agents all reached IF 3-4 on this case but VQ 0-2; the Claude-judged VQ of 3 reflects styling drift (smaller chart, 0-20% axis with gridlines, missing '*' significance markers that the ground truth carried over from the text). Failure mode: the agent reproduced the data but not the deck's existing chart style conventions (slides 1-7 already contain styled KFF charts it could have copied).",
+   "leaderboard_mean_combined": 2.12,
+   "leaderboard_best_combined": 3.0
+  },
+  {
+   "case": "Case 93: Multi-Edit Cascade (Copernicus Climate Highlights)",
+   "slug": "case_093",
+   "edit_type": "Charts",
+   "category": [
+    "Content",
+    "Styling"
+   ],
+   "in_hard_subset": false,
+   "prompt": "Please apply a consistent, professional theme to this presentation. Change all slide titles to a dark blue and all body text to a dark gray. On slide 4, replace the static image of the bar chart with an actual, editable column chart. On slide 5, rearrange the images and their captions for a better flow. Also, add a progress bar at the bottom of every slide. Finally, add a new 'Bibliography' slide at the very end with the source URL.",
+   "original": "Original/climate_original.pptx",
+   "ground_truth": "GroundTruth/climate_ground_truth.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 169,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 7,
+    "n_slides": {
+     "orig": 6,
+     "gt": 7,
+     "pred": 7
+    },
+    "slide_size_in": {
+     "orig": [
+      10.0,
+      7.5
+     ],
+     "gt": [
+      10.0,
+      7.5
+     ],
+     "pred": [
+      10.0,
+      7.5
+     ]
+    },
+    "n_charts": {
+     "orig": 0,
+     "gt": 1,
+     "pred": 1
+    },
+    "n_tables": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    }
+   },
+   "agent_report": "Edited deck.pptx in place (script: edit.py):\n- Theme: all slide titles (title/center-title placeholders) set to dark blue (#1F3864); all other text (body placeholders, captions, citation text boxes) set to dark gray (#404040) on every slide.\n- Slide 4: removed the static bar-chart PNG and inserted a native, editable clustered column chart at the same position (categories 1991-2020 Avg / 2023 / 2024, values 14.38 / 14.98 / 15.10 C taken from the deck's own figures, dark-blue bars, data labels, axis title, 0-16 scale). Description text box given word-wrap and moved beside the chart so it no longer runs off the slide.\n- Slide 5: the two images previously overlapped; laid them out side by side at a shared height with widths proportional to their aspect ratios, and placed each caption (wrapped, centered, 11pt) directly beneath its own image.\n- Progress bar: added a light-gray track plus a dark-blue fill proportional to slide position (i/7) along the bottom edge of every slide, including the new one.\n- Added a final \"Bibliography\" slide (Title and Content layout) citing the Copernicus Global Climate Highlights 2024 report with the source URL as a clickable hyperlink and a note that [1]-[6] link to sections of it.\n- Verification: deck reloads in python-pptx (7 slides, chart present on slide 4), zip integrity test passes, soffice headless converts to PDF, rendered PNGs inspected visually.\n- Chart values inferred from the slide text since the source image carried no exact numbers.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 4,
+    "instruction_following_reason": "Prediction delivers every requested change matching the ground truth's outcome (dark-blue titles, dark-gray body, native COLUMN_CLUSTERED chart with the same categories/values replacing the image on slide 4, slide-5 images and captions rearranged with clear pairing, proportional progress bar 1/7..7/7 on every slide, a 7th 'Bibliography' slide with the climate.copernicus.eu URL, citation markers [1]-[6] preserved), with only small differences such as no chart legend, captions reset to 11pt, and bibliography body left at the large default size.",
+    "visual_quality_score": 3,
+    "visual_quality_reason": "All slides are clean, legible and overlap-free like the ground truth, but there are noticeable differences: the prediction keeps a white background where the ground truth uses light blue, uses a dark-blue instead of orange progress bar, and the Bibliography slide's body text is rendered at a much larger size than the GT's 16pt list so it runs down to the progress bar."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 3.0,
+     "VQ": 3.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 1.0,
+     "VQ": 3.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Charts + multi-edit cascade. Six sub-edits were all executed (title/body colours, image-to-native-chart on slide 4, slide-5 re-layout, progress bar on every slide, new bibliography slide with URL). This is the case where recorded agents scored lowest on a chart task (mean 1.1, best 3.0) because they dropped sub-edits. Remaining gaps are judgement calls, not misses: chart values were inferred from slide text because the source was a bitmap (the ground truth used the same three bars), the chart was styled dark blue without a legend, and the bibliography body was left at the layout's default size so it runs close to the progress bar. Visual drift vs ground truth (white vs light-blue background, blue vs orange progress bar) is largely ground-truth taste.",
+   "leaderboard_mean_combined": 1.12,
+   "leaderboard_best_combined": 3.0
+  },
+  {
+   "case": "Case 98: Cross-Slide Conditional Formatting (Status → Timeline)",
+   "slug": "case_098",
+   "edit_type": "SmartArt & Diagrams",
+   "category": [
+    "Content",
+    "Layout"
+   ],
+   "in_hard_subset": false,
+   "prompt": "Using the status table on slide 2, update the project timeline on slide 3. For any project marked 'At Risk', change its corresponding shape's fill color to red. Aswell as the second one.",
+   "original": "Original/CrossSlideStatusToTimeline_TestA.pptx",
+   "ground_truth": "GroundTruth/CrossSlideStatusToTimeline_GroundTruthA.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 117,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 3,
+    "n_slides": {
+     "orig": 3,
+     "gt": 3,
+     "pred": 3
+    },
+    "slide_size_in": {
+     "orig": [
+      10.0,
+      5.62
+     ],
+     "gt": [
+      10.0,
+      5.62
+     ],
+     "pred": [
+      10.0,
+      5.62
+     ]
+    },
+    "n_charts": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    },
+    "n_tables": {
+     "orig": 1,
+     "gt": 1,
+     "pred": 1
+    }
+   },
+   "agent_report": "Case 098 done. Edited deck.pptx in place.\nWhat I changed:\n- Slide 2 status table shows only \"Mars Sample Return\" marked 'At Risk' (Kaheawa Wind Farm = On Track, U.S. Renewable Energy Growth = Completed).\n- Slide 3 timeline: the background roundRect behind \"Mars Sample Return\" (Shape 1, id 3) had its solid fill changed from 4472C4 to red (FF0000).\n- Per \"as well as the second one\", the second timeline shape (Shape 3, id 5, behind \"Kaheawa Wind Farm\") was also set to red FF0000.\n- Shape 5 (third box) left blue; outlines, text labels, positions, sizes and all other slides untouched (change made via python-pptx fill.solid()/fore_color only).\nVerification: reloaded with python-pptx: fills read back FF0000, FF0000, 4472C4. Converted with soffice to PDF, rendered slide 3; visually confirmed first two boxes red, third blue. Removed scratch files; wrote .finished timestamp.\nNote: the instruction's \"second one\" is ambiguous; interpreted as the second timeline shape (Kaheawa Wind Farm) and recolored its fill as well.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 3,
+    "instruction_following_reason": "The prediction correctly turned the 'Mars Sample Return' shape (Shape 1) red and left the 'U.S. Renewable Energy Growth' shape and slides 1-2 intact, but it filled the second shape 'Kaheawa Wind Farm' (Shape 3) with SOLID:FF0000 red instead of the green (ACCENT_6) the ground truth uses for an 'On Track' project, so one of the two requested changes is applied with the wrong color.",
+    "visual_quality_score": 2,
+    "visual_quality_reason": "Slides 1 and 2 render identically to the ground truth and text stays readable on all shapes, but on slide 3 the 'Kaheawa Wind Farm' box is bright red instead of green, a clearly wrong color versus the ground truth that also makes an On Track project look identical to the At Risk one."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 3.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Cross-slide conditional formatting. The agent read the status table on slide 2 and recoloured the matching timeline shape on slide 3 correctly. The instruction's trailing clause 'Aswell as the second one' is ambiguous: the agent turned the second shape red too, while the ground truth coloured it green (theme accent 6) for an 'On Track' project. Recorded agents hit the same wall (IF 2-3 for every agent). This is an instruction-ambiguity failure rather than perception or tooling; a human would probably have asked.",
+   "leaderboard_mean_combined": 1.31,
+   "leaderboard_best_combined": 2.5
+  },
+  {
+   "case": "Case 69: Cross-Slide Image–Caption Correlation",
+   "slug": "case_069",
+   "edit_type": "Images & Pictures",
+   "category": [
+    "Content"
+   ],
+   "in_hard_subset": false,
+   "prompt": "1. For every slide, match each image to its correct caption.  2. After pairing them, rearrange the pairs to create a balanced layout.  3. Update each slide's title correspondingly. 4. Finally, make sure all images are the same size, 3.2 inches wide by 2.4 inches high.",
+   "original": "Original/ImageTextCorrelation_TestA.pptx",
+   "ground_truth": "GroundTruth/ImageTextCorrelation_GroundTruthA.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 176,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 3,
+    "n_slides": {
+     "orig": 3,
+     "gt": 3,
+     "pred": 3
+    },
+    "slide_size_in": {
+     "orig": [
+      10.0,
+      7.5
+     ],
+     "gt": [
+      10.0,
+      7.5
+     ],
+     "pred": [
+      10.0,
+      7.5
+     ]
+    },
+    "n_charts": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    },
+    "n_tables": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    }
+   },
+   "agent_report": "Edited deck.pptx in place (3 slides, 3 captions + 3 pictures each).\n- Matched images to captions by inspecting each embedded PNG (each also carried a descr like \"Hubble_Space_Telescope.png\"). Three images were on the wrong slide, so moved them cross-slide with python-pptx (add_picture from the existing blob; removed the original pic element and dropped its dangling rel). Final pairing: slide 1 Rosetta/Terracotta/Machu Picchu, slide 2 Photosynthesis/Pythagorean/DNA, slide 3 Apollo 11/Hubble/Voyager.\n- Rearranged into a balanced 3-column layout: image at x=0.1/3.4/6.7 in, y=2.4 in; caption directly beneath at y=4.95 in, same column width (3.2 in), caption wrap set to square.\n- Titles updated from \"... Captions & Images (Unmatched)\" to \"... Images & Captions (Matched)\" on all three slides.\n- All 9 pictures set to exactly 3.2 in x 2.4 in.\nVerification: python-pptx reloads; unzip -t no errors; soffice converted to PDF and renders confirm each image sits above its matching caption.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 3,
+    "instruction_following_reason": "Prediction correctly pairs every image with its caption (moving pictures across slides as needed), resizes all pictures to 3.2x2.4 in, and arranges them in a balanced 3-column grid with unaltered caption text, but the title edit is wrong: it replaces the suffix with ' — Images & Captions (Matched)' instead of stripping it to the bare topic ('Ancient Civilizations', 'Core STEM Concepts', 'Space & Exploration') as the ground truth does.",
+    "visual_quality_score": 3,
+    "visual_quality_reason": "Rendered slides are clean and legible with correctly matched image/caption groups, uniform image sizes and no overlaps, but they visibly differ from the ground truth in the long retained title suffix, a different grid arrangement, and captions narrowed to 3.2 in so they wrap onto two or three lines."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 2.0,
+     "VQ": 3.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 1.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Cross-slide image/caption correlation. The agent inspected the embedded PNGs (and their alt-text descriptors) and moved three pictures across slides to pair them with captions, resized all nine to 3.2x2.4 in and laid them out in a 3-column grid. Recorded agents scored 0-2 here, mostly because they did not move pictures across slides. The two deductions are (a) the title edit: the agent appended 'Images & Captions (Matched)' where the ground truth stripped the suffix entirely, and (b) grid layout differing from the ground truth. Notably the ground-truth render has two captions overlapping on slide 1 while the prediction is clean, so this case illustrates ground-truth-anchored judging penalising a better layout.",
+   "leaderboard_mean_combined": 0.75,
+   "leaderboard_best_combined": 2.5
+  },
+  {
+   "case": "Case 94: Slide Size Conversion 4:3 → 16:9",
+   "slug": "case_094",
+   "edit_type": "Slide Layout & Placeholders",
+   "category": [
+    "Layout",
+    "Structure"
+   ],
+   "in_hard_subset": false,
+   "prompt": "Convert this 4:3 presentation to a 16:9 widescreen format. Make sure all the content fits on the slides and that images are not stretched or distorted.",
+   "original": "Original/Size43to169_DifferentContent_TestA.pptx",
+   "ground_truth": "GroundTruth/Size43to169_DifferentContent_GroundTruthA.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 136,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 5,
+    "n_slides": {
+     "orig": 5,
+     "gt": 5,
+     "pred": 5
+    },
+    "slide_size_in": {
+     "orig": [
+      10.0,
+      7.5
+     ],
+     "gt": [
+      10.0,
+      5.62
+     ],
+     "pred": [
+      13.33,
+      7.5
+     ]
+    },
+    "n_charts": {
+     "orig": 1,
+     "gt": 1,
+     "pred": 1
+    },
+    "n_tables": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    }
+   },
+   "agent_report": "Case 094 (4:3 -> 16:9 conversion) completed; deck edited in place.\nWhat I changed:\n- ppt/presentation.xml: <p:sldSz> changed from 9144000x6858000 (type=\"screen4x3\") to 12192000x6858000 (standard 16:9, height kept so vertical layout is untouched).\n- Slide master, all 11 layouts and all 5 slides: for text shapes, placeholders and the chart (slide 3), x-offset and width scaled by 4/3 so they fill the wider canvas; y/height unchanged.\n- The two pictures on slide 4 were NOT resized (width/height identical to the original, so no stretching/distortion); they were only shifted horizontally so their centres sit at the proportional 16:9 position. Crop (srcRect) and rotation left as-is.\n- No content, fonts, styling, notes or media were altered. Script: convert.py (lxml rewrite of the zip, no python-pptx re-save).\nVerification: python-pptx loads the deck; reported size 12192000x6858000; every shape's right edge within the new width. soffice converted to PDF without error; PNG renders checked for slides 2, 3 and 4: titles/bullets/chart centred on widescreen, images keep proportions, footnote boxes at the bottom. Nothing left undone.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 4,
+    "instruction_following_reason": "Prediction converts the deck to a true 16:9 size (13.33x7.5in vs GT 10x5.62in), keeps all text/fonts/chart data and legend, moves every '[1]' reference box up inside the slide, and keeps both slide-4 picture aspect ratios (1.78 and ~1.0) intact without overlap, but it stretches the slide-3 chart frame from a 2:1 to a 3:1 aspect and leaves both slide-4 pictures sharing the name 'Picture 2', small deviations from the GT outcome.",
+    "visual_quality_score": 3,
+    "visual_quality_reason": "All prediction slides render cleanly with no overlap or cut-off content and preserved fonts/colors, but relative to GT the body text and title appear noticeably smaller on the larger canvas, the slide-3 chart is much wider with more empty space below it, and the slide-4 images are enlarged with the caption pushed to the bottom edge, giving visibly different proportions."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 2.0,
+     "VQ": 4.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 1.0,
+     "VQ": 3.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 1.0,
+     "VQ": 4.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Layout: 4:3 to 16:9. The agent rewrote presentation.xml plus master, layouts and slides via lxml (no python-pptx re-save), scaling x/width by 4/3 and shifting but not resizing pictures. All content fits, nothing is stretched. Deviations: it chose 13.33x7.5 in where the ground truth chose 10x5.63 in (both 16:9), so text looks smaller on the larger canvas; the slide-3 chart frame was scaled to 3:1 instead of being kept near 2:1. Recorded agents mostly scored 1/1 (several left the deck at 4:3 or stretched images), so this is a clear improvement; the remaining issue is aesthetic judgement about which elements should scale and which should keep aspect.",
+   "leaderboard_mean_combined": 1.19,
+   "leaderboard_best_combined": 3.0
+  },
+  {
+   "case": "Case 95: Master & Layout Rebind",
+   "slug": "case_095",
+   "edit_type": "Template & Master-Level Edits",
+   "category": [
+    "Styling",
+    "Structure"
+   ],
+   "in_hard_subset": false,
+   "prompt": "On slide 2, change the layout from 'Title Slide' to 'Title and Content'. Make sure the existing text content is moved into the new content placeholder.",
+   "original": "Original/MasterRebind_TestA.pptx",
+   "ground_truth": "GroundTruth/MasterRebind_GroundTruthA.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 122,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 4,
+    "n_slides": {
+     "orig": 4,
+     "gt": 4,
+     "pred": 4
+    },
+    "slide_size_in": {
+     "orig": [
+      10.0,
+      7.5
+     ],
+     "gt": [
+      10.0,
+      7.5
+     ],
+     "pred": [
+      10.0,
+      7.5
+     ]
+    },
+    "n_charts": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    },
+    "n_tables": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    }
+   },
+   "agent_report": "Case 95 done: deck.pptx edited in place (slide 2 only, via direct OOXML edit in fix.py):\n- Rebound ppt/slides/_rels/slide2.xml.rels from slideLayout1.xml (\"Title Slide\") to slideLayout2.xml (\"Title and Content\").\n- Title placeholder changed from type=\"ctrTitle\" to type=\"title\" so it inherits the new layout's title position.\n- The empty subtitle placeholder (type=\"subTitle\" idx=\"1\") became the content placeholder (<p:ph idx=\"1\"/>, renamed \"Content Placeholder 2\"), and the three paragraphs from the free-floating \"TextBox 3\" were moved into it; TextBox 3 was then removed. The placeholder was given an explicit xfrm so the text stays in the left column beside the picture rather than running underneath it.\n- Picture 4, the \"[1]\" hyperlink footnote textbox, slide rels, and all other slides untouched.\nVerification: python-pptx loads the deck and reports slide 2 layout \"Title and Content\" with Title (idx 0) and Content Placeholder 2 (idx 1) containing the moved text; soffice converted to PDF and the slide-2 render shows title at top, three bulleted lines on the left, image on the right, matching slides 3-4.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 5,
+    "instruction_following_reason": "The prediction, like the ground truth, switches slide 2 to the 'Title and Content' layout with the three JWST bullet paragraphs moved into 'Content Placeholder 2', removes the empty Subtitle placeholder and old TextBox 3, keeps the image and '[1]' citation, and leaves slides 1, 3 and 4 structurally untouched (the only diffs are the narrower 5.5in placeholder width/picture position on slide 2 and the optional slide-3 image shift the GT made).",
+    "visual_quality_score": 3,
+    "visual_quality_reason": "Slides 1 and 4 are pixel-identical to the ground truth and slide 2 shows the bullets in a balanced left column beside the image with no overlap (text wraps narrower and the picture sits higher than in GT), but slide 3 in the prediction retains the image overlapping the right end of the body-text lines whereas the GT moved the image down to clear it."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 3.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 3.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 3.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 3.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Master/layout rebind. The agent edited slide2.xml.rels to point at the 'Title and Content' layout, converted the ctrTitle/subTitle placeholders into title/body placeholders and moved the floating text box's paragraphs into the body placeholder, then removed the orphan text box. Structure matches the ground truth (Claude-judged IF 5). Recorded agents scored IF 3 and VQ 1-2. The VQ deduction comes from slide 3, which the ground truth also touched (moved a picture down to clear overlapping body text) even though the instruction only mentions slide 2; the agent preserved slide 3 as instructed. This is a ground-truth scope mismatch, not an agent failure.",
+   "leaderboard_mean_combined": 1.12,
+   "leaderboard_best_combined": 2.5
+  },
+  {
+   "case": "Case 54: Match Slide Deck Theme",
+   "slug": "case_054",
+   "edit_type": "Theme & Background",
+   "category": [
+    "Styling"
+   ],
+   "in_hard_subset": true,
+   "prompt": "Apply the layout from slide 2 to all subsequent slides (3 through 9). Make sure the existing text and images are adjusted to fit the new layout.",
+   "original": "Original/MatchSlideDeck_TestA.pptx",
+   "ground_truth": "GroundTruth/MatchSlideDeck_GroundTruthA.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 208,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 9,
+    "n_slides": {
+     "orig": 9,
+     "gt": 9,
+     "pred": 9
+    },
+    "slide_size_in": {
+     "orig": [
+      13.33,
+      7.5
+     ],
+     "gt": [
+      13.33,
+      7.5
+     ],
+     "pred": [
+      13.33,
+      7.5
+     ]
+    },
+    "n_charts": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    },
+    "n_tables": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    }
+   },
+   "agent_report": "Case 054 done: deck.pptx edited in place (slides 3-9, via an lxml script apply_layout.py on the unzipped OOXML, then repacked).\n- Re-pointed each slide's layout relationship from \"Blank\" (slideLayout7) to slide 2's \"Title and Content\" (slideLayout2), and removed slide 3's per-slide bg2 background override so it uses the layout/master background like slide 2.\n- Titles: converted the free-floating \"Title 1\" text boxes (slides 3,4,6,7,8) and slide 9's orphan title placeholder into proper layout-bound title placeholders that inherit the layout's position/styling. Slide 5 had no title, so its first body paragraph \"What is Root Motion?\" was promoted into the title placeholder.\n- Body text: orphan content placeholders re-bound to the layout body placeholder (idx=1) at slide 2's left/top; width narrowed to the left column on slides with a side picture, full width with reduced height on slide 6.\n- Pictures: rescaled (aspect preserved) and moved into the right-hand column used by slide 2's picture, vertically centered; slide 7's two pictures side by side, slide 8's stacked, slide 6's wide timeline banner full-width under the text. Slides 1-2 untouched.\nVerification: python-pptx loads (9 slides, slides 3-9 report layout \"Title and Content\"); zip testzip OK; soffice converted to PDF and renders show every slide with a visible title in the header band, text at left, images fitting with no overlap.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 3,
+    "instruction_following_reason": "Slides 3-9 all gained TITLE/OBJECT placeholders with text and images carried over like the ground truth, but on slide 5 the prediction promoted the body line 'What is Root Motion?' into the title (dropping it from the body) instead of adding a new title and preserving all body text, slide 7's two pictures were swapped left/right, and animations were stripped from every slide including slides 1-2 which were supposed to remain unchanged.",
+    "visual_quality_score": 3,
+    "visual_quality_reason": "Prediction slides 3-9 are clean, legible and overlap-free with images right-aligned beside a half-width text column (slides 1-2 are pixel-identical to GT), but the narrower text box causes heavier wrapping than GT (slide 4 title now wraps to two lines, slides 4/7/8/9 bullets wrap), slide 5 lost the 'What is Root Motion?' bullet from the body, and slide 7's screenshot order is reversed."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 2.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 2.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 2.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 2.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Theme/layout propagation (hard subset). The agent re-bound slides 3-9 to slide 2's 'Title and Content' layout at the OOXML level, converting loose text boxes and orphan placeholders into layout-bound title/body placeholders and moving pictures into the right-hand column. Recorded agents all scored 2/1-2 here. Deductions: slide 5 had no title, so the agent promoted the first bullet into the title where the ground truth invented a new title ('Rootmotion vs. controlled movement'); the narrower text column increases wrapping; two screenshots on slide 7 are in the opposite order. The first judge run also penalised 'stripped animations', which is a judge error: the original deck has no animations and only the ground truth gained timing nodes (see the corrected re-run score). Failure type: layout taste plus a judge-input artefact.",
+   "claude_judge_rerun_corrected_diff_note": {
+    "instruction_following_score": 4,
+    "instruction_following_reason": "Slides 1-2 are untouched and slides 3-9 all gain the Title/Content placeholder structure with all original bullet text, numbering, bold run, and every picture preserved (aspect ratios intact, images moved into a right column clear of the narrowed 5.21in body), but on slide 5 the prediction promoted the existing body line 'What is Root Motion?' to the title and removed it from the body instead of creating a new title like the ground truth's 'Rootmotion vs. controlled movement' while keeping both body lines.",
+    "visual_quality_score": 3,
+    "visual_quality_reason": "All prediction slides are clean, legible, within bounds and free of overlap, but they deviate noticeably from the ground truth: the body column is narrowed so text wraps more and the slide 4 title breaks onto two lines, images sit in a right column rather than below the text as in GT (slide 7 screenshots are smaller and less readable, slide 6 strip sits lower with a large gap), and slide 5 carries a different title."
+   },
+   "leaderboard_mean_combined": 1.25,
+   "leaderboard_best_combined": 2.0
+  },
+  {
+   "case": "Case 50: Normalize Date Format",
+   "slug": "case_050",
+   "edit_type": "Tables",
+   "category": [
+    "Content"
+   ],
+   "in_hard_subset": true,
+   "prompt": "Go through the presentation and standardize all the date formats to 'Month Day, Year', for example 'March 22, 2022'. Make sure to handle different formats like '28 March 2022', '02/26/2022', and '18 of March 2022'.",
+   "original": "Original/NormalizeDate_Test.pptx",
+   "ground_truth": "GroundTruth/NormalizeDate_GroundTruth.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 151,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 15,
+    "n_slides": {
+     "orig": 15,
+     "gt": 15,
+     "pred": 15
+    },
+    "slide_size_in": {
+     "orig": [
+      11.69,
+      8.27
+     ],
+     "gt": [
+      11.69,
+      8.27
+     ],
+     "pred": [
+      11.69,
+      8.27
+     ]
+    },
+    "n_charts": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    },
+    "n_tables": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    }
+   },
+   "agent_report": "Case 050 (Normalize Date Format) complete. deck.pptx edited in place.\n- normalize_dates.py (python-pptx) walks every text frame/table/notes paragraph and rewrites dates to \"Month Day, Year\" at the run level, including dates split across multiple runs (merged into the first run so formatting is kept). 30 dates converted across slides 2, 3, 6-12 and 14: \"D Month YYYY\", \"D of Month YYYY\", \"first of March/September 2022\", \"March 12th 2022\", numeric MM/DD/YYYY and DD/MM/YYYY (24/02/2022 -> February 24, 2022; 03/02/2022 -> March 2, 2022, confirmed by the slide's own text), the slide-8 title \"22 March 2022\" -> March 22, 2022, and on slide 14 \"28 day of September – 10/12/1999\" -> \"September 28, 1999 – October 12, 1999\". Dates already in the target format left unchanged, as was all other text, layout and styling.\nVerification: re-loaded with python-pptx (15 slides), regex scan found no remaining old-format dates, converted with soffice to PDF (15 pages), rendered slides 3 and 14 to confirm.\nNot done: year-less mentions such as \"effective as of February 24\" and \"March 2\" on slides 7-8 left as-is since they are not full dates.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 3,
+    "instruction_following_reason": "The prediction correctly reformatted every explicitly formatted date (e.g. '25 February 2022', '5 march 2022', '03/28/2022', '24/02/2022', '18 of March 2022', '12 March 2022', '29 October 1998', footer '22 March 2022') to 'Month Day, Year' with fonts/sizes preserved, but unlike the ground truth it left the year-less dates unchanged ('Effective March 2,' on slide 8 and four occurrences of 'February 24'/'March 2' without a year on slide 7, which the ground truth completed to '..., 2022'), and it capitalized 'march' on slide 3 instead of preserving the original lowercase casing.",
+    "visual_quality_score": 4,
+    "visual_quality_reason": "All 15 prediction slides match the ground truth in layout, fonts, sizes, colors and positions with no unintended changes; the only visible differences are the missing ', 2022' after 'February 24'/'March 2' on slides 7 and 8 (causing slight line-wrap shifts on slide 7) and an en dash vs hyphen between the two 1999 dates on slide 14."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 1.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 1.0,
+     "VQ": 1.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 1.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Tables / text normalisation across 15 slides. The agent converted 30 dates across nine input formats, including dates split across runs and DD/MM vs MM/DD disambiguation from context, while preserving fonts and layout (Claude-judged VQ 4; recorded agents scored 0-2 on VQ, typically because they rewrote text frames and lost formatting). The IF deduction is a scope judgement: year-less mentions ('February 24', 'March 2') were deliberately left alone, whereas the ground truth completed them to 2022; and 'march' was capitalised. Failure type: conservative instruction interpretation rather than perception or tooling.",
+   "leaderboard_mean_combined": 0.88,
+   "leaderboard_best_combined": 1.5
+  },
+  {
+   "case": "Case 83: Bibliography Slide from Footers",
+   "slug": "case_083",
+   "edit_type": "Slide/Section Management & Footers",
+   "category": [
+    "Structure"
+   ],
+   "in_hard_subset": false,
+   "prompt": "Find all the source citations from the bottom of my slides, and create a new 'Bibliography' slide just before the final slide. The new slide should list all unique sources, alphabetized.",
+   "original": "Original/AddBibliography_TestA.pptx",
+   "ground_truth": "GroundTruth/AddBibliography_GroundTruthA.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 158,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 24,
+    "n_slides": {
+     "orig": 23,
+     "gt": 24,
+     "pred": 24
+    },
+    "slide_size_in": {
+     "orig": [
+      10.0,
+      7.5
+     ],
+     "gt": [
+      10.0,
+      7.5
+     ],
+     "pred": [
+      10.0,
+      7.5
+     ]
+    },
+    "n_charts": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    },
+    "n_tables": {
+     "orig": 4,
+     "gt": 4,
+     "pred": 4
+    }
+   },
+   "agent_report": "Case 083 done. Edited deck.pptx in place.\n- Scanned all 23 slides for source citations in bottom text boxes (slides 4-8, 11-16, 18, 19, 21). Found 9 unique sources after de-duplicating repeats (Vahidy on 12 & 13, Price-Haywood on 15 & 16, Patrick on 19 & 21, UCLA OHIA on 6 & 7). Excluded the \" Status Report\" fragment on slide 8 and the table footnotes on slide 16 since they are not sources.\n- Added one new slide titled \"Bibliography\" using the deck's existing \"Title and Content\" layout, inserted as slide 23 (just before the final \"Thank you! Questions?\" slide, now slide 24). Deck is now 24 slides.\n- Body lists the 9 sources alphabetized by first author/organization. Text set to 11pt with 6pt paragraph spacing so everything fits within the placeholder; placeholder at the layout's default position.\n- No other slides or styling were touched.\nVerification: loads with python-pptx (24 slides), zip integrity passes, converted with soffice; rendered slide 23 confirms title and all 9 entries display cleanly without overflow or overlap with footer logos.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 3,
+    "instruction_following_reason": "The prediction inserts a 'Bibliography' slide before the final slide with all 9 unique citations alphabetized like the ground truth, but it drops the italic formatting on journal names (9 runs vs 27, no italics), rewrites citation text ('M. Ali and C. Mangione' -> 'Ali M, Mangione C', adds '(Unpublished Data)'), and omits the slide-number placeholder the ground truth slide carries.",
+    "visual_quality_score": 3,
+    "visual_quality_reason": "Slides 1-22 and the final 'Thank you' slide render identically to the ground truth, but the new Bibliography slide uses a visibly smaller 11pt font instead of 14pt, lacks the italicized journal names, has no slide number in the corner, and leaves a large empty area below the list."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 3.0,
+     "VQ": 3.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 2.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 2.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 2.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Cross-slide structure: bibliography from footers. The agent found the same 9 unique sources as the ground truth, de-duplicated repeats, alphabetised them and inserted the slide in the right position using the deck's own layout (recorded agents: IF 0-3, several produced no slide or wrong position). The deductions are formatting fidelity: it re-typed the citations as plain 11pt text instead of copying the footer runs, so journal-name italics were lost, one citation was reformatted ('M. Ali and C. Mangione' to 'Ali M, Mangione C'), and the layout's slide-number placeholder was not instantiated. Failure type: rebuild-instead-of-copy, a tooling habit (building new text with python-pptx) rather than perception.",
+   "leaderboard_mean_combined": 1.12,
+   "leaderboard_best_combined": 3.0
+  },
+  {
+   "case": "Case 67: WCAG Accessibility & Master Cleanup",
+   "slug": "case_067",
+   "edit_type": "Accessibility & Semantics",
+   "category": [
+    "Structure",
+    "Styling"
+   ],
+   "in_hard_subset": true,
+   "prompt": "Improve this presentation's accessibility for screen readers. Ensure every slide has a unique title, the reading order is logical, and all text uses the theme's default font.",
+   "original": "Original/AccessibilityMasterCleanup_TestA.pptx",
+   "ground_truth": "GroundTruth/AccessibilityMasterCleanup_GroundTruthA.pptx",
+   "run": {
+    "status": "ok",
+    "wall_seconds": 236,
+    "sha_changed": true,
+    "is_zip_pptx": true,
+    "python_pptx_opens": true,
+    "renders_with_soffice": true,
+    "n_pred_png": 6,
+    "n_slides": {
+     "orig": 6,
+     "gt": 6,
+     "pred": 6
+    },
+    "slide_size_in": {
+     "orig": [
+      20.0,
+      11.25
+     ],
+     "gt": [
+      20.0,
+      11.25
+     ],
+     "pred": [
+      20.0,
+      11.25
+     ]
+    },
+    "n_charts": {
+     "orig": 0,
+     "gt": 0,
+     "pred": 0
+    },
+    "n_tables": {
+     "orig": 1,
+     "gt": 1,
+     "pred": 1
+    }
+   },
+   "agent_report": "Case 067 done. deck.pptx edited in place (script fix.py).\n1. Unique titles: the heading text box on every slide was converted into a real title placeholder so screen readers find it. Slides 1-4 previously all read \"TABLE SMARTART INFOGRAPHIC\"; now \"IDEA BOARD INFOGRAPHIC\", \"TABLE INFOGRAPHIC\", \"SMARTART INFOGRAPHIC\", \"MAIN POINTS INFOGRAPHIC\"; slides 5-6 keep \"RESOURCE PAGE\" and \"CREDITS\" (now placeholders). Position/size/styling unchanged.\n2. Reading order: spTree on every slide rebuilt as title first, then text-less decorative groups/freeforms (original relative order so z-order/visuals unchanged), then content shapes in logical order (column by column / row by row / top to bottom). Previously e.g. IDEA 2 came before IDEA 1 and the title was last.\n3. Fonts: theme major/minor font is Arial. All explicit typefaces on slide runs (DM Sans, Calibri) set to Arial, including table cells; Calibri overrides in the slide master and layouts also replaced with Arial (master cleanup).\nVerification: python-pptx loads; every slide reports a unique title; run fonts across all slides are {Arial, None}; zip testzip clean; soffice converted to PDF and renders show identical layouts apart from new titles and Arial typeface.\n",
+   "claude_judge": {
+    "label": "Claude-judged (Claude Code subagent, adapted PPTArena arena rubric), NOT the official GPT-5/Gemini/Kimi judge",
+    "instruction_following_score": 2,
+    "instruction_following_reason": "Prediction achieved unique titles only by rewriting the visible title text on slides 1-4 (e.g. 'TABLE SMARTART INFOGRAPHIC' -> 'IDEA BOARD INFOGRAPHIC', 'TABLE INFOGRAPHIC', 'SMARTART INFOGRAPHIC', 'MAIN POINTS INFOGRAPHIC') instead of adding hidden titles as in ground truth, and it did not remove font overrides at all: every 'DM Sans' run was replaced with an explicit 'Arial' override and the existing 'Arial' overrides on slides 5-6 were left in place, whereas ground truth has no font-family overrides on any text; reading order (title first, then column-wise content) is acceptable.",
+    "visual_quality_score": 2,
+    "visual_quality_reason": "Slides 1-4 show altered on-screen title text compared with ground truth ('IDEA BOARD INFOGRAPHIC', 'TABLE INFOGRAPHIC', 'SMARTART INFOGRAPHIC', 'MAIN POINTS INFOGRAPHIC' vs 'TABLE SMARTART INFOGRAPHIC'), a clear unrequested content change, while all other elements, fonts, colors, positions and slides 5-6 match the ground truth."
+   },
+   "leaderboard_recorded": {
+    "codex_gpt55": {
+     "IF": 1.0,
+     "VQ": 4.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "claude_code_opus48": {
+     "IF": 1.0,
+     "VQ": 4.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "gemini_cli_35flash": {
+     "IF": 1.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_deepseek_v4": {
+     "IF": 1.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_glm52": {
+     "IF": 0.0,
+     "VQ": 2.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_kimi_k27code": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "opencode_minimax_m3": {
+     "IF": 0.0,
+     "VQ": 0.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    },
+    "baidu_dumate_pptx_skill_r266": {
+     "IF": 1.0,
+     "VQ": 4.0,
+     "judge": "kimi-k2.6 (median of 3)"
+    }
+   },
+   "analysis": "Accessibility and master cleanup (hard subset; every recorded agent scored IF 0-1). The agent converted each slide's heading box into a real title placeholder, rewrote slides 1-4's identical headings into distinct titles, reordered the spTree so titles are read first, and replaced DM Sans/Calibri overrides with Arial on slides, layouts and master. The ground truth took a different route: it added hidden off-slide 'Slide N Title' text boxes, left the visible headings alone and removed font-family overrides entirely so text inherits the theme. The judge therefore penalised the visible title rewrite as an unrequested content change and the explicit Arial overrides as 'not removed'. Failure type: instruction interpretation (what counts as a 'unique title' and 'uses the theme font') on an under-specified task; the agent's reading is defensible for screen readers but diverges from the reference, which is why this case is hard for everyone.",
+   "leaderboard_mean_combined": 1.44,
+   "leaderboard_best_combined": 2.5
+  }
+ ]
+}
