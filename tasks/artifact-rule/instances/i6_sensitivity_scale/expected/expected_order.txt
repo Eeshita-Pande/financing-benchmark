@@ -1,0 +1,31 @@
+ 1. Northstar Compute: hardware financing and customer arrangements
+ 2. Agenda
+ 3. Executive summary
+ 4. Key assumptions
+ 5. Key risks
+ 6. Transaction timeline
+ 7. Cases
+ 8. Case 1 — Base
+ 9. Case 2 — Delayed usage receipt
+10. Case 3 — Major operating incident
+11. Case 4 — Renewal without credit transfer
+12. Case 5 — Early renewal at reduced rate
+13. Case 6 — Hardware refresh deferred
+14. Case 7 — Interest rate plus 200bp
+15. Case 8 — Customer payment term extension
+16. Financing and covenant
+17. Covenant: monthly DSCR and sponsor support
+18. Sensitivity: DSCR with support cap minus 20%
+19. Funding: sources and uses
+20. Recommendation
+21. Closing
+22. Appendix
+23. Appendix: DSCR summary
+24. Appendix: Support cap
+25. Appendix: Sponsor return
+26. Appendix: Debt service
+27. Appendix: Closing cash
+28. Appendix: Receipts
+29. Appendix: Covenant tests
+30. Appendix: Equity cure
+31. Layout reference: Case card
