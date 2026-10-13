@@ -1,0 +1,105 @@
+{
+  "instance": "i1_case4",
+  "new_slide_title": "Case 4 — Renewal without credit transfer",
+  "expected_title_order": [
+    "Northstar Compute: hardware financing and customer arrangements",
+    "Agenda",
+    "Executive summary",
+    "Cases",
+    "Case 1 — Base",
+    "Case 4 — Renewal without credit transfer",
+    "Case 2 — Delayed usage receipt",
+    "Case 3 — Major operating incident",
+    "Financing and covenant",
+    "Covenant: monthly DSCR and sponsor support",
+    "Funding: sources and uses",
+    "Recommendation",
+    "Closing",
+    "Appendix",
+    "Appendix: DSCR summary",
+    "Appendix: Sponsor return",
+    "Layout reference: Case card"
+  ],
+  "expected_new_slide_index": 5,
+  "literal_placement_title_order": [
+    "Northstar Compute: hardware financing and customer arrangements",
+    "Agenda",
+    "Executive summary",
+    "Cases",
+    "Case 1 — Base",
+    "Case 2 — Delayed usage receipt",
+    "Case 3 — Major operating incident",
+    "Case 4 — Renewal without credit transfer",
+    "Financing and covenant",
+    "Covenant: monthly DSCR and sponsor support",
+    "Funding: sources and uses",
+    "Recommendation",
+    "Closing",
+    "Appendix",
+    "Appendix: DSCR summary",
+    "Appendix: Sponsor return",
+    "Layout reference: Case card"
+  ],
+  "structure_template_title": "Layout reference: Case card",
+  "reference_title": "Layout reference: Case card",
+  "slides_allowed_to_change": [
+    "Agenda"
+  ],
+  "agenda_check": {
+    "case_labels_order": [
+      "Case 1",
+      "Case 4",
+      "Case 2",
+      "Case 3"
+    ],
+    "must_contain": [
+      "Renewal without credit transfer"
+    ]
+  },
+  "values": {
+    "kind": "card",
+    "tiles": [
+      {
+        "label": "Min operating DSCR",
+        "value": 1.18
+      },
+      {
+        "label": "Min post-cure DSCR",
+        "value": 1.25
+      },
+      {
+        "label": "Sponsor support used",
+        "value": 410
+      },
+      {
+        "label": "Sponsor IRR",
+        "value": 10.4
+      }
+    ],
+    "table_rows": [
+      {
+        "label": "Total service receipts",
+        "value": 58.2
+      },
+      {
+        "label": "Total debt service",
+        "value": 16.4
+      },
+      {
+        "label": "Closing cash, 31 Dec 2031",
+        "value": 8.1
+      }
+    ],
+    "table_dims": [
+      4,
+      2
+    ]
+  },
+  "forbidden_text_on_new_slide": [
+    "[Fill]",
+    "Do not edit this slide",
+    "Reference slide"
+  ],
+  "rule_location": "body text of the 'Cases' section divider slide",
+  "rule_text": "Case slides are grouped by scenario family rather than by case number: a renewal variant is presented immediately after its base case, before the delayed-receipt and operating-incident cases."
+}

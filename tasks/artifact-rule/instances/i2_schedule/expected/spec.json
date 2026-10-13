@@ -1,0 +1,93 @@
+{
+  "instance": "i2_schedule",
+  "new_slide_title": "Appendix: Support-cap utilisation",
+  "expected_title_order": [
+    "Northstar Compute: hardware financing and customer arrangements",
+    "Agenda",
+    "Executive summary",
+    "Cases",
+    "Case 1 — Base",
+    "Case 2 — Delayed usage receipt",
+    "Case 3 — Major operating incident",
+    "Financing and covenant",
+    "Covenant: monthly DSCR and sponsor support",
+    "Funding: sources and uses",
+    "Recommendation",
+    "Closing",
+    "Appendix",
+    "Appendix: DSCR summary",
+    "Appendix: Support-cap utilisation",
+    "Appendix: Sponsor return",
+    "Layout reference: Case card"
+  ],
+  "expected_new_slide_index": 14,
+  "literal_placement_title_order": [
+    "Northstar Compute: hardware financing and customer arrangements",
+    "Agenda",
+    "Executive summary",
+    "Cases",
+    "Case 1 — Base",
+    "Case 2 — Delayed usage receipt",
+    "Case 3 — Major operating incident",
+    "Financing and covenant",
+    "Covenant: monthly DSCR and sponsor support",
+    "Funding: sources and uses",
+    "Recommendation",
+    "Closing",
+    "Appendix",
+    "Appendix: DSCR summary",
+    "Appendix: Sponsor return",
+    "Appendix: Support-cap utilisation",
+    "Layout reference: Case card"
+  ],
+  "structure_template_title": "Appendix: DSCR summary",
+  "reference_title": "Layout reference: Case card",
+  "slides_allowed_to_change": [],
+  "agenda_check": null,
+  "values": {
+    "kind": "schedule",
+    "header": [
+      "Case",
+      "Peak monthly draw (USD k)",
+      "Lifetime support used (USD k)",
+      "Lifetime cap utilisation (%)"
+    ],
+    "rows": [
+      [
+        "Base",
+        0,
+        0,
+        0.0
+      ],
+      [
+        "Delayed usage receipt",
+        250,
+        320,
+        32.0
+      ],
+      [
+        "Major operating incident",
+        250,
+        1000,
+        100.0
+      ],
+      [
+        "Renewal without credit transfer",
+        250,
+        410,
+        41.0
+      ]
+    ],
+    "table_dims": [
+      5,
+      4
+    ]
+  },
+  "forbidden_text_on_new_slide": [
+    "[Fill]",
+    "Do not edit this slide",
+    "Reference slide"
+  ],
+  "rule_location": "speaker notes of the 'Appendix' section divider slide",
+  "rule_text": "Supporting schedules appear in the order of the workbook tabs they are drawn from; a new schedule is inserted at that position, never appended at the end."
+}
