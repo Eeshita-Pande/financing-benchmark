@@ -1,0 +1,490 @@
+{
+ "benchmark": {
+  "name": "PPT-Eval",
+  "repo": "https://github.com/microsoft/ppteval",
+  "main_commit": "1b8b55a29e48fdc65d423689b6f2370ad91beeea",
+  "gh_pages_commit": "aa930cc93b576e614ca9bdac7475324b7cf08971",
+  "track": "CLI (Claude Code agent, claude-code-*.yaml)",
+  "total_tasks": 120,
+  "total_files": 12
+ },
+ "generated": "2026-10-13",
+ "status": "BLOCKED_NO_DATA",
+ "blocker": {
+  "summary": "All 12 source .pptx files are hosted on archive.org / s3.us.archive.org, which the session network policy denies (CONNECT 403). No benchmark task could be executed.",
+  "hosts_denied": [
+   "archive.org",
+   "s3.us.archive.org",
+   "ia800100.us.archive.org",
+   "ia600100.us.archive.org",
+   "web.archive.org",
+   "microsoft.github.io",
+   "huggingface.co",
+   "hf-mirror.com"
+  ],
+  "hosts_allowed": [
+   "github.com (git smart-HTTP only; web pages and REST API for non-attached repos return 403)",
+   "pypi.org",
+   "files.pythonhosted.org"
+  ],
+  "note": "PowerPoint Online normalisation (hydrate_data.py step 3) would also be skipped even if the files were fetched; that can cause spurious diffs in 'no extraneous changes' rubric nodes."
+ },
+ "environment": {
+  "claude_code_cli": "2.1.296",
+  "agent_model_cli_default": "claude-sonnet-5-5",
+  "judge_model_cli_default": "claude-sonnet-5-5",
+  "libreoffice": "24.2.7.2",
+  "poppler_pdftoppm": "24.02.0",
+  "python": "3.13.16",
+  "python_pptx": "1.0.2",
+  "ai_rubric": "0.2.5",
+  "docker": "not running (GUI track out of scope)",
+  "pptx_skill": "Anthropic pptx skill copied from /mnt/skills/public/pptx into claude-workspace/.claude/skills/pptx/"
+ },
+ "published_results": {
+  "source": "gh-pages _data/benchmark.yml (Table 1 of the paper); success_rate and avg_score in percent",
+  "overall": {
+   "Human Baseline": {
+    "sr": 80,
+    "avg": 90
+   },
+   "GPT-5.5 (Medium)": {
+    "sr": 63,
+    "avg": 78
+   },
+   "API Baseline (Claude-4.5-Opus)": {
+    "sr": 62,
+    "avg": 81
+   },
+   "Claude-Opus-4.8 (High)": {
+    "sr": 62,
+    "avg": 78
+   },
+   "Claude-4.5-Opus": {
+    "sr": 45,
+    "avg": 57
+   },
+   "Claude-4-Sonnet": {
+    "sr": 42,
+    "avg": 53
+   },
+   "Computer-Use-Preview": {
+    "sr": 38,
+    "avg": 49
+   },
+   "OpenCUA-32B": {
+    "sr": 28,
+    "avg": 42
+   },
+   "OpenCUA-7B": {
+    "sr": 24,
+    "avg": 36
+   },
+   "Qwen3-VL-8B": {
+    "sr": 16,
+    "avg": 27
+   },
+   "Qwen3-VL-32B": {
+    "sr": 14,
+    "avg": 23
+   }
+  },
+  "hard_tier": {
+   "Human Baseline": {
+    "sr": 68,
+    "avg": 88
+   },
+   "GPT-5.5 (Medium)": {
+    "sr": 41,
+    "avg": 67
+   },
+   "Claude-Opus-4.8 (High)": {
+    "sr": 41,
+    "avg": 67
+   },
+   "Claude-4.5-Opus": {
+    "sr": 35,
+    "avg": 48
+   },
+   "API Baseline (Claude-4.5-Opus)": {
+    "sr": 30,
+    "avg": 61
+   },
+   "Computer-Use-Preview": {
+    "sr": 20,
+    "avg": 36
+   },
+   "Claude-4-Sonnet": {
+    "sr": 17,
+    "avg": 33
+   },
+   "OpenCUA-32B": {
+    "sr": 11,
+    "avg": 28
+   },
+   "Qwen3-VL-32B": {
+    "sr": 11,
+    "avg": 22
+   },
+   "OpenCUA-7B": {
+    "sr": 7,
+    "avg": 22
+   },
+   "Qwen3-VL-8B": {
+    "sr": 3,
+    "avg": 18
+   }
+  },
+  "per_task_results_available": false
+ },
+ "inventory_summary": {
+  "by_tier": {
+   "Easy": 51,
+   "Medium": 39,
+   "Hard": 30
+  },
+  "by_tier_kind": {
+   "Easy": {
+    "edit": 33,
+    "create": 18
+   },
+   "Medium": {
+    "edit": 19,
+    "create": 20
+   },
+   "Hard": {
+    "edit": 15,
+    "create": 15
+   }
+  },
+  "tasks_with_vlm_nodes": {
+   "Easy": 19,
+   "Medium": 21,
+   "Hard": 21,
+   "total": 61
+  }
+ },
+ "failing_set": {
+  "definition": "Hard tier (30 tasks). Only tier-level numbers are published, so the top difficulty tier is used as the failing set.",
+  "tasks": [
+   {
+    "task_id": "3-007",
+    "file": "3.pptx",
+    "kind": "create",
+    "rubric_leaves": 6,
+    "critical_leaves": 4,
+    "vlm_leaves": 4,
+    "goal": "On slide 3, Add a fourth vCPU circle (vCPU4) next to the existing three circles using a different color and also add vCPU4 to the time-sharing diagram"
+   },
+   {
+    "task_id": "3-009",
+    "file": "3.pptx",
+    "kind": "edit",
+    "rubric_leaves": 3,
+    "critical_leaves": 1,
+    "vlm_leaves": 1,
+    "goal": "Change the color tone of the figure on slide 4 to blue by adding a shape on top of the figure and increasing it's transparency"
+   },
+   {
+    "task_id": "3-030",
+    "file": "3.pptx",
+    "kind": "create",
+    "rubric_leaves": 4,
+    "critical_leaves": 2,
+    "vlm_leaves": 3,
+    "goal": "On slide 33, add a code example showing a simple fork() call below the bullet points"
+   },
+   {
+    "task_id": "4._Pre-Colonial_Filipino_Culture-005",
+    "file": "4._Pre-Colonial_Filipino_Culture.pptx",
+    "kind": "edit",
+    "rubric_leaves": 7,
+    "critical_leaves": 5,
+    "vlm_leaves": 2,
+    "goal": "Combine slides 2 and 3 into a single slide with table for male and female clothing. Include the images from both slides. Don't delete the original slides yet; just insert this as a new slide after slide 3."
+   },
+   {
+    "task_id": "4._Pre-Colonial_Filipino_Culture-020",
+    "file": "4._Pre-Colonial_Filipino_Culture.pptx",
+    "kind": "edit",
+    "rubric_leaves": 4,
+    "critical_leaves": 1,
+    "vlm_leaves": 2,
+    "goal": "On slide 12, make the fourth and fifth items in the numbered list look consistent with the first three."
+   },
+   {
+    "task_id": "Accounting Equation-008",
+    "file": "Accounting Equation.pptx",
+    "kind": "edit",
+    "rubric_leaves": 3,
+    "critical_leaves": 2,
+    "vlm_leaves": 0,
+    "goal": "On slide 6. Change the slide layout to 'Two Content' and split the Assets and Liabilities sections into two separate content areas"
+   },
+   {
+    "task_id": "Accounting Equation-012",
+    "file": "Accounting Equation.pptx",
+    "kind": "create",
+    "rubric_leaves": 4,
+    "critical_leaves": 3,
+    "vlm_leaves": 0,
+    "goal": "Add a footer to every slide with the text 'Fundamental Accounting Concepts', and ensure that the footer is center-aligned"
+   },
+   {
+    "task_id": "Accounting Equation-015",
+    "file": "Accounting Equation.pptx",
+    "kind": "create",
+    "rubric_leaves": 5,
+    "critical_leaves": 2,
+    "vlm_leaves": 1,
+    "goal": "Insert a SmartArt graphic on slide 3 to represent the accounting equation (Assets = Capital + Liabilities) using a SmartArt suitable for an equation"
+   },
+   {
+    "task_id": "Accounting Equation-045",
+    "file": "Accounting Equation.pptx",
+    "kind": "create",
+    "rubric_leaves": 5,
+    "critical_leaves": 3,
+    "vlm_leaves": 0,
+    "goal": "On slide 3, Create a flowchart showing the logic: Left Hand Side \u2192 Right Hand Side \u2192 Balance using rounder rectangles and line arrows"
+   },
+   {
+    "task_id": "Aircraft_surface-004",
+    "file": "Aircraft_surface.pptx",
+    "kind": "edit",
+    "rubric_leaves": 6,
+    "critical_leaves": 3,
+    "vlm_leaves": 1,
+    "goal": "On slide 2, Add a new bullet point at the end of the list that says 'All three axes intersect at the aircraft's center of gravity'. Resize the image to avoid overlap."
+   },
+   {
+    "task_id": "HSC Careers and Expo FINAL COM MOD-022",
+    "file": "HSC Careers and Expo FINAL COM MOD.pptx",
+    "kind": "create",
+    "rubric_leaves": 4,
+    "critical_leaves": 3,
+    "vlm_leaves": 1,
+    "goal": "Create a callout box with no fill around the entire second checkbox item on slide 5"
+   },
+   {
+    "task_id": "HSC Careers and Expo FINAL COM MOD-038",
+    "file": "HSC Careers and Expo FINAL COM MOD.pptx",
+    "kind": "edit",
+    "rubric_leaves": 5,
+    "critical_leaves": 1,
+    "vlm_leaves": 1,
+    "goal": "Convert the entire checklist on slide 8 into a two-column layout to save space"
+   },
+   {
+    "task_id": "HSC Careers and Expo FINAL COM MOD-064",
+    "file": "HSC Careers and Expo FINAL COM MOD.pptx",
+    "kind": "create",
+    "rubric_leaves": 3,
+    "critical_leaves": 2,
+    "vlm_leaves": 0,
+    "goal": "Add a hyperlink on the word 'HSC' on slide 19 that links to slide 1"
+   },
+   {
+    "task_id": "HSC Careers and Expo FINAL COM MOD-072",
+    "file": "HSC Careers and Expo FINAL COM MOD.pptx",
+    "kind": "create",
+    "rubric_leaves": 4,
+    "critical_leaves": 2,
+    "vlm_leaves": 0,
+    "goal": "Create a table with two columns and convert the checklist into table format on slide 8"
+   },
+   {
+    "task_id": "Jean-Nicolas-Louis Durand-008",
+    "file": "Jean-Nicolas-Louis Durand.pptx",
+    "kind": "edit",
+    "rubric_leaves": 4,
+    "critical_leaves": 2,
+    "vlm_leaves": 0,
+    "goal": "Resize the historical document image on slide 4 to be 20% smaller while maintaining aspect ratio"
+   },
+   {
+    "task_id": "Jean-Nicolas-Louis Durand-015",
+    "file": "Jean-Nicolas-Louis Durand.pptx",
+    "kind": "edit",
+    "rubric_leaves": 4,
+    "critical_leaves": 1,
+    "vlm_leaves": 1,
+    "goal": "Crop the architectural diagram image on slide 8 to show only the top two rows of buildings"
+   },
+   {
+    "task_id": "Jean-Nicolas-Louis Durand-025",
+    "file": "Jean-Nicolas-Louis Durand.pptx",
+    "kind": "edit",
+    "rubric_leaves": 4,
+    "critical_leaves": 1,
+    "vlm_leaves": 0,
+    "goal": "Rotate the architectural diagram image 45 degrees clockwise on slide 6"
+   },
+   {
+    "task_id": "Obesity-015",
+    "file": "Obesity.pptx",
+    "kind": "create",
+    "rubric_leaves": 4,
+    "critical_leaves": 2,
+    "vlm_leaves": 1,
+    "goal": "Insert a small table on slide 3 showing BMI ranges categorized by male and female and for ages (2-5, 6-11, 12-19, 20+) using <,> and \u2013 to denote ranges on slide 3"
+   },
+   {
+    "task_id": "Obesity-020",
+    "file": "Obesity.pptx",
+    "kind": "edit",
+    "rubric_leaves": 6,
+    "critical_leaves": 4,
+    "vlm_leaves": 4,
+    "goal": "Change slide 8 to a two-column comparison layout with 'Adults' on the left and 'Children' on the right, moving appropriate bullet points to each column"
+   },
+   {
+    "task_id": "Revisiting Classical  Social Experiments [Autosaved]-016",
+    "file": "Revisiting Classical  Social Experiments [Autosaved].pptx",
+    "kind": "create",
+    "rubric_leaves": 5,
+    "critical_leaves": 3,
+    "vlm_leaves": 0,
+    "goal": "Create slide after slide 3 with a table listing each experiment from slide 3 with columns for Researcher, Year, and Key Finding"
+   },
+   {
+    "task_id": "Revisiting Classical  Social Experiments [Autosaved]-018",
+    "file": "Revisiting Classical  Social Experiments [Autosaved].pptx",
+    "kind": "create",
+    "rubric_leaves": 3,
+    "critical_leaves": 2,
+    "vlm_leaves": 1,
+    "goal": "Add icons or symbols inside each of the three circles in slide 2 which illustrate the respective text"
+   },
+   {
+    "task_id": "Revisiting Classical  Social Experiments [Autosaved]-033",
+    "file": "Revisiting Classical  Social Experiments [Autosaved].pptx",
+    "kind": "create",
+    "rubric_leaves": 3,
+    "critical_leaves": 2,
+    "vlm_leaves": 0,
+    "goal": "Create hyperlinks from each experiment name in slide 3 to corresponding Wikipedia pages about either the experiment or the researcher(s)"
+   },
+   {
+    "task_id": "Worms-007",
+    "file": "Worms.pptx",
+    "kind": "create",
+    "rubric_leaves": 4,
+    "critical_leaves": 3,
+    "vlm_leaves": 1,
+    "goal": "Add a text box in Slide 4 explaining what 'prostomium' means and position it above the word  'prostomium' on the diagram"
+   },
+   {
+    "task_id": "Worms-060",
+    "file": "Worms.pptx",
+    "kind": "create",
+    "rubric_leaves": 8,
+    "critical_leaves": 5,
+    "vlm_leaves": 1,
+    "goal": "Add a slide after slide 2 with a table comparing characteristics of all three worm types"
+   },
+   {
+    "task_id": "application+layer+slide-011",
+    "file": "application+layer+slide.pptx",
+    "kind": "edit",
+    "rubric_leaves": 6,
+    "critical_leaves": 2,
+    "vlm_leaves": 3,
+    "goal": "On slide 11, replace the existing diagram with a simpler flowchart showing 'Browser \u2192 HTTP Request \u2192 Web Server \u2192 HTTP Response \u2192 Browser'"
+   },
+   {
+    "task_id": "application+layer+slide-019",
+    "file": "application+layer+slide.pptx",
+    "kind": "edit",
+    "rubric_leaves": 5,
+    "critical_leaves": 2,
+    "vlm_leaves": 2,
+    "goal": "On slide 8, replace the IP address and Port number bullet points with a simple diagram showing IP address (128.119.245.12) connected to Port 80"
+   },
+   {
+    "task_id": "application+layer+slide-021",
+    "file": "application+layer+slide.pptx",
+    "kind": "edit",
+    "rubric_leaves": 5,
+    "critical_leaves": 1,
+    "vlm_leaves": 2,
+    "goal": "Replace the URL example with 'https://university.edu/courses/networking.html' and update the URL labels breakdown accordingly"
+   },
+   {
+    "task_id": "pediatic glasses when to prescribe1-019",
+    "file": "pediatic glasses when to prescribe1.pptx",
+    "kind": "edit",
+    "rubric_leaves": 2,
+    "critical_leaves": 2,
+    "vlm_leaves": 1,
+    "goal": "Apply a different design theme to the entire presentation while maintaining the current color scheme of greenish backgrounds"
+   },
+   {
+    "task_id": "pediatic glasses when to prescribe1-032",
+    "file": "pediatic glasses when to prescribe1.pptx",
+    "kind": "create",
+    "rubric_leaves": 3,
+    "critical_leaves": 2,
+    "vlm_leaves": 1,
+    "goal": "Add a chart based on the table data showing age distribution on slide 13"
+   },
+   {
+    "task_id": "pediatic glasses when to prescribe1-035",
+    "file": "pediatic glasses when to prescribe1.pptx",
+    "kind": "edit",
+    "rubric_leaves": 3,
+    "critical_leaves": 3,
+    "vlm_leaves": 2,
+    "goal": "Change the slide layout to \"Three Content\" and apply it to slide 14, rearranging content into a three-column comparison format, adding a new column that calls out the difference between unilateral and bilateral"
+   }
+  ]
+ },
+ "planned_run_set": {
+  "size": 12,
+  "selection_rule": "Hard-tier editing/layout/table/chart/formatting tasks spread across 9 of the 12 files",
+  "task_ids": [
+   "3-009",
+   "4._Pre-Colonial_Filipino_Culture-020",
+   "Accounting Equation-008",
+   "Accounting Equation-012",
+   "Aircraft_surface-004",
+   "HSC Careers and Expo FINAL COM MOD-038",
+   "HSC Careers and Expo FINAL COM MOD-072",
+   "Jean-Nicolas-Louis Durand-008",
+   "Obesity-020",
+   "pediatic glasses when to prescribe1-032",
+   "pediatic glasses when to prescribe1-035",
+   "application+layer+slide-021"
+  ]
+ },
+ "runs": [],
+ "scores": {
+  "n_run": 0,
+  "success_rate": null,
+  "avg_partial_score": null,
+  "note": "No benchmark task ran. Nothing here is a benchmark score."
+ },
+ "pipeline_smoke_test": {
+  "is_benchmark_result": false,
+  "description": "End-to-end check of the harness on a synthetic 4-slide deck created with python-pptx and a synthetic rubric (SMOKE-001: change 'Lecture 3' to 'Lecture 1' in title and footers). Exercises workspace seeding, Claude Code agent run without the bypass flag, LibreOffice+poppler rendering, deterministic rubric nodes, ppt_diff extraneous-change node, and one VLM node answered by the Claude judge.",
+  "agent_command_flags": "--permission-mode acceptEdits --allowedTools Bash,Read,Write,Edit,MultiEdit,Glob,Grep,LS,Skill,TodoWrite (the repo default --dangerously-skip-permissions was denied by this session's permission classifier)",
+  "result": {
+   "score": 1.0,
+   "success": true,
+   "rubric_nodes": {
+    "Title updated": 1.0,
+    "Footers updated": 1.0,
+    "Visual check of title slide (VLM, Claude-judged)": 1.0,
+    "No extraneous changes": 1.0
+   },
+   "agent_turns": 4,
+   "agent_tool_calls": 3,
+   "agent_duration_s": 11.5,
+   "agent_cost_usd": 0.073,
+   "agent_model": "claude-sonnet-5-5",
+   "judge_calls": 1,
+   "judge_duration_s": 6.8,
+   "judge_cost_usd": 0.076
+  }
+ }
+}

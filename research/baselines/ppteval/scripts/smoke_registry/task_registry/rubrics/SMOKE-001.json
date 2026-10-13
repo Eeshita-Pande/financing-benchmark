@@ -1,0 +1,53 @@
+{
+  "root": {
+    "name": "Smoke test: Lecture 3 -> Lecture 1",
+    "description": "Synthetic pipeline smoke test",
+    "is_critical": false,
+    "metadata": {},
+    "children": [
+      {
+        "name": "Title updated",
+        "description": "Slide 1 title says Lecture 1",
+        "is_critical": true,
+        "metadata": {},
+        "scorer": {
+          "type": "function",
+          "function_code": "def compute_score() -> tuple[str, float]:\n    from pptx import Presentation\n    prs = Presentation(modified_ppt_path)\n    t = prs.slides[0].shapes.title.text if prs.slides[0].shapes.title else \"\"\n    if \"Lecture 1\" in t and \"Lecture 3\" not in t:\n        return f\"Title updated: {t}\", 1.0\n    return f\"Title not updated: {t}\", 0.0\n"
+        }
+      },
+      {
+        "name": "Footers updated",
+        "description": "Footers Lec 3.n -> Lec 1.n",
+        "is_critical": false,
+        "metadata": {},
+        "scorer": {
+          "type": "function",
+          "function_code": "def compute_score() -> tuple[str, float]:\n    from pptx import Presentation\n    import re\n    prs = Presentation(modified_ppt_path)\n    bad = []\n    for i, s in enumerate(prs.slides):\n        if i == 0: continue\n        texts = \" \".join(sh.text for sh in s.shapes if hasattr(sh, \"text\"))\n        if not re.search(r\"Lec 1\\.%d\" % (i + 1), texts) or re.search(r\"Lec 3\\.\", texts):\n            bad.append(i + 1)\n    if bad:\n        return f\"Footers not updated on slides {bad}\", 0.0\n    return \"All footers updated\", 1.0\n"
+        }
+      },
+      {
+        "name": "Visual check of title slide (VLM)",
+        "description": "VLM compares slide 1 before/after",
+        "is_critical": false,
+        "metadata": {},
+        "scorer": {
+          "type": "function",
+          "function_code": "def compute_score() -> tuple[str, float]:\n    from ppteval.verify.ppt.verifier import ScreenshotsUnavailableError\n    o = next((s for s in original_ppt_screenshots if s.slide_number == 1), None)\n    m = next((s for s in modified_ppt_screenshots if s.slide_number == 1), None)\n    if not o or not m:\n        raise ScreenshotsUnavailableError(\"slide 1 screenshots missing\")\n    prompt = \"\"\"Compare these two PowerPoint title slides (original vs modified).\nTask: the title should now read 'Lecture 1' instead of 'Lecture 3', with no other visible change to the slide.\nRespond with PASS if the modified slide's title shows 'Lecture 1' and the layout/styling otherwise looks unchanged, otherwise FAIL. Add a one-sentence explanation.\"\"\"\n    response = vlm_call(prompt, [o.image_path, m.image_path], temperature=0.3)\n    if \"PASS\" in response.upper():\n        return f\"Visual check passed: {response}\", 1.0\n    return f\"Visual check failed: {response}\", 0.0\n"
+        }
+      },
+      {
+        "name": "No extraneous changes",
+        "description": "No structural changes",
+        "is_critical": false,
+        "metadata": {},
+        "scorer": {
+          "type": "function",
+          "function_code": "def compute_score() -> tuple[str, float]:\n    from pptx import Presentation\n    issues = []\n    if ppt_diff.added_slides or ppt_diff.removed_slides:\n        issues.append(\"slide count changed\")\n    if ppt_diff.added_animations or ppt_diff.removed_animations or ppt_diff.added_transitions or ppt_diff.removed_transitions:\n        issues.append(\"animation/transition changes\")\n    o = Presentation(original_ppt_path); m = Presentation(modified_ppt_path)\n    for i, (so, sm) in enumerate(zip(o.slides, m.slides)):\n        if len(so.shapes) != len(sm.shapes):\n            issues.append(f\"shape count changed on slide {i+1}\")\n    if issues:\n        return \"Extraneous changes: \" + \"; \".join(issues), max(0.0, 1.0 - 0.3 * len(issues))\n    return \"No extraneous changes\", 1.0\n"
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "task": "synthetic smoke test; not part of PPT-Eval"
+  }
+}
