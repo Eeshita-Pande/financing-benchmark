@@ -159,9 +159,11 @@ def grade(output_path, instance_dir):
     # 1. slide count and title order
     add("slide_count", len(out_titles) == len(in_titles) + 1, {"input": len(in_titles), "output": len(out_titles)})
     add("new_slide_present", out_titles.count(new_title) == 1, {"count": out_titles.count(new_title)})
+    decoy_titles = [norm(t) for t in spec.get("decoy_placement_title_order", [])]
     add("title_order", out_titles == exp_titles,
         {"output": out_titles, "expected": exp_titles,
          "matches_literal_placement": out_titles == lit_titles,
+         "matches_decoy_placement": (out_titles == decoy_titles) if decoy_titles else None,
          "new_slide_index": out_titles.index(new_title) if new_title in out_titles else None,
          "expected_index": spec["expected_new_slide_index"]})
     # 1b. relative order of the pre-existing slides preserved (diagnostic)

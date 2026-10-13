@@ -89,7 +89,8 @@ def update_agenda_i1(prs):
     np_.runs[0].text = "Case 4 — Renewal without credit transfer"
 
 
-def build(instance, misplaced, out_path):
+def build(instance, placement, out_path):
+    """placement: 'correct', 'misplaced' (literal default) or 'decoy' (spec's decoy order)."""
     inst_dir = os.path.join(ROOT, "instances", instance)
     spec = json.load(open(os.path.join(inst_dir, "expected", "spec.json")))
     prs = Presentation(os.path.join(inst_dir, "inputs", "ic_deck_base.pptx"))
@@ -100,7 +101,7 @@ def build(instance, misplaced, out_path):
         tiles, rows = G.card_values(G.CASES[3])
         fill_card(new, spec["new_slide_title"], tiles, rows, G.CASE_FOOTER, "Case 4 headline metrics from the Case summary tab.")
         update_agenda_i1(prs)
-    elif instance == "i3_sensitivity":
+    elif instance in ("i3_sensitivity", "i4_sensitivity_anchor", "i5_sensitivity_notes_anchor", "i6_sensitivity_scale"):
         tiles, rows = G.card_values(G.SENSITIVITY)
         fill_card(new, spec["new_slide_title"], tiles, rows, "Source: model_outputs.xlsx, tab 'Sensitivity'",
                   "Sensitivity of the covenant DSCR to a 20% lower support cap.")
@@ -108,7 +109,8 @@ def build(instance, misplaced, out_path):
         rows = [[r[0], G.fmt_int(r[1]), G.fmt_int(r[2]), G.fmt_pct(r[3])] for r in G.support_rows()]
         fill_schedule(new, spec["new_slide_title"], G.SUPPORT_HEADER, rows,
                       "Source: model_outputs.xlsx, tab 'Support cap'", "Support-cap utilisation per case.")
-    order = spec["literal_placement_title_order"] if misplaced else spec["expected_title_order"]
+    order = {"correct": spec["expected_title_order"], "misplaced": spec["literal_placement_title_order"],
+             "decoy": spec.get("decoy_placement_title_order")}[placement]
     move_slide(prs, new, order.index(spec["new_slide_title"]))
     prs.save(out_path)
 
@@ -117,9 +119,10 @@ def main():
     out_dir = os.path.join(HERE, "fixtures")
     os.makedirs(out_dir, exist_ok=True)
     for inst in G.BRIEFS:
-        for tag, mis in (("correct", False), ("misplaced", True)):
+        tags = ["correct", "misplaced"] + (["decoy"] if "decoy_after" in G.BRIEFS[inst] else [])
+        for tag in tags:
             path = os.path.join(out_dir, f"{inst}_{tag}.pptx")
-            build(inst, mis, path)
+            build(inst, tag, path)
             print("wrote", path)
 
 

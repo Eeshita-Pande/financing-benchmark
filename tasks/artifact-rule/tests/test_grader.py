@@ -13,7 +13,8 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, ROOT)
 import grade  # noqa: E402
 
-INSTANCES = ["i1_case4", "i2_schedule", "i3_sensitivity"]
+INSTANCES = ["i1_case4", "i2_schedule", "i3_sensitivity",
+             "i2b_schedule_first", "i4_sensitivity_anchor", "i5_sensitivity_notes_anchor", "i6_sensitivity_scale"]
 
 
 def main():
@@ -32,7 +33,17 @@ def main():
         expect_failed = ["title_order"]
         okm = (not rm["strict_pass"]) and failed == expect_failed \
             and rm["checks"]["title_order"]["detail"]["matches_literal_placement"]
-        for tag, ok, r in (("untouched", ok0, r0), ("correct", okc, rc), ("misplaced", okm, rm)):
+        verdicts = [("untouched", ok0, r0), ("correct", okc, rc), ("misplaced", okm, rm)]
+        decoy_path = os.path.join(HERE, "fixtures", f"{inst}_decoy.pptx")
+        if os.path.exists(decoy_path):
+            # decoy fixture (e.g. workbook tab order for i2b) must fail title_order only and be flagged as decoy
+            rd = grade.grade(decoy_path, inst_dir)
+            failed_d = sorted(k for k, v in rd["checks"].items() if not v["pass"])
+            okd = (not rd["strict_pass"]) and failed_d == ["title_order"] \
+                and rd["checks"]["title_order"]["detail"]["matches_decoy_placement"] is True \
+                and not rd["checks"]["title_order"]["detail"]["matches_literal_placement"]
+            verdicts.append(("decoy", okd, rd))
+        for tag, ok, r in verdicts:
             status = "PASS" if ok else "FAIL"
             print(f"[{status}] {inst} {tag}: strict={r['strict_pass']} failed_checks="
                   f"{[k for k, v in r['checks'].items() if not v['pass']]}")

@@ -85,26 +85,27 @@ def card_values(c):
     return tiles, rows
 
 
-def support_rows():
+def support_rows(cases=None):
     out = []
-    for c in CASES:
+    for c in (cases or CASES):
         util = round(100.0 * c["support"] / LIFETIME_CAP_K, 1)
         out.append([c["name"], c["peak"], c["support"], util])
     return out
 
 
-def dscr_rows():
-    return [[c["name"], c["op"], c["cure"], c["below"]] for c in CASES]
+def dscr_rows(cases=None):
+    return [[c["name"], c["op"], c["cure"], c["below"]] for c in (cases or CASES)]
 
 
-def return_rows():
-    return [[c["name"], c["equity"], c["dist"], c["irr"]] for c in CASES]
+def return_rows(cases=None):
+    return [[c["name"], c["equity"], c["dist"], c["irr"]] for c in (cases or CASES)]
 
 
 # --------------------------------------------------------------------------------------
 # Workbook
 # --------------------------------------------------------------------------------------
-def build_workbook(path):
+def build_workbook(path, scale=False):
+    cases = CASES6 if scale else CASES
     wb = openpyxl.Workbook()
     ws = wb.active
     ws.title = "Read me"
@@ -120,6 +121,13 @@ def build_workbook(path):
         ("DSCR summary - covenant results per case (appendix schedule)", False),
         ("Support cap - sponsor support utilisation per case (appendix schedule)", False),
         ("Sponsor return - equity, distribution and IRR per case (appendix schedule)", False),
+    ] + ([
+        ("Debt service - interest, principal and fees per case (appendix schedule)", False),
+        ("Closing cash - minimum and closing cash per case (appendix schedule)", False),
+        ("Receipts - fixed and usage receipts per case (appendix schedule)", False),
+        ("Covenant tests - months tested and months below covenant per case (appendix schedule)", False),
+        ("Equity cure - cure months and amounts per case (appendix schedule)", False),
+    ] if scale else []) + [
         ("Sensitivity - headline metrics for the DSCR sensitivity", False),
         ("", False),
         ("Units: DSCR in multiples (x); support, equity and distributions in USD thousands (k); "
@@ -143,10 +151,13 @@ def build_workbook(path):
 
     sheet("Case summary", CASE_SUMMARY_HEADER,
           [[c["id"], c["name"], c["op"], c["cure"], c["support"], c["irr"], c["receipts"], c["ds"], c["cash"]]
-           for c in CASES], {1: 10, 2: 34})
-    sheet("DSCR summary", DSCR_HEADER, dscr_rows(), {1: 34})
-    sheet("Support cap", SUPPORT_HEADER, support_rows(), {1: 34})
-    sheet("Sponsor return", RETURN_HEADER, return_rows(), {1: 34})
+           for c in cases], {1: 10, 2: 34})
+    sheet("DSCR summary", DSCR_HEADER, dscr_rows(cases), {1: 34})
+    sheet("Support cap", SUPPORT_HEADER, support_rows(cases), {1: 34})
+    sheet("Sponsor return", RETURN_HEADER, return_rows(cases), {1: 34})
+    if scale:
+        for name, header, rows_fn, _ in SCALE_SCHEDULES[3:]:
+            sheet(name, header, rows_fn(cases), {1: 34})
     sheet("Sensitivity", SENS_HEADER,
           [[SENSITIVITY["name"], SENSITIVITY["op"], SENSITIVITY["cure"], SENSITIVITY["support"],
             SENSITIVITY["irr"], SENSITIVITY["receipts"], SENSITIVITY["ds"], SENSITIVITY["cash"]]], {1: 48})
@@ -197,7 +208,7 @@ def add_textbox(slide, left, top, width, height, text, size=11, color=GREY, bold
     return tb
 
 
-def fill_body(slide, paragraphs):
+def fill_body(slide, paragraphs, sizes=(18, 16)):
     """paragraphs: list of (text, level)."""
     body = [ph for ph in slide.placeholders if ph.placeholder_format.idx != 0][0]
     tf = body.text_frame
@@ -209,7 +220,7 @@ def fill_body(slide, paragraphs):
         p.text = text
         p.level = level
         for r in p.runs:
-            r.font.size = Pt(18 if level == 0 else 16)
+            r.font.size = Pt(sizes[0] if level == 0 else sizes[1])
 
 
 def add_tile(slide, left, top, width, height, label, value):
@@ -290,10 +301,10 @@ def section_slide(prs, layout, title, body, notes):
     return s
 
 
-def content_slide(prs, layout, title, bullets, notes):
+def content_slide(prs, layout, title, bullets, notes, sizes=(18, 16)):
     s = prs.slides.add_slide(layout)
     s.shapes.title.text = title
-    fill_body(s, [(b, 0) for b in bullets])
+    fill_body(s, [(b, 0) for b in bullets], sizes)
     set_notes(s, notes)
     return s
 
@@ -318,13 +329,94 @@ RULES = {
         "text": ("Deck conventions: Recommendation always immediately precedes Closing; a sensitivity slide "
                  "is placed directly after the slide it sensitises."),
     },
+    # ---- v2 instances ----
+    "i2b_schedule_first": {
+        "location": "speaker notes of the 'Appendix' section divider slide",
+        "text": ("Appendix convention: a newly added schedule is inserted directly after this Appendix divider, "
+                 "ahead of the existing schedules, so that the committee sees new material first. Schedules are "
+                 "never appended at the end of the appendix and are not ordered by workbook tab."),
+    },
+    "i4_sensitivity_anchor": {
+        "location": "footnote text box on the 'Agenda' slide",
+        "text": ("Deck conventions: a sensitivity slide is placed directly after the slide it sensitises; "
+                 "Recommendation always immediately precedes Closing."),
+    },
+    "i5_sensitivity_notes_anchor": {
+        "location": "speaker notes of the 'Financing and covenant' section divider slide",
+        "text": ("Section convention: a sensitivity slide is placed directly after the slide it sensitises, "
+                 "never at the end of the section."),
+    },
+    "i6_sensitivity_scale": {
+        "location": "footnote text box on the 'Agenda' slide",
+        "text": ("Deck conventions: a sensitivity slide is placed directly after the slide it sensitises; "
+                 "Recommendation always immediately precedes Closing."),
+    },
 }
+V1_INSTANCES = ["i1_case4", "i2_schedule", "i3_sensitivity"]
+AGENDA_RULE_INSTANCES = {"i3_sensitivity", "i4_sensitivity_anchor", "i6_sensitivity_scale"}
+APPENDIX_NOTES_RULE_INSTANCES = {"i2_schedule", "i2b_schedule_first"}
+FINANCING_NOTES_RULE_INSTANCES = {"i5_sensitivity_notes_anchor"}
+SCALE_INSTANCES = {"i6_sensitivity_scale"}
 NEUTRAL = {
     "cases_body": ("Each case changes only the fields shown in the Cases tab of the source workbook; prices, "
                    "service obligations and the financing commitments are fixed."),
     "appendix_notes": "Schedules are drawn directly from the frozen workbook; no figures are recalculated in this deck.",
     "agenda_footnote": "All figures are fictional illustrative outputs of the Northstar Compute model (model_outputs.xlsx).",
+    "financing_notes": "Financing section: covenant first, then sources and uses.",
 }
+
+# ---- extended data for the scale instance (i6): eight cases and eight appendix schedules ----
+EXTRA_CASES = [
+    dict(id=5, name="Early renewal at reduced rate", op=1.27, cure=1.27, support=0, irr=11.4, receipts=57.1,
+         ds=16.4, cash=8.9, below=0, peak=0, equity=7560, dist=11640),
+    dict(id=6, name="Hardware refresh deferred", op=1.29, cure=1.29, support=0, irr=11.8, receipts=59.4,
+         ds=16.4, cash=9.2, below=0, peak=0, equity=7560, dist=11790),
+    dict(id=7, name="Interest rate plus 200bp", op=1.22, cure=1.25, support=90, irr=11.3, receipts=59.4,
+         ds=17.1, cash=8.6, below=0, peak=90, equity=7650, dist=11700),
+    dict(id=8, name="Customer payment term extension", op=0.84, cure=1.25, support=180, irr=11.6, receipts=59.4,
+         ds=16.4, cash=9.5, below=0, peak=180, equity=7740, dist=11880),
+]
+CASES6 = CASES + EXTRA_CASES
+DEBT_HEADER = ["Case", "Total interest (USD m)", "Total principal (USD m)", "Agent fees (USD k)"]
+CASH_HEADER = ["Case", "Minimum cash balance (USD m)", "Month of minimum", "Closing cash 31 Dec 2031 (USD m)"]
+RECEIPTS_HEADER = ["Case", "Fixed consideration (USD m)", "Usage receipts (USD m)", "Total service receipts (USD m)"]
+TESTS_HEADER = ["Case", "Months tested", "Months below 1.25x before cure", "Months below 1.25x after cure"]
+CURE_HEADER = ["Case", "Cure months", "Cure amount (USD k)", "Remaining lifetime cap (USD k)"]
+
+
+def debt_rows(cases):
+    return [[c["name"], round(c["ds"] - 14.0 - 0.18, 1), 14.0, 180] for c in cases]
+
+
+def cash_rows(cases):
+    return [[c["name"], round(min(c["cash"], 2.4 - 0.1 * c["id"]), 1), 3 + c["id"], c["cash"]] for c in cases]
+
+
+def receipts_rows(cases):
+    return [[c["name"], 36.0, round(c["receipts"] - 36.0, 1), c["receipts"]] for c in cases]
+
+
+def tests_rows(cases):
+    before = {1: 0, 2: 1, 3: 6, 4: 2, 5: 0, 6: 0, 7: 1, 8: 1}
+    return [[c["name"], 34, before[c["id"]], c["below"]] for c in cases]
+
+
+def cure_rows(cases):
+    months = {1: 0, 2: 2, 3: 4, 4: 2, 5: 0, 6: 0, 7: 1, 8: 1}
+    return [[c["name"], months[c["id"]], c["support"], LIFETIME_CAP_K - c["support"]] for c in cases]
+
+
+SCALE_SCHEDULES = [
+    # (tab/slide name, header, rows fn, formats)
+    ("DSCR summary", DSCR_HEADER, lambda cs: [[c["name"], c["op"], c["cure"], c["below"]] for c in cs], None),
+    ("Support cap", SUPPORT_HEADER, None, None),
+    ("Sponsor return", RETURN_HEADER, lambda cs: [[c["name"], c["equity"], c["dist"], c["irr"]] for c in cs], None),
+    ("Debt service", DEBT_HEADER, debt_rows, None),
+    ("Closing cash", CASH_HEADER, cash_rows, None),
+    ("Receipts", RECEIPTS_HEADER, receipts_rows, None),
+    ("Covenant tests", TESTS_HEADER, tests_rows, None),
+    ("Equity cure", CURE_HEADER, cure_rows, None),
+]
 
 REFERENCE_TITLE = "Layout reference: Case card"
 REFERENCE_FOOTER = "Reference slide. Duplicate this layout for new case slides. Do not edit this slide."
@@ -332,6 +424,8 @@ CASE_FOOTER = "Source: model_outputs.xlsx, tab 'Case summary'"
 
 
 def build_deck(path, instance):
+    scale = instance in SCALE_INSTANCES
+    cases = CASES6 if scale else CASES
     prs = Presentation()
     prs.slide_width = Inches(10)
     prs.slide_height = Inches(7.5)
@@ -348,18 +442,31 @@ def build_deck(path, instance):
     # 2 Agenda
     s = prs.slides.add_slide(L["Title and Content"])
     s.shapes.title.text = "Agenda"
-    fill_body(s, [
-        ("1. Executive summary", 0),
-        ("2. Cases", 0),
-        ("Case 1 — Base", 1),
-        ("Case 2 — Delayed usage receipt", 1),
-        ("Case 3 — Major operating incident", 1),
-        ("3. Financing and covenant", 0),
-        ("4. Recommendation", 0),
-        ("5. Closing", 0),
-        ("Appendix: supporting schedules", 0),
-    ])
-    foot = RULES["i3_sensitivity"]["text"] if instance == "i3_sensitivity" else NEUTRAL["agenda_footnote"]
+    if scale:
+        fill_body(s, [
+            ("1. Executive summary", 0),
+            ("2. Key assumptions and risks", 0),
+            ("3. Transaction timeline", 0),
+            ("4. Cases", 0),
+        ] + [(f"Case {c['id']} — {c['name']}", 1) for c in cases] + [
+            ("5. Financing and covenant", 0),
+            ("6. Recommendation", 0),
+            ("7. Closing", 0),
+            ("Appendix: supporting schedules", 0),
+        ], sizes=(14, 12))
+    else:
+        fill_body(s, [
+            ("1. Executive summary", 0),
+            ("2. Cases", 0),
+            ("Case 1 — Base", 1),
+            ("Case 2 — Delayed usage receipt", 1),
+            ("Case 3 — Major operating incident", 1),
+            ("3. Financing and covenant", 0),
+            ("4. Recommendation", 0),
+            ("5. Closing", 0),
+            ("Appendix: supporting schedules", 0),
+        ])
+    foot = RULES[instance]["text"] if instance in AGENDA_RULE_INSTANCES else NEUTRAL["agenda_footnote"]
     fb = add_textbox(s, Inches(0.5), Inches(6.6), Inches(9.0), Inches(0.6), foot, size=10)
     fb.name = "Agenda footnote"
     set_notes(s, "Walk through the agenda briefly. The case list mirrors the order of the case slides in the deck.")
@@ -373,23 +480,46 @@ def build_deck(path, instance):
         "Sponsor IRR ranges from 10.4% to 12.1% across the funded cases.",
     ], "Headline messages. Figures are fictional illustrative model outputs.")
 
-    # 4 Section: Cases
+    if scale:
+        content_slide(prs, L["Title and Content"], "Key assumptions", [
+            "Anchor contract: Helix Research, 36 months from 1 January 2028, fixed consideration USD 36.0m.",
+            "Usage receipts: metered monthly, invoiced in arrears, 30-day terms.",
+            "Hardware: USD 20.0m purchased on signing; refresh assumed at month 30 unless deferred.",
+            "Financing: USD 14.0m lender advance at 10% cash interest, 36 equal principal instalments from month 3.",
+            "Sponsor support: USD 250k monthly cap and USD 1.0m lifetime cap, counted as an equity cure.",
+        ], "Assumptions common to every case.")
+        content_slide(prs, L["Title and Content"], "Key risks", [
+            "Usage shortfall or late usage receipts tighten the monthly DSCR in the affected months.",
+            "An operating incident exceeding the support cap leaves an unresolved covenant breach.",
+            "Renewal without credit transfer lowers receipts from month 37 onward.",
+            "A 200bp rise in the interest rate raises debt service by about USD 0.7m over the term.",
+        ], "Risks ranked by covenant impact.")
+        content_slide(prs, L["Title and Content"], "Transaction timeline", [
+            "Signing and funding: 1 January 2028.",
+            "First covenant test: forecast month 3 (March 2028).",
+            "Hardware refresh decision: month 30 (June 2030).",
+            "Renewal decision with Helix Research: month 34 (October 2030).",
+            "Final principal instalment and model horizon: 31 December 2031.",
+        ], "Key dates for the committee.")
+
+    # Section: Cases
     body = RULES["i1_case4"]["text"] if instance == "i1_case4" else NEUTRAL["cases_body"]
     section_slide(prs, L["Section Header"], "Cases", body,
-                  "Three of the four modelled cases are presented in this version of the deck.")
+                  ("All eight modelled cases are presented in this version of the deck." if scale else
+                   "Three of the four modelled cases are presented in this version of the deck."))
 
-    # 5-7 Case cards
-    for c in CASES[:3]:
+    # Case cards
+    for c in (cases if scale else cases[:3]):
         tiles, rows = card_values(c)
         case_card(prs, case_layout, f"Case {c['id']} — {c['name']}", tiles, rows, CASE_FOOTER,
                   f"Case {c['id']} headline metrics from the Case summary tab.")
 
-    # 8 Section: Financing and covenant
+    # Section: Financing and covenant
+    fin_notes = RULES[instance]["text"] if instance in FINANCING_NOTES_RULE_INSTANCES else NEUTRAL["financing_notes"]
     section_slide(prs, L["Section Header"], "Financing and covenant",
-                  "Facility terms, covenant performance and sponsor support across the presented cases.",
-                  "Financing section: covenant first, then sources and uses.")
+                  "Facility terms, covenant performance and sponsor support across the presented cases.", fin_notes)
 
-    # 9 Covenant
+    # Covenant
     content_slide(prs, L["Title and Content"], "Covenant: monthly DSCR and sponsor support", [
         "Minimum monthly cash DSCR of 1.25x, tested from forecast month 3 in each month with debt service.",
         "Sponsor support: USD 250k monthly cap and USD 1.0m lifetime cap; the covenant portion counts as a "
@@ -399,7 +529,7 @@ def build_deck(path, instance):
         "Operating incident: the covenant breach is unresolved once the lifetime cap is exhausted.",
     ], "Covenant mechanics and results. Operating ratio and post-cure ratio are shown separately on the case cards.")
 
-    # 10 Funding
+    # Funding
     content_slide(prs, L["Title and Content"], "Funding: sources and uses", [
         "Uses: new hardware USD 20.0m, paid on signing on 1 January 2028.",
         "Sources: lender advance USD 14.0m (70%) and sponsor hardware equity USD 6.0m (30%), both on 1 January 2028.",
@@ -408,7 +538,7 @@ def build_deck(path, instance):
         "Debt: 10% annual cash interest, 36 equal principal instalments from month 3, USD 15k quarter-end agent fee.",
     ], "Sources and uses on the funding date.")
 
-    # 11 Recommendation
+    # Recommendation
     content_slide(prs, L["Title and Content"], "Recommendation", [
         "Proceed with the hardware financing under the signed terms and the base-case credit designation.",
         "Retain the committed sponsor support of USD 1.0m for the delayed-receipt case.",
@@ -416,25 +546,41 @@ def build_deck(path, instance):
         "Confirm the renewal credit-transfer position with Helix Research before the renewal is signed.",
     ], "Recommendation to the committee.")
 
-    # 12 Closing
+    # Closing
     content_slide(prs, L["Title and Content"], "Closing", [
         "Decisions requested: approve the financing; approve the support commitment; note the incident-case exposure.",
         "Next steps: lender confirmation of the covenant definitions; renewal clause confirmation with Helix Research.",
     ], "Close with the decisions requested and next steps.")
 
-    # 13 Section: Appendix
-    notes = RULES["i2_schedule"]["text"] if instance == "i2_schedule" else NEUTRAL["appendix_notes"]
+    # Section: Appendix
+    notes = RULES[instance]["text"] if instance in APPENDIX_NOTES_RULE_INSTANCES else NEUTRAL["appendix_notes"]
     section_slide(prs, L["Section Header"], "Appendix", "Supporting schedules drawn from model_outputs.xlsx.", notes)
 
-    # 14-15 Schedules
-    schedule_slide(prs, sched_layout, "Appendix: DSCR summary", DSCR_HEADER, dscr_rows(),
-                   "Source: model_outputs.xlsx, tab 'DSCR summary'", "DSCR schedule per case.",
-                   [None, fmt_x, fmt_x, fmt_int])
-    schedule_slide(prs, sched_layout, "Appendix: Sponsor return", RETURN_HEADER, return_rows(),
-                   "Source: model_outputs.xlsx, tab 'Sponsor return'", "Sponsor return schedule per case.",
-                   [None, fmt_int, fmt_int, fmt_pct])
+    # Schedules
+    if scale:
+        fmts = {
+            "DSCR summary": [None, fmt_x, fmt_x, fmt_int],
+            "Support cap": [None, fmt_int, fmt_int, fmt_pct],
+            "Sponsor return": [None, fmt_int, fmt_int, fmt_pct],
+            "Debt service": [None, fmt_m, fmt_m, fmt_int],
+            "Closing cash": [None, fmt_m, fmt_int, fmt_m],
+            "Receipts": [None, fmt_m, fmt_m, fmt_m],
+            "Covenant tests": [None, fmt_int, fmt_int, fmt_int],
+            "Equity cure": [None, fmt_int, fmt_int, fmt_int],
+        }
+        for name, header, rows_fn, _ in SCALE_SCHEDULES:
+            rows = support_rows(cases) if name == "Support cap" else rows_fn(cases)
+            schedule_slide(prs, sched_layout, f"Appendix: {name}", header, rows,
+                           f"Source: model_outputs.xlsx, tab '{name}'", f"{name} schedule per case.", fmts[name])
+    else:
+        schedule_slide(prs, sched_layout, "Appendix: DSCR summary", DSCR_HEADER, dscr_rows(),
+                       "Source: model_outputs.xlsx, tab 'DSCR summary'", "DSCR schedule per case.",
+                       [None, fmt_x, fmt_x, fmt_int])
+        schedule_slide(prs, sched_layout, "Appendix: Sponsor return", RETURN_HEADER, return_rows(),
+                       "Source: model_outputs.xlsx, tab 'Sponsor return'", "Sponsor return schedule per case.",
+                       [None, fmt_int, fmt_int, fmt_pct])
 
-    # 16 Reference slide
+    # Reference slide (last)
     case_card(prs, case_layout, REFERENCE_TITLE, ["[Fill]"] * 4, ["[Fill]"] * 3, REFERENCE_FOOTER,
               "Locked reference slide. Keep it as the last slide of the deck.")
 
@@ -462,6 +608,27 @@ BASE_TITLES = [
     "Appendix: Sponsor return",
     REFERENCE_TITLE,
 ]
+SCALE_TITLES = [
+    "Northstar Compute: hardware financing and customer arrangements",
+    "Agenda",
+    "Executive summary",
+    "Key assumptions",
+    "Key risks",
+    "Transaction timeline",
+    "Cases",
+] + [f"Case {c['id']} — {c['name']}" for c in CASES6] + [
+    "Financing and covenant",
+    "Covenant: monthly DSCR and sponsor support",
+    "Funding: sources and uses",
+    "Recommendation",
+    "Closing",
+    "Appendix",
+] + [f"Appendix: {name}" for name, _, _, _ in SCALE_SCHEDULES] + [REFERENCE_TITLE]
+
+
+def base_titles(instance):
+    return list(SCALE_TITLES if instance in SCALE_INSTANCES else BASE_TITLES)
+
 
 ANCHORS = {
     "i1_case4": "Place it with the other case slides, before the \"Financing and covenant\" divider.",
@@ -473,18 +640,14 @@ PLACEMENT_LINES = {
     "i2_schedule": "4. Place it in the appendix.",
     "i3_sensitivity": "4. Place it in the financing section.",
 }
+# v2 anchor: strong, literal, true under the correct answer, and not readable as "immediately before".
+ANCHOR_V2 = ("Place it in the financing section, ahead of the Recommendation slide (that is, anywhere between the "
+             "\"Financing and covenant\" divider and the Recommendation slide).")
 
 COMMON_TAIL = ("\n\nSave the result in place as `inputs/ic_deck_base.pptx` (same filename). "
                "Work only with the files in this directory.\n")
 
-BRIEFS = {
-    "i1_case4": {
-        "title": "Case 4 — Renewal without credit transfer",
-        "insert_after": "Case 1 — Base",
-        "literal_after": "Case 3 — Major operating incident",
-        "template": REFERENCE_TITLE,
-        "allowed_to_change": ["Agenda"],
-        "brief": """# Brief: add the Case 4 slide
+CASE4_BRIEF = """# Brief: add the Case 4 slide
 
 The investment committee deck `inputs/ic_deck_base.pptx` presents three of the four Northstar Compute cases.
 The frozen model outputs for all four cases are in `inputs/model_outputs.xlsx` (read-only reference data;
@@ -500,15 +663,9 @@ Add a slide for Case 4, "Renewal without credit transfer":
    note at the bottom with the same source line the other case slides use.
 4. Place it with the other case slides.
 5. Update the agenda so that it lists Case 4 with the other cases.
-6. Leave the "Layout reference: Case card" slide unchanged, and do not change any other slide.""",
-    },
-    "i2_schedule": {
-        "title": "Appendix: Support-cap utilisation",
-        "insert_after": "Appendix: DSCR summary",
-        "literal_after": "Appendix: Sponsor return",
-        "template": "Appendix: DSCR summary",
-        "allowed_to_change": [],
-        "brief": """# Brief: add the support-cap schedule
+6. Leave the "Layout reference: Case card" slide unchanged, and do not change any other slide."""
+
+SCHEDULE_BRIEF = """# Brief: add the support-cap schedule
 
 The investment committee deck `inputs/ic_deck_base.pptx` has an appendix of supporting schedules drawn from
 the frozen workbook `inputs/model_outputs.xlsx` (read-only reference data; do not recalculate anything).
@@ -524,15 +681,9 @@ Add an appendix schedule for sponsor support-cap utilisation:
    (USD k values as whole numbers, percentages with one decimal and a % sign). Use a source line in the same
    style as the other schedules, naming the `Support cap` tab.
 4. Place it in the appendix.
-5. Leave the "Layout reference: Case card" slide unchanged, and do not change any other slide.""",
-    },
-    "i3_sensitivity": {
-        "title": "Sensitivity: DSCR with support cap minus 20%",
-        "insert_after": "Covenant: monthly DSCR and sponsor support",
-        "literal_after": "Funding: sources and uses",
-        "template": REFERENCE_TITLE,
-        "allowed_to_change": [],
-        "brief": """# Brief: add the DSCR sensitivity slide
+5. Leave the "Layout reference: Case card" slide unchanged, and do not change any other slide."""
+
+SENSITIVITY_BRIEF = """# Brief: add the DSCR sensitivity slide
 
 The investment committee deck `inputs/ic_deck_base.pptx` presents the Northstar Compute cases and the
 covenant analysis. The frozen workbook `inputs/model_outputs.xlsx` (read-only reference data; do not
@@ -547,23 +698,63 @@ Add a sensitivity slide for the covenant DSCR with the support cap minus 20%:
    using the same labels, units and number formats as the existing case slides. Replace the reference
    note at the bottom with a source line in the same style naming the `Sensitivity` tab.
 4. Place it in the financing section.
-5. Leave the "Layout reference: Case card" slide unchanged, and do not change any other slide.""",
+5. Leave the "Layout reference: Case card" slide unchanged, and do not change any other slide."""
+
+SENSITIVITY_ANCHOR_BRIEF = SENSITIVITY_BRIEF.replace(PLACEMENT_LINES["i3_sensitivity"], "4. " + ANCHOR_V2)
+assert SENSITIVITY_ANCHOR_BRIEF != SENSITIVITY_BRIEF
+
+SENS_SPEC = dict(title="Sensitivity: DSCR with support cap minus 20%",
+                 insert_after="Covenant: monthly DSCR and sponsor support",
+                 literal_after="Funding: sources and uses",
+                 template=REFERENCE_TITLE, allowed_to_change=[])
+
+BRIEFS = {
+    "i1_case4": {
+        "title": "Case 4 — Renewal without credit transfer",
+        "insert_after": "Case 1 — Base",
+        "literal_after": "Case 3 — Major operating incident",
+        "template": REFERENCE_TITLE,
+        "allowed_to_change": ["Agenda"],
+        "brief": CASE4_BRIEF,
     },
+    "i2_schedule": {
+        "title": "Appendix: Support-cap utilisation",
+        "insert_after": "Appendix: DSCR summary",
+        "literal_after": "Appendix: Sponsor return",
+        "template": "Appendix: DSCR summary",
+        "allowed_to_change": [],
+        "brief": SCHEDULE_BRIEF,
+    },
+    "i3_sensitivity": dict(SENS_SPEC, brief=SENSITIVITY_BRIEF),
+    # ---- v2 ----
+    "i2b_schedule_first": {
+        "title": "Appendix: Support-cap utilisation",
+        "insert_after": "Appendix",                       # directly after the divider, ahead of DSCR summary
+        "literal_after": "Appendix: Sponsor return",      # append at the end of the appendix
+        "decoy_after": "Appendix: DSCR summary",          # workbook tab order (the v1 I2 answer): now wrong
+        "template": "Appendix: DSCR summary",
+        "allowed_to_change": [],
+        "brief": SCHEDULE_BRIEF,
+    },
+    "i4_sensitivity_anchor": dict(SENS_SPEC, brief=SENSITIVITY_ANCHOR_BRIEF),
+    "i5_sensitivity_notes_anchor": dict(SENS_SPEC, brief=SENSITIVITY_ANCHOR_BRIEF),
+    "i6_sensitivity_scale": dict(SENS_SPEC, brief=SENSITIVITY_ANCHOR_BRIEF),
 }
 
 
-def expected_order(instance):
+def order_with(instance, after_key):
     spec = BRIEFS[instance]
-    order = list(BASE_TITLES)
-    order.insert(order.index(spec["insert_after"]) + 1, spec["title"])
+    order = base_titles(instance)
+    order.insert(order.index(spec[after_key]) + 1, spec["title"])
     return order
+
+
+def expected_order(instance):
+    return order_with(instance, "insert_after")
 
 
 def literal_order(instance):
-    spec = BRIEFS[instance]
-    order = list(BASE_TITLES)
-    order.insert(order.index(spec["literal_after"]) + 1, spec["title"])
-    return order
+    return order_with(instance, "literal_after")
 
 
 def expected_values(instance):
@@ -573,15 +764,23 @@ def expected_values(instance):
                 "tiles": [{"label": l, "value": v} for l, v in zip(TILE_LABELS, [c["op"], c["cure"], c["support"], c["irr"]])],
                 "table_rows": [{"label": l, "value": v} for l, v in zip(TABLE_LABELS, [c["receipts"], c["ds"], c["cash"]])],
                 "table_dims": [4, 2]}
-    if instance == "i3_sensitivity":
+    if instance in ("i3_sensitivity", "i4_sensitivity_anchor", "i5_sensitivity_notes_anchor", "i6_sensitivity_scale"):
         c = SENSITIVITY
         return {"kind": "card",
                 "tiles": [{"label": l, "value": v} for l, v in zip(TILE_LABELS, [c["op"], c["cure"], c["support"], c["irr"]])],
                 "table_rows": [{"label": l, "value": v} for l, v in zip(TABLE_LABELS, [c["receipts"], c["ds"], c["cash"]])],
                 "table_dims": [4, 2]}
-    if instance == "i2_schedule":
+    if instance in ("i2_schedule", "i2b_schedule_first"):
         return {"kind": "schedule", "header": SUPPORT_HEADER, "rows": support_rows(), "table_dims": [5, 4]}
     raise ValueError(instance)
+
+
+def control_sentence(instance):
+    rule = RULES[instance]
+    if instance in V1_INSTANCES:
+        return "\n\nDeck convention (stated in the " + rule["location"] + "): " + rule["text"]
+    return ("\n\nNote the convention stated in the " + rule["location"] + " of the deck: \"" + rule["text"] +
+            "\" Apply it when placing the new slide.")
 
 
 def write_instance(root, instance):
@@ -590,7 +789,7 @@ def write_instance(root, instance):
         shutil.rmtree(inst_dir)
     os.makedirs(os.path.join(inst_dir, "inputs"))
     os.makedirs(os.path.join(inst_dir, "expected"))
-    build_workbook(os.path.join(inst_dir, "inputs", "model_outputs.xlsx"))
+    build_workbook(os.path.join(inst_dir, "inputs", "model_outputs.xlsx"), scale=instance in SCALE_INSTANCES)
     build_deck(os.path.join(inst_dir, "inputs", "ic_deck_base.pptx"), instance)
 
     spec = BRIEFS[instance]
@@ -598,12 +797,12 @@ def write_instance(root, instance):
     with open(os.path.join(inst_dir, "brief.md"), "w") as f:
         f.write(spec["brief"] + COMMON_TAIL)
     with open(os.path.join(inst_dir, "brief_control.md"), "w") as f:
-        f.write(spec["brief"] + "\n\nDeck convention (stated in the " + rule["location"] + "): " +
-                rule["text"] + COMMON_TAIL)
-    # anchor variant: same brief, placement sentence carries a stronger (still true) literal anchor
-    assert PLACEMENT_LINES[instance] in spec["brief"]
-    with open(os.path.join(inst_dir, "brief_anchor.md"), "w") as f:
-        f.write(spec["brief"].replace(PLACEMENT_LINES[instance], "4. " + ANCHORS[instance]) + COMMON_TAIL)
+        f.write(spec["brief"] + control_sentence(instance) + COMMON_TAIL)
+    if instance in V1_INSTANCES:
+        # anchor variant: same brief, placement sentence carries a stronger (still true) literal anchor
+        assert PLACEMENT_LINES[instance] in spec["brief"]
+        with open(os.path.join(inst_dir, "brief_anchor.md"), "w") as f:
+            f.write(spec["brief"].replace(PLACEMENT_LINES[instance], "4. " + ANCHORS[instance]) + COMMON_TAIL)
     agenda = None
     if instance == "i1_case4":
         agenda = {"case_labels_order": ["Case 1", "Case 4", "Case 2", "Case 3"],
@@ -623,6 +822,9 @@ def write_instance(root, instance):
         "rule_location": rule["location"],
         "rule_text": rule["text"],
     }
+    if "decoy_after" in spec:
+        expected["decoy_placement_title_order"] = order_with(instance, "decoy_after")
+        expected["decoy_placement_description"] = "workbook tab order (between DSCR summary and Sponsor return)"
     with open(os.path.join(inst_dir, "expected", "spec.json"), "w") as f:
         json.dump(expected, f, indent=2, ensure_ascii=False)
     with open(os.path.join(inst_dir, "expected", "expected_order.txt"), "w") as f:
@@ -632,9 +834,10 @@ def write_instance(root, instance):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(HERE, "instances"))
+    ap.add_argument("--instances", default=",".join(BRIEFS), help="comma-separated subset to (re)build")
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
-    for inst in BRIEFS:
+    for inst in args.instances.split(","):
         write_instance(args.out, inst)
         print("built", inst)
 

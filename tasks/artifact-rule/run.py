@@ -23,7 +23,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import grade  # noqa: E402
 
-INSTANCES = ["i1_case4", "i2_schedule", "i3_sensitivity"]
+INSTANCES = ["i1_case4", "i2_schedule", "i3_sensitivity",
+             "i2b_schedule_first", "i4_sensitivity_anchor", "i5_sensitivity_notes_anchor", "i6_sensitivity_scale"]
 CONDITIONS = {"artefact": "brief.md", "control": "brief_control.md", "anchor": "brief_anchor.md"}
 PROMPT_TAIL = ("\n\nEdit inputs/ic_deck_base.pptx in place and keep the filename. Do not read or write "
                "anything outside this directory. When you are done, stop.")

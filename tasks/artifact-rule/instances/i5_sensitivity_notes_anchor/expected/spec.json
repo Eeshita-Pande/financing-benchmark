@@ -1,0 +1,93 @@
+{
+  "instance": "i5_sensitivity_notes_anchor",
+  "new_slide_title": "Sensitivity: DSCR with support cap minus 20%",
+  "expected_title_order": [
+    "Northstar Compute: hardware financing and customer arrangements",
+    "Agenda",
+    "Executive summary",
+    "Cases",
+    "Case 1 — Base",
+    "Case 2 — Delayed usage receipt",
+    "Case 3 — Major operating incident",
+    "Financing and covenant",
+    "Covenant: monthly DSCR and sponsor support",
+    "Sensitivity: DSCR with support cap minus 20%",
+    "Funding: sources and uses",
+    "Recommendation",
+    "Closing",
+    "Appendix",
+    "Appendix: DSCR summary",
+    "Appendix: Sponsor return",
+    "Layout reference: Case card"
+  ],
+  "expected_new_slide_index": 9,
+  "literal_placement_title_order": [
+    "Northstar Compute: hardware financing and customer arrangements",
+    "Agenda",
+    "Executive summary",
+    "Cases",
+    "Case 1 — Base",
+    "Case 2 — Delayed usage receipt",
+    "Case 3 — Major operating incident",
+    "Financing and covenant",
+    "Covenant: monthly DSCR and sponsor support",
+    "Funding: sources and uses",
+    "Sensitivity: DSCR with support cap minus 20%",
+    "Recommendation",
+    "Closing",
+    "Appendix",
+    "Appendix: DSCR summary",
+    "Appendix: Sponsor return",
+    "Layout reference: Case card"
+  ],
+  "structure_template_title": "Layout reference: Case card",
+  "reference_title": "Layout reference: Case card",
+  "slides_allowed_to_change": [],
+  "agenda_check": null,
+  "values": {
+    "kind": "card",
+    "tiles": [
+      {
+        "label": "Min operating DSCR",
+        "value": 0.62
+      },
+      {
+        "label": "Min post-cure DSCR",
+        "value": 1.14
+      },
+      {
+        "label": "Sponsor support used",
+        "value": 270
+      },
+      {
+        "label": "Sponsor IRR",
+        "value": 11.1
+      }
+    ],
+    "table_rows": [
+      {
+        "label": "Total service receipts",
+        "value": 59.4
+      },
+      {
+        "label": "Total debt service",
+        "value": 16.4
+      },
+      {
+        "label": "Closing cash, 31 Dec 2031",
+        "value": 9.3
+      }
+    ],
+    "table_dims": [
+      4,
+      2
+    ]
+  },
+  "forbidden_text_on_new_slide": [
+    "[Fill]",
+    "Do not edit this slide",
+    "Reference slide"
+  ],
+  "rule_location": "speaker notes of the 'Financing and covenant' section divider slide",
+  "rule_text": "Section convention: a sensitivity slide is placed directly after the slide it sensitises, never at the end of the section."
+}
