@@ -111,6 +111,13 @@ followable.
   it. The extra slides (three front-matter slides, eight case cards, eight schedules) do not mention
   placement at all, so nothing competes with the rule; the question is only whether it gets lost at scale.
 
+Results of the v2 pilot (58 runs on Opus 5.5 and Sonnet 5.5) are in `research/baselines/artifact-rule-pilot-v2/`.
+In short: I2b fails both models on repeat (Opus 2/5, Sonnet 0/5, controls 3/3 on both); I4 and I5 do not fail
+Opus; I6 produced one Opus failure of the "rule read and overridden" kind. That run exposed a competing reading
+of the I4/I5/I6 rule: the workbook labels the sensitivity "(Case 2 basis)", so "the slide it sensitises" can be
+read as the Case 2 card. Fix before benchmark use: drop that label from the row name, or phrase the rule as
+"directly after the analysis slide it sensitises (for the covenant DSCR, the Covenant slide)".
+
 For I2b the grader additionally reports `matches_decoy_placement` (the workbook-tab-order position) in the
 `title_order` detail, so a pass cannot be mistaken for a tab-order inference and a failure can be classified
 as "appended" or "tab order".

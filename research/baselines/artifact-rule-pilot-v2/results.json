@@ -1,0 +1,2380 @@
+{
+  "total_runs": 58,
+  "total_cost_usd": 13.3,
+  "total_wall_minutes": 45.0,
+  "groups": [
+    {
+      "instance": "i2b_schedule_first",
+      "condition": "artefact",
+      "model": "claude-opus-5-5",
+      "n": 5,
+      "strict_pass": 2,
+      "strict_pass_rate": 0.4,
+      "placement_pass": 2,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "decoy_placement": 3,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 2
+      },
+      "rule_seen_in_tool_output": 2,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 5,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 32.6,
+      "total_cost_usd": 1.35,
+      "runs": [
+        {
+          "tag": "i2b_schedule_first__artefact__claude-opus-5-5__r1",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "decoy (workbook tab order)",
+          "new_slide_index": 14,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 31.2,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2678778,
+          "num_turns": 5,
+          "final_text": "I've added the slide `Appendix: Support-cap utilisation` to `inputs/ic_deck_base.pptx` and saved it in place. I checked the result by reopening the saved deck and reading back the slide order and the new slide's text.\n\n**Where it sits:** The new slide is slide 15, between \"DSCR summary\" (14) and \"Sponsor return\" (16). That matches the tab order in the workbook. \"Layout reference: Case card\" is still the last slide (17), and no other slide was edited.\n\n**How it was built:** It is a copy of the \"DSCR summary\" slide on the same \"Schedule\" layout. It has the same title, the same 5×4 table with the same position, style and fonts, and the same source-line style. Only the text was replaced.\n\n**What the table shows:**\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n**Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n\n**One addition you didn't ask for:** the other schedule slides each have a one-line speaker note, so I gave this one the note \"Support-cap schedule per case.\"\n\nAt one point I briefly unpacked the deck into a temporary folder just outside the working directory. I deleted it straight away, but it did go against the \"work only in this directory\" instruction."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__claude-opus-5-5__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 13,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 32.4,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2786366,
+          "num_turns": 5,
+          "final_text": "I added the support-cap schedule as a new slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked it by reading the saved file back.\n\n**Where it sits:** It is slide 14, straight after the Appendix divider and ahead of the DSCR summary and Sponsor return slides. The brief only said \"in the appendix\", so I followed the deck's own rule, written in the speaker notes on the Appendix divider: new schedules go directly after the divider, not at the end and not in workbook tab order. If you'd rather have it between the two existing schedules (its position in the workbook), it's a quick move.\n\n**How it was built:** I copied the DSCR summary slide, so it has the same layout, the same title, table and source-line shapes, and the same positions and styling.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Title:** `Appendix: Support-cap utilisation`\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n- **Speaker note:** I added one (\"Support-cap utilisation schedule per case.\"), since every other slide has one. This wasn't in the brief.\n\nNo other slide's content changed. The DSCR summary and Sponsor return slides each move down one place, and the \"Layout reference: Case card\" slide is still last."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__claude-opus-5-5__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "decoy (workbook tab order)",
+          "new_slide_index": 14,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 31.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.266923,
+          "num_turns": 5,
+          "final_text": "I added the support-cap schedule as a new slide 15 and saved it in place as `inputs/ic_deck_base.pptx`. I checked the new slide's title, table, source line and notes, and the slide order, by reading the saved file back. I didn't open the deck in PowerPoint to look at it.\n\n- **Structure:** it's a copy of the \"Appendix: DSCR summary\" slide on the \"Schedule\" layout, so it has the same title, one 5×4 table with the same styling and position, and a source line in the same style.\n- **Title:** `Appendix: Support-cap utilisation`.\n- **Table:** the headers and rows come straight from the `Support cap` tab, in workbook order. USD k values are whole numbers and percentages have one decimal place and a % sign.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`.\n- **Position:** it sits in the appendix between \"DSCR summary\" and \"Sponsor return\", which matches the tab order in the workbook. The deck now has 17 slides.\n- **Speaker notes:** I gave it the note \"Support-cap utilisation schedule per case.\" to match the notes on the other schedule slides. The brief didn't ask for this.\n\nI didn't change any other slide. \"Layout reference: Case card\" is still untouched and is still the las"
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__claude-opus-5-5__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 13,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 33.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2761302,
+          "num_turns": 6,
+          "final_text": "I've added the new appendix slide, \"Appendix: Support-cap utilisation\", and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked it by reloading the saved file and reading back the slide order and the new slide's text.\n\n**What's on the slide:** I copied the existing Sponsor return schedule slide, so it uses the same \"Schedule\" layout, table position, table style, font sizes and grey source line. The table is filled from the `Support cap` tab in workbook order:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\nThe source line reads `Source: model_outputs.xlsx, tab 'Support cap'`. I also gave the slide a short speaker note (\"Support-cap utilisation schedule per case.\"), as every other slide has one.\n\n**Where it sits:** it's slide 14, straight after the Appendix divider and before the DSCR summary and Sponsor return schedules. I put it there because the divider's speaker notes say new schedules go directly after it, ahead of the existing ones, and not in workbook-tab order. If you'd rather follow workbook order, it would go between DSCR summary and Sponsor return.\n\n**Other slides:** no other slide was changed. The \"Layout reference: Case card\" slide is unchanged and is still the last slide, now slide 17.\n\nI broke your \"work"
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__claude-opus-5-5__r5",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "decoy (workbook tab order)",
+          "new_slide_index": 14,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 34.1,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2576634,
+          "num_turns": 5,
+          "final_text": "I added the support-cap schedule as slide 15 and saved the deck in place as `inputs/ic_deck_base.pptx`. It sits between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\", which follows the tab order in the workbook.\n\n- **Structure:** I built it by copying the DSCR summary slide on the \"Schedule\" layout. The title, the 5×4 table and the source line are in the same positions with the same formatting, and only the text differs.\n- **Title:** `Appendix: Support-cap utilisation`\n- **Table:** the values come straight from the `Support cap` tab, using the workbook's headings and case order:\n\n  | Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n  |---|---|---|---|\n  | Base | 0 | 0 | 0.0% |\n  | Delayed usage receipt | 250 | 320 | 32.0% |\n  | Major operating incident | 250 | 1,000 | 100.0% |\n  | Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n- **Speaker notes:** the other schedule slides each have a one-line note, so I gave this one \"Support-cap utilisation schedule per case.\" in the same style. The brief didn't ask for this.\n- **Other slides:** I compared every other slide, including \"Layout reference: Case card\", against the original file, and none of them changed. The agenda still lists \"Appendix: supporting schedules\" as one item, so I left it alone."
+        }
+      ],
+      "failed_runs": [
+        {
+          "tag": "i2b_schedule_first__artefact__claude-opus-5-5__r1",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "decoy (workbook tab order)",
+          "new_slide_index": 14,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 31.2,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2678778,
+          "num_turns": 5,
+          "final_text": "I've added the slide `Appendix: Support-cap utilisation` to `inputs/ic_deck_base.pptx` and saved it in place. I checked the result by reopening the saved deck and reading back the slide order and the new slide's text.\n\n**Where it sits:** The new slide is slide 15, between \"DSCR summary\" (14) and \"Sponsor return\" (16). That matches the tab order in the workbook. \"Layout reference: Case card\" is still the last slide (17), and no other slide was edited.\n\n**How it was built:** It is a copy of the \"DSCR summary\" slide on the same \"Schedule\" layout. It has the same title, the same 5×4 table with the same position, style and fonts, and the same source-line style. Only the text was replaced.\n\n**What the table shows:**\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n**Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n\n**One addition you didn't ask for:** the other schedule slides each have a one-line speaker note, so I gave this one the note \"Support-cap schedule per case.\"\n\nAt one point I briefly unpacked the deck into a temporary folder just outside the working directory. I deleted it straight away, but it did go against the \"work only in this directory\" instruction."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__claude-opus-5-5__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "decoy (workbook tab order)",
+          "new_slide_index": 14,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 31.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.266923,
+          "num_turns": 5,
+          "final_text": "I added the support-cap schedule as a new slide 15 and saved it in place as `inputs/ic_deck_base.pptx`. I checked the new slide's title, table, source line and notes, and the slide order, by reading the saved file back. I didn't open the deck in PowerPoint to look at it.\n\n- **Structure:** it's a copy of the \"Appendix: DSCR summary\" slide on the \"Schedule\" layout, so it has the same title, one 5×4 table with the same styling and position, and a source line in the same style.\n- **Title:** `Appendix: Support-cap utilisation`.\n- **Table:** the headers and rows come straight from the `Support cap` tab, in workbook order. USD k values are whole numbers and percentages have one decimal place and a % sign.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`.\n- **Position:** it sits in the appendix between \"DSCR summary\" and \"Sponsor return\", which matches the tab order in the workbook. The deck now has 17 slides.\n- **Speaker notes:** I gave it the note \"Support-cap utilisation schedule per case.\" to match the notes on the other schedule slides. The brief didn't ask for this.\n\nI didn't change any other slide. \"Layout reference: Case card\" is still untouched and is still the las"
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__claude-opus-5-5__r5",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "decoy (workbook tab order)",
+          "new_slide_index": 14,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 34.1,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2576634,
+          "num_turns": 5,
+          "final_text": "I added the support-cap schedule as slide 15 and saved the deck in place as `inputs/ic_deck_base.pptx`. It sits between \"Appendix: DSCR summary\" and \"Appendix: Sponsor return\", which follows the tab order in the workbook.\n\n- **Structure:** I built it by copying the DSCR summary slide on the \"Schedule\" layout. The title, the 5×4 table and the source line are in the same positions with the same formatting, and only the text differs.\n- **Title:** `Appendix: Support-cap utilisation`\n- **Table:** the values come straight from the `Support cap` tab, using the workbook's headings and case order:\n\n  | Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n  |---|---|---|---|\n  | Base | 0 | 0 | 0.0% |\n  | Delayed usage receipt | 250 | 320 | 32.0% |\n  | Major operating incident | 250 | 1,000 | 100.0% |\n  | Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n- **Speaker notes:** the other schedule slides each have a one-line note, so I gave this one \"Support-cap utilisation schedule per case.\" in the same style. The brief didn't ask for this.\n- **Other slides:** I compared every other slide, including \"Layout reference: Case card\", against the original file, and none of them changed. The agenda still lists \"Appendix: supporting schedules\" as one item, so I left it alone."
+        }
+      ]
+    },
+    {
+      "instance": "i2b_schedule_first",
+      "condition": "artefact",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 0,
+      "strict_pass_rate": 0.0,
+      "placement_pass": 0,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 5,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 0
+      },
+      "rule_seen_in_tool_output": 0,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 4,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 25.4,
+      "total_cost_usd": 0.58,
+      "runs": [
+        {
+          "tag": "i2b_schedule_first__artefact__default__r1",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 34.6,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1546944,
+          "num_turns": 6,
+          "final_text": "I added the `Appendix: Support-cap utilisation` slide and saved it over `inputs/ic_deck_base.pptx`. I checked that the file reopens and the slide order is right, but I didn't render the slide to look at it.\n\n- **Position:** it's slide 16, right after `Appendix: Sponsor return` and before `Layout reference: Case card`, which is now slide 17.\n- **Structure:** I copied the Sponsor return slide, so it has the same \"Schedule\" layout, 5×4 table, source line and speaker-notes slide. The notes read \"Support-cap utilisation schedule per case.\" I based the notes wording on the Sponsor return notes; you didn't ask for notes.\n- **Table:** the header row uses the workbook's column headings, with one row per case in workbook order. The percentages are formatted to one decimal, e.g. 32.0%.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`.\n- **Number formats:** the workbook cells are stored as plain numbers, so the percentages are whole-number values (32 means 32.0%). I read the workbook's own stored values and recalculated nothing.\n- **Other slides:** no other slide was changed."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__default__r2",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 18.6,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.08775759999999999,
+          "num_turns": 3,
+          "final_text": "I added the new slide, \"Appendix: Support-cap utilisation\", to `inputs/ic_deck_base.pptx` and saved the deck in place under the same filename. I re-opened the saved file and checked the text and table values. I didn't render it to look at the slide.\n\n- **Layout:** I copied the existing \"Appendix: Sponsor return\" schedule slide and changed only its text. It keeps the \"Schedule\" layout, the title, the 5×4 table and the source line.\n- **Position:** it is the last schedule in the appendix, directly after \"Sponsor return\" and before the \"Layout reference: Case card\" slide.\n- **Table:** the header row uses the workbook headings, with one row per case in workbook order. The number columns follow the existing schedules: USD k as whole numbers with thousands separators, and percentages with one decimal and a % sign. The values are:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Support cap'\", in the same wording as the other schedules.\n\nThe workbook stores the percentages as whole numbers (32, 100, 41). I read them as percent values, so 32 shows as 32.0%. I did no calculations. No other slide was changed, and the \"Case card\" reference slide is as it was."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__default__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 19.9,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": false,
+          "cost_usd": 0.0876854,
+          "num_turns": 3,
+          "final_text": "I added the new slide, \"Appendix: Support-cap utilisation\", to `inputs/ic_deck_base.pptx` and saved it in place under the same filename. I checked it by reading the saved file back, not by opening the deck in PowerPoint.\n\n- **Position:** it comes after \"Appendix: Sponsor return\" and before the \"Layout reference: Case card\" slide.\n- **Structure:** it uses the same \"Schedule\" layout as the other two schedule slides, with a title, a 5-row by 4-column table and a source line.\n- **Table:** the header row uses the workbook headings, followed by the four cases in workbook order.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Formats:** USD k values are whole numbers with thousands separators, and percentages have one decimal and a % sign, matching the existing schedules.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Support cap'\", in the same style as the other schedules.\n\nThe workbook stores the utilisation column as whole percents (32, 100, 41), so I printed them as 32.0%, 100.0% and 41.0%. No other slide was changed, including the \"Layout reference: Case card\" slide."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__default__r4",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 26.8,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.11210450000000002,
+          "num_turns": 6,
+          "final_text": "I added the new slide, \"Appendix: Support-cap utilisation\", to `inputs/ic_deck_base.pptx` and saved it under the same filename. I re-opened the saved file to check the slide's title, table text and source line. I haven't rendered the deck, so I haven't looked at it visually.\n\n- **Position:** it is slide 16, right after \"Appendix: Sponsor return\". The \"Layout reference: Case card\" slide stays last and I changed no other slide.\n- **Layout:** I copied the \"Sponsor return\" slide, so it has the same \"Schedule\" layout, title, 5×4 table and source line.\n- **Table:** the header row uses the workbook headings, followed by the four cases in workbook order. Values are whole numbers (with a thousands separator, so 1,000) and percentages show one decimal.\n\n  | Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n  |---|---|---|---|\n  | Base | 0 | 0 | 0.0% |\n  | Delayed usage receipt | 250 | 320 | 32.0% |\n  | Major operating incident | 250 | 1,000 | 100.0% |\n  | Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`.\n- **Speaker note (not in your brief):** the other schedule slides each carry a one-line note, so I added \"Support-cap utilisation schedule per case.\"\n\nThe workbook stores the percentages as plain numbers (32, 100), not fractions. I read them as percent values, which matches its \"IRR in percent\" units note, and wrote 32.0% and 100.0%."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__default__r5",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 27.1,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1402216,
+          "num_turns": 5,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" slide to `inputs/ic_deck_base.pptx` and saved the deck under the same filename. I confirmed the slide order and table text by reopening the saved file. I didn't render the slide.\n\n- **Position:** it is slide 16, directly after \"Appendix: Sponsor return\". The \"Layout reference: Case card\" slide is now slide 17 and is unchanged. No other slide was edited.\n- **Structure:** I duplicated the existing Sponsor return schedule slide, so it uses the same \"Schedule\" layout. It has the same title, 5×4 table and source line, and I also gave it a speaker note in the same style as the other schedules.\n- **Table:** the header row is the workbook's column headings, followed by the four cases in workbook order.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Number formats:** USD k values are whole numbers with a thousands separator (\"1,000\"), matching \"7,560\" on the Sponsor return slide. Percentages have one decimal and a % sign.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Support cap'\".\n\nThe workbook was read only.\n\nI created a temporary folder, `/tmp/x`, outside this directory by mistake. Its removal failed, so it may still exist and can be deleted."
+        }
+      ],
+      "failed_runs": [
+        {
+          "tag": "i2b_schedule_first__artefact__default__r1",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 34.6,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1546944,
+          "num_turns": 6,
+          "final_text": "I added the `Appendix: Support-cap utilisation` slide and saved it over `inputs/ic_deck_base.pptx`. I checked that the file reopens and the slide order is right, but I didn't render the slide to look at it.\n\n- **Position:** it's slide 16, right after `Appendix: Sponsor return` and before `Layout reference: Case card`, which is now slide 17.\n- **Structure:** I copied the Sponsor return slide, so it has the same \"Schedule\" layout, 5×4 table, source line and speaker-notes slide. The notes read \"Support-cap utilisation schedule per case.\" I based the notes wording on the Sponsor return notes; you didn't ask for notes.\n- **Table:** the header row uses the workbook's column headings, with one row per case in workbook order. The percentages are formatted to one decimal, e.g. 32.0%.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`.\n- **Number formats:** the workbook cells are stored as plain numbers, so the percentages are whole-number values (32 means 32.0%). I read the workbook's own stored values and recalculated nothing.\n- **Other slides:** no other slide was changed."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__default__r2",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 18.6,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.08775759999999999,
+          "num_turns": 3,
+          "final_text": "I added the new slide, \"Appendix: Support-cap utilisation\", to `inputs/ic_deck_base.pptx` and saved the deck in place under the same filename. I re-opened the saved file and checked the text and table values. I didn't render it to look at the slide.\n\n- **Layout:** I copied the existing \"Appendix: Sponsor return\" schedule slide and changed only its text. It keeps the \"Schedule\" layout, the title, the 5×4 table and the source line.\n- **Position:** it is the last schedule in the appendix, directly after \"Sponsor return\" and before the \"Layout reference: Case card\" slide.\n- **Table:** the header row uses the workbook headings, with one row per case in workbook order. The number columns follow the existing schedules: USD k as whole numbers with thousands separators, and percentages with one decimal and a % sign. The values are:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Support cap'\", in the same wording as the other schedules.\n\nThe workbook stores the percentages as whole numbers (32, 100, 41). I read them as percent values, so 32 shows as 32.0%. I did no calculations. No other slide was changed, and the \"Case card\" reference slide is as it was."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__default__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 19.9,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": false,
+          "cost_usd": 0.0876854,
+          "num_turns": 3,
+          "final_text": "I added the new slide, \"Appendix: Support-cap utilisation\", to `inputs/ic_deck_base.pptx` and saved it in place under the same filename. I checked it by reading the saved file back, not by opening the deck in PowerPoint.\n\n- **Position:** it comes after \"Appendix: Sponsor return\" and before the \"Layout reference: Case card\" slide.\n- **Structure:** it uses the same \"Schedule\" layout as the other two schedule slides, with a title, a 5-row by 4-column table and a source line.\n- **Table:** the header row uses the workbook headings, followed by the four cases in workbook order.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Formats:** USD k values are whole numbers with thousands separators, and percentages have one decimal and a % sign, matching the existing schedules.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Support cap'\", in the same style as the other schedules.\n\nThe workbook stores the utilisation column as whole percents (32, 100, 41), so I printed them as 32.0%, 100.0% and 41.0%. No other slide was changed, including the \"Layout reference: Case card\" slide."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__default__r4",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 26.8,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.11210450000000002,
+          "num_turns": 6,
+          "final_text": "I added the new slide, \"Appendix: Support-cap utilisation\", to `inputs/ic_deck_base.pptx` and saved it under the same filename. I re-opened the saved file to check the slide's title, table text and source line. I haven't rendered the deck, so I haven't looked at it visually.\n\n- **Position:** it is slide 16, right after \"Appendix: Sponsor return\". The \"Layout reference: Case card\" slide stays last and I changed no other slide.\n- **Layout:** I copied the \"Sponsor return\" slide, so it has the same \"Schedule\" layout, title, 5×4 table and source line.\n- **Table:** the header row uses the workbook headings, followed by the four cases in workbook order. Values are whole numbers (with a thousands separator, so 1,000) and percentages show one decimal.\n\n  | Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n  |---|---|---|---|\n  | Base | 0 | 0 | 0.0% |\n  | Delayed usage receipt | 250 | 320 | 32.0% |\n  | Major operating incident | 250 | 1,000 | 100.0% |\n  | Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`.\n- **Speaker note (not in your brief):** the other schedule slides each carry a one-line note, so I added \"Support-cap utilisation schedule per case.\"\n\nThe workbook stores the percentages as plain numbers (32, 100), not fractions. I read them as percent values, which matches its \"IRR in percent\" units note, and wrote 32.0% and 100.0%."
+        },
+        {
+          "tag": "i2b_schedule_first__artefact__default__r5",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 15,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 27.1,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1402216,
+          "num_turns": 5,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" slide to `inputs/ic_deck_base.pptx` and saved the deck under the same filename. I confirmed the slide order and table text by reopening the saved file. I didn't render the slide.\n\n- **Position:** it is slide 16, directly after \"Appendix: Sponsor return\". The \"Layout reference: Case card\" slide is now slide 17 and is unchanged. No other slide was edited.\n- **Structure:** I duplicated the existing Sponsor return schedule slide, so it uses the same \"Schedule\" layout. It has the same title, 5×4 table and source line, and I also gave it a speaker note in the same style as the other schedules.\n- **Table:** the header row is the workbook's column headings, followed by the four cases in workbook order.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Number formats:** USD k values are whole numbers with a thousands separator (\"1,000\"), matching \"7,560\" on the Sponsor return slide. Percentages have one decimal and a % sign.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Support cap'\".\n\nThe workbook was read only.\n\nI created a temporary folder, `/tmp/x`, outside this directory by mistake. Its removal failed, so it may still exist and can be deleted."
+        }
+      ]
+    },
+    {
+      "instance": "i2b_schedule_first",
+      "condition": "control",
+      "model": "claude-opus-5-5",
+      "n": 3,
+      "strict_pass": 3,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 3,
+      "all_non_placement_pass": 3,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 3,
+        "file_opens": 3,
+        "new_slide_no_placeholders_left": 3,
+        "new_slide_present": 3,
+        "new_slide_structure": 3,
+        "new_slide_values": 3,
+        "other_slides_unchanged": 3,
+        "reference_unchanged": 3,
+        "slide_count": 3,
+        "title_order": 3
+      },
+      "rule_seen_in_tool_output": 3,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 3,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 27.1,
+      "total_cost_usd": 0.63,
+      "runs": [
+        {
+          "tag": "i2b_schedule_first__control__claude-opus-5-5__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 13,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 27.2,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2318199,
+          "num_turns": 5,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" schedule and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked it by reopening the saved file and reading back the slide order, table and source line. I haven't opened it in PowerPoint.\n\n- **Placement:** it is slide 14, directly after the Appendix divider and before the DSCR summary and Sponsor return schedules. That follows the convention in the divider's speaker notes.\n- **Structure:** I copied it from the Sponsor return slide, so it has the same \"Schedule\" layout: a title, a 5×4 table and a source line.\n- **Table:** the header row uses the `Support cap` tab's column headings, then one row per case in workbook order. USD k values are whole numbers with thousands separators (e.g. 1,000), and utilisation has one decimal and a % sign (0.0%, 32.0%, 100.0%, 41.0%).\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`.\n- **Speaker notes:** I added \"Support-cap utilisation schedule per case.\" to the new slide, to match the notes on the other schedules.\n\nAll other slides are unchanged. The \"Layout reference: Case card\" slide is still the last slide."
+        },
+        {
+          "tag": "i2b_schedule_first__control__claude-opus-5-5__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 13,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 27.6,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2096465,
+          "num_turns": 4,
+          "final_text": "I added the support-cap schedule to `inputs/ic_deck_base.pptx` and saved it under the same name. It is now slide 14, directly after the Appendix divider and ahead of the DSCR summary and Sponsor return schedules, as the divider's speaker notes say new schedules should go. I checked the saved file against the original: only the new slide was added, and no existing slide changed. That includes the \"Layout reference: Case card\" slide, which is still last.\n\n- **Layout:** I copied the \"Appendix: DSCR summary\" slide, which uses the \"Schedule\" layout. The new slide keeps its title, its 5-row by 4-column table, the source line, and the same positions and formatting.\n- **Title:** `Appendix: Support-cap utilisation`\n- **Table:** the values come straight from the `Support cap` tab, with the tab's column headings and cases in workbook order:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n- **Speaker notes:** you didn't ask for these, but I added a one-line note to match the other schedules: \"Support-cap utilisation schedule per case.\""
+        },
+        {
+          "tag": "i2b_schedule_first__control__claude-opus-5-5__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 13,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 26.4,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.18906640000000002,
+          "num_turns": 3,
+          "final_text": "I added the support-cap schedule to `inputs/ic_deck_base.pptx` and saved it under the same filename. It is now slide 14, placed directly after the Appendix divider and ahead of the DSCR summary and Sponsor return schedules, as the divider's speaker notes require. I checked the saved deck: the new slide's text and the slide order came out as intended. I haven't opened it in PowerPoint to look at it.\n\n- **Structure:** I copied the existing \"Appendix: DSCR summary\" slide, so the new slide uses the \"Schedule\" layout and has the same title, 5×4 table and source line, in the same positions and formatting.\n- **Title:** `Appendix: Support-cap utilisation`\n- **Table:** The header row is the workbook column headings, and the four cases are in workbook order:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`\n- **Speaker note:** I added one line in the same style as the other schedules: \"Support-cap utilisation schedule per case.\"\n\nNo other slide was changed. The existing schedules each moved down one place, and \"Layout reference: Case card\" is still the last slide and is untouched. The workbook was only read, not changed."
+        }
+      ],
+      "failed_runs": []
+    },
+    {
+      "instance": "i2b_schedule_first",
+      "condition": "control",
+      "model": "claude-sonnet-5-5",
+      "n": 3,
+      "strict_pass": 3,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 3,
+      "all_non_placement_pass": 3,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 3,
+        "file_opens": 3,
+        "new_slide_no_placeholders_left": 3,
+        "new_slide_present": 3,
+        "new_slide_structure": 3,
+        "new_slide_values": 3,
+        "other_slides_unchanged": 3,
+        "reference_unchanged": 3,
+        "slide_count": 3,
+        "title_order": 3
+      },
+      "rule_seen_in_tool_output": 3,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 3,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 24.1,
+      "total_cost_usd": 0.29,
+      "runs": [
+        {
+          "tag": "i2b_schedule_first__control__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 13,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 29.8,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.10877330000000002,
+          "num_turns": 5,
+          "final_text": "I added the `Appendix: Support-cap utilisation` slide to `inputs/ic_deck_base.pptx` and saved the deck in place under the same filename. I checked the slide order after saving, but I haven't opened the deck to look at the new slide.\n\n- **Placement:** It sits directly after the Appendix divider and ahead of the DSCR summary and Sponsor return schedules, as the divider's speaker notes require. The \"Layout reference: Case card\" slide is still last and unchanged, and no other slide was touched.\n- **Structure:** I copied the existing DSCR summary schedule slide, so it has the same Schedule layout: a title, a 5×4 table and a source line.\n- **Table:** The header row uses the `Support cap` tab's column headings, with one row per case in workbook order.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Formats:** The USD k columns follow the Sponsor return schedule, which uses thousands separators (so 1,000 rather than 1000). The percentages are shown with one decimal and a % sign. In the workbook the percentage cells hold plain numbers such as 32 with no percent format, so I read 32 as 32.0%, not 3,200%.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Support cap'`, in the same style as the other schedules.\n\nI also gave the slide a"
+        },
+        {
+          "tag": "i2b_schedule_first__control__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 13,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 19.8,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.0961663,
+          "num_turns": 4,
+          "final_text": "I added the \"Appendix: Support-cap utilisation\" slide to `inputs/ic_deck_base.pptx` and saved the deck in place. I checked it by re-reading the saved file for text and table contents. I did not render it to check how it looks.\n\n- **Placement:** it is slide 14, directly after the Appendix divider and ahead of the existing DSCR summary and Sponsor return schedules, as the divider's speaker notes require.\n- **Structure:** I duplicated the DSCR summary slide, so it has the same \"Schedule\" layout, one 5-row by 4-column table and a source line. The speaker note is \"Support-cap utilisation schedule per case.\" (my wording, modelled on the other schedules' notes).\n- **Table:** the headings and the four cases come straight from the `Support cap` tab, in workbook order:\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Number formats:** USD k values are whole numbers with thousands separators, matching the other schedules (e.g. \"7,560\"). The workbook stores utilisation as 32, 100 and so on, so I wrote those as percentages with one decimal.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Support cap'\".\n\nThe \"Layout reference: Case card\" slide is unchanged and is still the last slide. I did not change any other slide."
+        },
+        {
+          "tag": "i2b_schedule_first__control__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 13,
+          "expected_index": 13,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 22.6,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.0895084,
+          "num_turns": 4,
+          "final_text": "I added the slide \"Appendix: Support-cap utilisation\" to `inputs/ic_deck_base.pptx`, saved in place under the same filename. I confirmed the new slide's title, table and source line by re-reading the saved file. I didn't render the deck, so the layout hasn't been checked visually.\n\n- **Placement:** It sits directly after the Appendix divider, ahead of the DSCR summary and Sponsor return schedules, as the divider's speaker notes require.\n- **Structure:** I copied the DSCR summary slide, so it has the same \"Schedule\" layout: a title, one 5×4 table and a source line. The source line reads \"Source: model_outputs.xlsx, tab 'Support cap'\".\n- **Table:** The header row uses the workbook's `Support cap` column headings, followed by the four cases in workbook order.\n\n| Case | Peak monthly draw (USD k) | Lifetime support used (USD k) | Lifetime cap utilisation (%) |\n|---|---|---|---|\n| Base | 0 | 0 | 0.0% |\n| Delayed usage receipt | 250 | 320 | 32.0% |\n| Major operating incident | 250 | 1,000 | 100.0% |\n| Renewal without credit transfer | 250 | 410 | 41.0% |\n\n- **Formats:** USD k values are whole numbers with thousands separators, as on the other schedules. Percentages take one decimal and a % sign. The workbook already stores them as percent values (32 means 32%), so I did not rescale them.\n- **Speaker notes:** I added one line, \"Support-cap utilisation schedule per case.\", in the style of the other schedules' notes.\n- **Unchanged slides:** The \"Layout reference: Case card\" slide and e"
+        }
+      ],
+      "failed_runs": []
+    },
+    {
+      "instance": "i4_sensitivity_anchor",
+      "condition": "artefact",
+      "model": "claude-opus-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 5,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 95.3,
+      "total_cost_usd": 1.86,
+      "runs": [
+        {
+          "tag": "i4_sensitivity_anchor__artefact__claude-opus-5-5__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 44.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.32194800000000007,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. It is slide 10, **\"Sensitivity: DSCR with support cap minus 20%\"**. I checked it by reopening the saved deck.\n\n**What's on it:** I copied it from the \"Layout reference: Case card\" slide, so the shapes and formatting match the existing case slides. The values come from the `Sensitivity` tab:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe source line reads `Source: model_outputs.xlsx, tab 'Sensitivity'`. I also added a one-line speaker note, as every case slide has one.\n\n**Placement:** The deck's own rule (footnote on the Agenda slide) says a sensitivity slide goes directly after the slide it tests. So I put it right after \"Covenant: monthly DSCR and sponsor support\" and ahead of \"Funding: sources and uses\". That keeps it inside the financing section, and Recommendation still comes directly before Closing.\n\n**Nothing else changed:** I compared the saved file against the original. Every existing slide, including the layout reference slide (still last), is byte-for-byte identical. The only other edits are to the deck's internal index files that list the slides and their order.\n\nThe covenant minimum is 1.25x, so a post-cure DSCR of 1.14x is a breach that is still no"
+        },
+        {
+          "tag": "i4_sensitivity_anchor__artefact__claude-opus-5-5__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 32.8,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2542175,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. It is now slide 10 of 17. I reloaded the saved file and confirmed the slide order and every value on the new slide.\n\n**Placement:** It sits directly after \"Covenant: monthly DSCR and sponsor support\" and ahead of \"Funding: sources and uses\". That is inside the financing section and before Recommendation. I chose that spot because the Agenda slide's footnote says a sensitivity slide goes directly after the slide it tests.\n\n**Build:** I copied the \"Layout reference: Case card\" slide, so the new slide has the same layout, tiles, table and fonts. I changed only the text.\n\n**Content**, from the `Sensitivity` tab:\n\n| Item | Value |\n|---|---|\n| Title | Sensitivity: DSCR with support cap minus 20% |\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n| Source line | Source: model_outputs.xlsx, tab 'Sensitivity' |\n\n**Speaker note:** The existing case slides have speaker notes, so I added one to match. It says the figures come from the Sensitivity tab and are on a Case 2 basis, as the workbook labels them.\n\nNo other slide was changed. The layout reference slide is still last and unedited. The workbook was only read.\n\nThe post-cure DSCR of 1.14x is below the 1.25x covenant. This slide doesn't say so, and the "
+        },
+        {
+          "tag": "i4_sensitivity_anchor__artefact__claude-opus-5-5__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 172.5,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 11,
+          "tools": {
+            "Bash": 8,
+            "ToolSearch": 1,
+            "TaskStop": 1,
+            "Write": 1
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.42524819999999997,
+          "num_turns": 12,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked it by reading the saved file back.\n\n**Where it sits:** it is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding\" and \"Recommendation\". The deck's own rule, in the note on the Agenda slide, is that a sensitivity slide goes directly after the slide it tests. This slide tests the covenant DSCR, so I put it after the covenant slide, which is still inside the financing section.\n\n**What's on it:** I copied the \"Layout reference: Case card\" slide, so it uses the same shapes and formatting as the case slides. The figures come from the `Sensitivity` tab, which says the case is built on Case 2 (Delayed usage receipt).\n\n| Item | Value |\n|---|---|\n| Title | Sensitivity: DSCR with support cap minus 20% |\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n| Source line | Source: model_outputs.xlsx, tab 'Sensitivity' |\n\nThe source line copies the font and colour of the existing case slides' source lines. I also added a one-line speaker note, as the other case slides have one.\n\n**Unchanged:** the layout reference slide is still the last slide and still reads `[Fill]`. No other slide was edited, including the Agenda, which doesn't list the new slide.\n\n**One problem outside t"
+        },
+        {
+          "tag": "i4_sensitivity_anchor__artefact__claude-opus-5-5__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 181.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 11,
+          "tools": {
+            "Bash": 8,
+            "ToolSearch": 1,
+            "TaskStop": 1,
+            "Write": 1
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.5057004999999999,
+          "num_turns": 12,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`.\n\n**Where it sits:** slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\" and Recommendation. The brief allowed anywhere in that range. I picked this spot because the deck's own rule (in the agenda footnote) says a sensitivity slide goes right after the slide it tests, and this one tests the covenant DSCR.\n\n**How it's built:** it's a copy of the \"Layout reference: Case card\" slide, with the same layout, shape names, positions and formatting. Everything below comes from the `Sensitivity` tab, which says the figures are on a Case 2 basis:\n\n| Item | Value |\n|---|---|\n| Title | Sensitivity: DSCR with support cap minus 20% |\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n| Source line | Source: model_outputs.xlsx, tab 'Sensitivity' |\n\nThe labels, units and number formats match the existing case slides. The minimum DSCR after the cure comes out at 1.14x, which is below the 1.25x covenant.\n\nI also added a short speaker note to the new slide, since every other slide has one. The brief didn't ask for it, so delete it if you don't want it.\n\n**Other slides:** I compared the file against a backup of the original. No other slide or note changed, and the layout "
+        },
+        {
+          "tag": "i4_sensitivity_anchor__artefact__claude-opus-5-5__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 45.0,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 7,
+          "tools": {
+            "Bash": 7
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.34850129999999996,
+          "num_turns": 8,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. It is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\" and Recommendation.\n\n**Where it sits:** The brief allowed anywhere between the \"Financing and covenant\" divider and Recommendation. I put it right after the Covenant slide because the Agenda slide's footnote says a sensitivity slide goes directly after the slide it tests, and this one tests the covenant DSCR.\n\nThe workbook marks this sensitivity as \"Case 2 basis,\" and that slide is in the Cases section, which the brief rules out. So the Covenant slide is the only spot that satisfies both the brief and the deck's own rule. If you'd rather anchor it to Case 2, it would have to move out of the financing section.\n\n**How I built it:** I copied the \"Layout reference: Case card\" slide exactly, so it has the same tiles, table and source line as the other case slides. Then I put in the values from the `Sensitivity` tab, formatted like the case slides:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the other slides.\n- **Speaker note:** I added a one-line note to match the other slide"
+        }
+      ],
+      "failed_runs": []
+    },
+    {
+      "instance": "i4_sensitivity_anchor",
+      "condition": "artefact",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 3,
+      "rendered_thumbnails": 3,
+      "timed_out": 0,
+      "mean_wall_seconds": 32.9,
+      "total_cost_usd": 0.61,
+      "runs": [
+        {
+          "tag": "i4_sensitivity_anchor__artefact__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 25.4,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.10558469999999999,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` (saved in place, same filename). It's now slide 10. I checked the saved file by reading it back; I didn't render it to look at the layout.\n\n- **Placement:** it sits directly after \"Covenant: monthly DSCR and sponsor support\", inside the financing section and ahead of Recommendation. The agenda footnote says a sensitivity slide goes directly after the slide it sensitises. The covenant slide is the one this sensitivity applies to.\n- **Build and title:** it's a copy of the Case card layout, with the exact title `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** 0.62x, 1.14x, USD 270k and 11.1%, taken from the `Sensitivity` tab. The format matches the existing case slides.\n- **Table:** 59.4, 16.4 and 9.3 as USD m, in the same format as the existing case slides.\n- **Source note:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the other source notes.\n- **Speaker notes:** the copy had the reference slide's \"Locked reference slide\" note, so I replaced it with \"Sensitivity headline metrics from the Sensitivity tab.\"\n- **Other slides:** the \"Layout reference: Case card\" slide is unchanged and is still the last slide. I didn't edit any other slide."
+        },
+        {
+          "tag": "i4_sensitivity_anchor__artefact__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 47.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 9,
+          "tools": {
+            "Bash": 7,
+            "Read": 2
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": true,
+          "read_notes": true,
+          "cost_usd": 0.1678124,
+          "num_turns": 10,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` as slide 10. It sits right after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\", inside the financing section and ahead of the Recommendation slide. I rendered it to check: the title wraps onto two lines, but everything else fits.\n\n- **Layout and title:** I duplicated the \"Layout reference: Case card\" slide, so the structure matches the case slides. The title is exactly `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** the four tiles read 0.62x, 1.14x, USD 270k and 11.1%.\n- **Table rows:** the table shows Total service receipts USD 59.4m, Total debt service USD 16.4m and Closing cash, 31 Dec 2031 USD 9.3m.\n- **Source line:** the bottom note reads `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the case slides.\n- **Placement:** I put it after the covenant slide because the Agenda footnote says a sensitivity slide goes directly after the slide it sensitises.\n- **Other slides:** every other slide is unchanged, including the layout reference slide, which is still last. The Agenda slide doesn't list the new slide.\n- **Speaker notes:** I gave the new slide a one-line note naming the Sensitivity tab.\n\nI also left two scratch folders, `/d` and `/x`, outside your directory. A shell variable was unset and my temp paths landed at the filesystem root. The delete was blocked, so please remove them if you can. They hold only my working copies and a preview image"
+        },
+        {
+          "tag": "i4_sensitivity_anchor__artefact__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 28.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1263535,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide and saved it over `inputs/ic_deck_base.pptx`. I printed the text of the new slide and its neighbours after saving and it matches the workbook. I didn't render the deck to check it visually.\n\nThe new slide is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and ahead of Recommendation. It sits right after the DSCR slide it sensitises, which follows the deck convention in the agenda footnote. It's also within the financing section you specified.\n\nI duplicated the \"Layout reference: Case card\" slide and filled it from the `Sensitivity` tab:\n\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:**\n\n| Tile | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n\n- **Table rows:**\n\n| Row | Value |\n|---|---|\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the other case slides.\n- **Speaker notes:** I wrote new notes for the slide rather than copying the reference slide's \"locked\" text.\n\nThe reference slide is unchanged and is still the last slide, now slide 17. No other slide was edited. The agenda doesn't list the new slide because you said not to change other slides."
+        },
+        {
+          "tag": "i4_sensitivity_anchor__artefact__default__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 26.5,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": true,
+          "read_notes": false,
+          "cost_usd": 0.10076170000000001,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx`, saved in place under the same filename. I read the saved file back to confirm the text, but I didn't look at the rendered slide image.\n\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table rows:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash 31 Dec 2031 USD 9.3m. The labels and number formats match the existing case slides.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the other source notes.\n- **Placement:** It is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and ahead of Recommendation. The agenda footnote says a sensitivity slide goes directly after the slide it sensitises, and the Covenant slide is the DSCR slide in the financing section.\n- **Structure:** It was built from the \"Layout reference: Case card\" layout, so it has the same tiles, table and note box as the case slides.\n- **Other slides:** The reference slide and all other slides are unchanged.\n\nI didn't edit the agenda, which lists the sections but not individual slides."
+        },
+        {
+          "tag": "i4_sensitivity_anchor__artefact__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 36.1,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": true,
+          "read_notes": false,
+          "cost_usd": 0.104519,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide as slide 10 and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked the text and slide order after saving. I did not look at a rendered image of the new slide.\n\n- **Placement:** It sits directly after \"Covenant: monthly DSCR and sponsor support\", inside the financing section and ahead of the Recommendation slide. I chose that spot because the agenda footnote says a sensitivity slide goes directly after the slide it sensitises.\n- **Build:** I duplicated the last slide (\"Layout reference: Case card\"), so it uses the same tiles, table and source line as the existing case slides.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, min post-cure DSCR 1.14x, sponsor support used USD 270k, sponsor IRR 11.1%.\n- **Table:** Total service receipts USD 59.4m, total debt service USD 16.4m, closing cash 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the case slides.\n- **Unchanged slides:** The \"Layout reference: Case card\" slide is unchanged, and so are the other existing slides, including the agenda.\n\nThe `Sensitivity` tab labels the row \"Case 2 basis\", but the slide title is the exact wording you gave, so the slide doesn't say that."
+        }
+      ],
+      "failed_runs": []
+    },
+    {
+      "instance": "i4_sensitivity_anchor",
+      "condition": "control",
+      "model": "claude-sonnet-5-5",
+      "n": 3,
+      "strict_pass": 3,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 3,
+      "all_non_placement_pass": 3,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 3,
+        "file_opens": 3,
+        "new_slide_no_placeholders_left": 3,
+        "new_slide_present": 3,
+        "new_slide_structure": 3,
+        "new_slide_values": 3,
+        "other_slides_unchanged": 3,
+        "reference_unchanged": 3,
+        "slide_count": 3,
+        "title_order": 3
+      },
+      "rule_seen_in_tool_output": 3,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 2,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 23.8,
+      "total_cost_usd": 0.32,
+      "runs": [
+        {
+          "tag": "i4_sensitivity_anchor__control__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 22.5,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1074078,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. I confirmed the new slide's text by reading the file back, but I didn't render it to check how it looks.\n\nThe slide is a copy of the Case card layout, titled `Sensitivity: DSCR with support cap minus 20%`. The source line reads \"Source: model_outputs.xlsx, tab 'Sensitivity'\". The values come from the `Sensitivity` tab, in the same format as the case slides:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\n**Placement:** it is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". That slide covers the covenant DSCR and the support cap, so I treated it as the slide being sensitised. This follows the Agenda footnote convention, and Recommendation still sits immediately before Closing. The workbook labels the sensitivity \"Case 2 basis\", so you could argue it belongs after the Case 2 slide, but the brief puts it in the financing section.\n\nThe Agenda's contents list isn't updated to mention the new slide, because the brief says not to change any other slide. The \"Layout reference: Case card\" slide and all other slides are untouched."
+        },
+        {
+          "tag": "i4_sensitivity_anchor__control__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 22.1,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": false,
+          "cost_usd": 0.0985688,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide and saved it in place as `inputs/ic_deck_base.pptx`. I checked the slide order and the new slide's text by re-opening the saved file, but I haven't rendered it, so I haven't looked at the layout visually.\n\nThe slide is built from the Case 2 card, so it has the same layout as the existing case slides. Its title is `Sensitivity: DSCR with support cap minus 20%`. Values come from the `Sensitivity` tab, in the existing formats:\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash, 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n\nI placed it directly after \"Covenant: monthly DSCR and sponsor support\". That is the covenant DSCR slide it sensitises, and the placement follows the Agenda footnote convention. The tab labels the row \"Case 2 basis\", but the Case 2 slide is in the Cases section, which the brief rules out. Recommendation still comes right before Closing.\n\nThe \"Layout reference: Case card\" slide and the other slides are unchanged.\n\nThe Case 2 card has a speaker-notes page. I didn't carry it over, so the new slide has no notes."
+        },
+        {
+          "tag": "i4_sensitivity_anchor__control__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 26.8,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1131162,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. I checked the saved file by reading the slide order and the new slide's text back. I didn't render the slides to look at them.\n\n- **Placement:** it is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". The Agenda footnote says a sensitivity goes directly after the slide it sensitises. The sensitivity is of the covenant DSCR, so I read the covenant slide as that slide, and it sits inside the financing section you specified. Recommendation still comes immediately before Closing.\n- **Structure:** it is a copy of the Case card layout, so the title, four tiles, table and source note match the existing case slides. I did not copy the speaker notes that the case slides carry.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:**\n  - Min operating DSCR: 0.62x\n  - Min post-cure DSCR: 1.14x\n  - Sponsor support used: USD 270k\n  - Sponsor IRR: 11.1%\n- **Table:**\n  - Total service receipts: USD 59.4m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 9.3m\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n\nThe \"Layout reference: Case card\" slide and all other slides are unchanged.\n\nI didn't update the Agenda list, which only names the sections and the three cases, so it doesn't mention the new slide."
+        }
+      ],
+      "failed_runs": []
+    },
+    {
+      "instance": "i5_sensitivity_notes_anchor",
+      "condition": "artefact",
+      "model": "claude-opus-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 5,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 63.8,
+      "total_cost_usd": 1.62,
+      "runs": [
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__claude-opus-5-5__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 31.0,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.3008155,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. It is now slide 10, directly after \"Covenant: monthly DSCR and sponsor support\". I checked the saved file and the new slide reads back as intended.\n\n**Where it sits.** The speaker notes on the \"Financing and covenant\" divider say a sensitivity slide goes directly after the slide it tests, not at the end of the section. This one tests the covenant DSCR, so it follows the covenant slide. That is still between the divider and the Recommendation slide, as the brief requires.\n\n**What's on it.** I copied the \"Layout reference: Case card\" slide, so the shapes, positions, fonts and colours match the existing case slides. I only changed the text:\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`\n- **Tiles:** Min operating DSCR 0.62x · Min post-cure DSCR 1.14x · Sponsor support used USD 270k · Sponsor IRR 11.1%\n- **Table:** Total service receipts USD 59.4m · Total debt service USD 16.4m · Closing cash, 31 Dec 2031 USD 9.3m\n- **Bottom line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`\n\nAll values come straight from the `Sensitivity` tab, with nothing recalculated.\n\n**Speaker notes.** The reference slide's notes say it is a locked slide that must stay last, which wouldn't make sense on the copy. I replaced them with a one-line note, which I wrote myself: \"DSCR sensitivity with the support cap reduced by 20% (Case 2 basis), headline metrics from the Sensitivity tab.\"\n\nNo other slide was"
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__claude-opus-5-5__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 34.5,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2955539,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same name. It's slide 10, titled exactly \"Sensitivity: DSCR with support cap minus 20%\". I reopened the saved deck and checked the slide order and every value on the new slide. I didn't open it in PowerPoint to check how it looks.\n\n**Placement:** The slide comes straight after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". The brief allowed anywhere in the financing section before Recommendation. I picked this spot because the speaker notes on the \"Financing and covenant\" divider say a sensitivity slide goes directly after the slide it tests.\n\n**What's on it** (from the `Sensitivity` tab, labels and formats matching the case slides):\n\n| | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\n- **Post-cure DSCR breaches the covenant:** at 1.14x it is below the 1.25x minimum, while Case 2 meets it at exactly 1.25x. The workbook says these figures are on a Case 2 basis.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Sensitivity'\", in the same style as the case slides.\n- **Speaker notes:** the case slides all have notes, so I added a one-line note to the new slide describing it as the Case 2 basis sensitivity.\n\nThe \"Layout reference: Case card\" slide is unc"
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__claude-opus-5-5__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 41.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.2600169,
+          "num_turns": 5,
+          "final_text": "I've added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. A file comparison against the original showed no changes to any other slide or speaker note.\n\n**Placement:** the new slide is slide 10, straight after \"Covenant: monthly DSCR and sponsor support\" and ahead of \"Funding: sources and uses\" and \"Recommendation\". I put it there because the speaker notes on the \"Financing and covenant\" divider say a sensitivity slide goes directly after the slide it tests, not at the end of the section.\n\n**Structure:** I built it by copying the \"Layout reference: Case card\" slide. At the file level it is identical to the Case 2 slide except for the text, so the shapes, shape names and formatting all match.\n\n**Contents** (from the `Sensitivity` tab, which describes it as \"Case 2 basis\"):\n\n| Item | Value |\n|---|---|\n| Title | Sensitivity: DSCR with support cap minus 20% |\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n| Source line | Source: model_outputs.xlsx, tab 'Sensitivity' |\n\nThe 1.14x post-cure figure is below the 1.25x covenant. It sits on the slide with no comment, because the brief didn't ask for any narrative.\n\nI also gave the slide a short speaker note describing the sensitivity, since every other slide has one.\n\nThe \"Layout reference: Case card\" slide is still "
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__claude-opus-5-5__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 32.0,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.34262600000000004,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same name. Reading the file back shows the right slide order, text and table values. I haven't opened it in PowerPoint to check how it looks.\n\n**Placement:** it is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\". The speaker note on the \"Financing and covenant\" divider says a sensitivity slide goes directly after the slide it tests, never at the end of the section. That puts it ahead of Recommendation, as you asked.\n\n**Layout:** I copied the \"Layout reference: Case card\" slide, so it has the same layout, shapes, positions and formatting as the case slides.\n\n**Content:**\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`\n- **Tiles:**\n  - Min operating DSCR **0.62x**\n  - Min post-cure DSCR **1.14x**\n  - Sponsor support used **USD 270k**\n  - Sponsor IRR **11.1%**\n- **Table:**\n  - Total service receipts **USD 59.4m**\n  - Total debt service **USD 16.4m**\n  - Closing cash, 31 Dec 2031 **USD 9.3m**\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the case slides.\n\nThe minimum post-cure DSCR here is 1.14x, below the 1.25x covenant minimum. In Case 2, which the workbook says this sensitivity is based on, it is 1.25x.\n\nThe case slides each have a speaker note, so I added one to match: \"Sensitivity headline metrics from the Sensitivity tab (Case 2 basis, sponsor support cap reduced by 20%).\" No other slide was changed, the reference sl"
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__claude-opus-5-5__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 180.0,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 9,
+          "tools": {
+            "Bash": 7,
+            "ToolSearch": 1,
+            "TaskStop": 1
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.4205251,
+          "num_turns": 10,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same name. I checked the saved deck by reading it back.\n\n- **Placement:** it's slide 10, right after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". The speaker notes on the \"Financing and covenant\" divider say a sensitivity slide goes directly after the slide it tests, and this one tests the covenant DSCR.\n- **Build:** I copied the shapes from the \"Layout reference: Case card\" slide onto a new slide using the same layout. The tiles, table and source line have the same structure and formatting as the existing case slides.\n- **Values**, taken from the `Sensitivity` tab:\n\n  | Item | Value |\n  |---|---|\n  | Min operating DSCR | 0.62x |\n  | Min post-cure DSCR | 1.14x |\n  | Sponsor support used | USD 270k |\n  | Sponsor IRR | 11.1% |\n  | Total service receipts | USD 59.4m |\n  | Total debt service | USD 16.4m |\n  | Closing cash, 31 Dec 2031 | USD 9.3m |\n\n- **Source line:** the reference note is replaced with `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n- **Speaker notes:** I added a short note in the same style as the case slides. The reference slide's \"locked\" note was not copied.\n- **Other slides:** the reference slide is still last and unchanged, and no other slide was edited. Nothing in the workbook was recalculated.\n\nOn content: the post-cure DSCR of 1.14x is below the 1.25x covenant. With the cap cut by 20%, the cure no longer restores compliance in the C"
+        }
+      ],
+      "failed_runs": []
+    },
+    {
+      "instance": "i5_sensitivity_notes_anchor",
+      "condition": "artefact",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 2,
+      "strict_pass_rate": 0.4,
+      "placement_pass": 2,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 3,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 2
+      },
+      "rule_seen_in_tool_output": 2,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 5,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 31.7,
+      "total_cost_usd": 0.71,
+      "runs": [
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__default__r1",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 10,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 31.8,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 6,
+          "tools": {
+            "Bash": 6
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1981285,
+          "num_turns": 7,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it in place. I haven't rendered the deck to check it visually. I confirmed the slide order by reading the titles back from the saved file.\n\n**Position:** The slide is slide 11, after \"Funding: sources and uses\" and before \"Recommendation\". \"Layout reference: Case card\" is still the last slide, now slide 17.\n\n**Build:** I copied the Case card layout and gave the new slide the title `Sensitivity: DSCR with support cap minus 20%`.\n\n**Values from the `Sensitivity` tab:**\n- **Min operating DSCR:** 0.62x\n- **Min post-cure DSCR:** 1.14x\n- **Sponsor support used:** USD 270k\n- **Sponsor IRR:** 11.1%\n- **Total service receipts:** USD 59.4m\n- **Total debt service:** USD 16.4m\n- **Closing cash, 31 Dec 2031:** USD 9.3m\n\nThe bottom note now reads \"Source: model_outputs.xlsx, tab 'Sensitivity'\", in the same style as the case slides. I wrote a speaker note for the slide in the same style as the case slides' notes, rather than copying the reference slide's \"do not edit\" note.\n\nI changed no other slide. The Agenda slide doesn't list the new slide, since you said not to change other slides."
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 28.2,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.10182139999999999,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` as slide 10. I checked the saved file by listing the slide order and the new slide's text, but I haven't opened or rendered it in PowerPoint to check the layout.\n\n- **Placement:** I put it directly after \"Covenant: monthly DSCR and sponsor support\" (slide 9), the slide it sensitises, rather than just before Recommendation. The notes on the \"Financing and covenant\" divider say a sensitivity slide goes directly after the slide it sensitises, never at the end of the section.\n- **Layout:** It is a copy of the Case card layout from the reference slide, with the same shapes and formatting.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:**\n  - Min operating DSCR: 0.62x\n  - Min post-cure DSCR: 1.14x\n  - Sponsor support used: USD 270k\n  - Sponsor IRR: 11.1%\n- **Table:**\n  - Total service receipts: USD 59.4m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 9.3m\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, replacing the reference note.\n- **Speaker notes:** I wrote a one-line note for the slide, which you didn't ask for.\n\nThe \"Layout reference: Case card\" slide and every other slide are unchanged. The reference slide is still last, and the workbook was only read."
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__default__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 10,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 27.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.12211010000000001,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx`. It's slide 11, between \"Funding: sources and uses\" and \"Recommendation\", in the financing section. I didn't render the deck to check the slide's appearance. I re-opened the saved file and confirmed the slide order and the text on the new slide.\n\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:**\n  - Min operating DSCR: 0.62x\n  - Min post-cure DSCR: 1.14x\n  - Sponsor support used: USD 270k\n  - Sponsor IRR: 11.1%\n- **Table rows:**\n  - Total service receipts: USD 59.4m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 9.3m\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n\nI built it by copying the \"Layout reference: Case card\" slide's shapes, so it has the same structure as the case slides. The existing case slides carry speaker notes, so I gave this one its own note (\"Sensitivity headline metrics (support cap minus 20%, Case 2 basis) from the Sensitivity tab.\"). I didn't reuse the reference slide's \"locked\" note.\n\nThe reference slide and all other slides are unchanged, and the reference slide is still last."
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__default__r4",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 10,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 46.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 6,
+          "tools": {
+            "Bash": 6
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1885809,
+          "num_turns": 7,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it in place under the same filename. I confirmed the new slide order by reopening the saved file in python-pptx, but I didn't render the slide to check how it looks.\n\n- **Position:** it is slide 11, after \"Funding: sources and uses\" and before \"Recommendation\", so it sits inside the financing section. The \"Layout reference: Case card\" slide is still last and unchanged, and no other slide was touched.\n- **Build:** I duplicated the Case card slide with the same layout and shapes. The title is `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table rows:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the case slides' source lines.\n- **Speaker notes:** the new slide has its own notes, \"DSCR sensitivity with the sponsor support cap reduced by 20% (Case 2 basis), from the Sensitivity tab.\" I wrote them because the reference slide's notes say it is a locked reference slide, which would have been wrong to copy.\n\nWhile extracting the file I accidentally created an empty `/d` folder outside this directory. I tried to remove it, but the delete was blocked, so it is still there."
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 24.1,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.09975629999999999,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide as slide 10 of `inputs/ic_deck_base.pptx`, saved in place under the same filename. I checked it by reopening the saved file and reading back the slide order and the slide's text. I haven't rendered the slide to look at it.\n\n- **Placement:** it sits directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". The notes on the \"Financing and covenant\" divider say a sensitivity slide goes directly after the slide it sensitises, so I put it after the covenant slide rather than just before Recommendation. That is still between the divider and Recommendation, as you asked.\n- **Layout:** I copied the Case card layout, and the title is exactly `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table rows:**\n  - Total service receipts: USD 59.4m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 9.3m\n- **Source line:** it reads \"Source: model_outputs.xlsx, tab 'Sensitivity'\", in the same style as the case slides.\n- **Speaker notes (my addition):** I gave the slide its own notes, since each existing slide has one. They describe the support-cap-minus-20% sensitivity on the Case 2 basis, taken from the Sensitivity tab.\n- **Other slides:** every other slide, including \"Layout reference: Case card\", is unchanged. The reference slide is still the last slide."
+        }
+      ],
+      "failed_runs": [
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__default__r1",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 10,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 31.8,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 6,
+          "tools": {
+            "Bash": 6
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1981285,
+          "num_turns": 7,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it in place. I haven't rendered the deck to check it visually. I confirmed the slide order by reading the titles back from the saved file.\n\n**Position:** The slide is slide 11, after \"Funding: sources and uses\" and before \"Recommendation\". \"Layout reference: Case card\" is still the last slide, now slide 17.\n\n**Build:** I copied the Case card layout and gave the new slide the title `Sensitivity: DSCR with support cap minus 20%`.\n\n**Values from the `Sensitivity` tab:**\n- **Min operating DSCR:** 0.62x\n- **Min post-cure DSCR:** 1.14x\n- **Sponsor support used:** USD 270k\n- **Sponsor IRR:** 11.1%\n- **Total service receipts:** USD 59.4m\n- **Total debt service:** USD 16.4m\n- **Closing cash, 31 Dec 2031:** USD 9.3m\n\nThe bottom note now reads \"Source: model_outputs.xlsx, tab 'Sensitivity'\", in the same style as the case slides. I wrote a speaker note for the slide in the same style as the case slides' notes, rather than copying the reference slide's \"do not edit\" note.\n\nI changed no other slide. The Agenda slide doesn't list the new slide, since you said not to change other slides."
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__default__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 10,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 27.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.12211010000000001,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx`. It's slide 11, between \"Funding: sources and uses\" and \"Recommendation\", in the financing section. I didn't render the deck to check the slide's appearance. I re-opened the saved file and confirmed the slide order and the text on the new slide.\n\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:**\n  - Min operating DSCR: 0.62x\n  - Min post-cure DSCR: 1.14x\n  - Sponsor support used: USD 270k\n  - Sponsor IRR: 11.1%\n- **Table rows:**\n  - Total service receipts: USD 59.4m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 9.3m\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n\nI built it by copying the \"Layout reference: Case card\" slide's shapes, so it has the same structure as the case slides. The existing case slides carry speaker notes, so I gave this one its own note (\"Sensitivity headline metrics (support cap minus 20%, Case 2 basis) from the Sensitivity tab.\"). I didn't reuse the reference slide's \"locked\" note.\n\nThe reference slide and all other slides are unchanged, and the reference slide is still last."
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__artefact__default__r4",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 10,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 46.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 6,
+          "tools": {
+            "Bash": 6
+          },
+          "rule_seen_in_tool_output": false,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1885809,
+          "num_turns": 7,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it in place under the same filename. I confirmed the new slide order by reopening the saved file in python-pptx, but I didn't render the slide to check how it looks.\n\n- **Position:** it is slide 11, after \"Funding: sources and uses\" and before \"Recommendation\", so it sits inside the financing section. The \"Layout reference: Case card\" slide is still last and unchanged, and no other slide was touched.\n- **Build:** I duplicated the Case card slide with the same layout and shapes. The title is `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table rows:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the case slides' source lines.\n- **Speaker notes:** the new slide has its own notes, \"DSCR sensitivity with the sponsor support cap reduced by 20% (Case 2 basis), from the Sensitivity tab.\" I wrote them because the reference slide's notes say it is a locked reference slide, which would have been wrong to copy.\n\nWhile extracting the file I accidentally created an empty `/d` folder outside this directory. I tried to remove it, but the delete was blocked, so it is still there."
+        }
+      ]
+    },
+    {
+      "instance": "i5_sensitivity_notes_anchor",
+      "condition": "control",
+      "model": "claude-sonnet-5-5",
+      "n": 3,
+      "strict_pass": 3,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 3,
+      "all_non_placement_pass": 3,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 3,
+        "file_opens": 3,
+        "new_slide_no_placeholders_left": 3,
+        "new_slide_present": 3,
+        "new_slide_structure": 3,
+        "new_slide_values": 3,
+        "other_slides_unchanged": 3,
+        "reference_unchanged": 3,
+        "slide_count": 3,
+        "title_order": 3
+      },
+      "rule_seen_in_tool_output": 3,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 3,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 23.4,
+      "total_cost_usd": 0.32,
+      "runs": [
+        {
+          "tag": "i5_sensitivity_notes_anchor__control__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 22.6,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.118955,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide as slide 10 and saved the deck in place as `inputs/ic_deck_base.pptx`. I re-opened the saved file to check the slide order and the new slide's text, but I haven't looked at it rendered.\n\n**Placement:** it sits directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". That follows the section convention, since the covenant slide is the one it sensitises. The Recommendation slide is now slide 12.\n\n**Build:** I duplicated the Case 2 card, because the workbook labels this sensitivity \"Case 2 basis\". The reference slide is untouched and still last.\n\n**Content:** the title is `Sensitivity: DSCR with support cap minus 20%`, with the values taken from the `Sensitivity` tab:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe bottom line reads `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n\nI also wrote a one-line speaker note for the new slide. No other slide was changed."
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__control__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 22.5,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.10208750000000001,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` as slide 10. I checked the saved file's slide order and the new slide's text, but I haven't rendered it, so I haven't checked how it looks.\n\n**Placement:** it sits directly after \"Covenant: monthly DSCR and sponsor support\" (slide 9), the slide it sensitises, per the section-divider convention. It comes before \"Funding: sources and uses\" and the Recommendation slide, inside the financing section.\n\n**Slide content:** I duplicated the Case 2 card, which has the same structure as the reference slide. The workbook labels this sensitivity \"Case 2 basis\".\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash, 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the other case slides.\n\nI also gave the slide a one-line speaker note, which you didn't ask for.\n\nI didn't edit any other slide, including \"Layout reference: Case card\", which is still the last slide."
+        },
+        {
+          "tag": "i5_sensitivity_notes_anchor__control__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 9,
+          "expected_index": 9,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 25.2,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.0956036,
+          "num_turns": 3,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I haven't rendered the deck or opened it in PowerPoint. I checked the new slide order and title through python-pptx, but not the layout or the filled-in numbers.\n\n- **Content:** The slide is a copy of the Case card layout, titled `Sensitivity: DSCR with support cap minus 20%`. The values come from the `Sensitivity` tab, in the same formats as the case slides:\n\n  | Item | Value |\n  |---|---|\n  | Min operating DSCR | 0.62x |\n  | Min post-cure DSCR | 1.14x |\n  | Sponsor support used | USD 270k |\n  | Sponsor IRR | 11.1% |\n  | Total service receipts | USD 59.4m |\n  | Total debt service | USD 16.4m |\n  | Closing cash, 31 Dec 2031 | USD 9.3m |\n\n  The bottom line reads `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n- **Placement:** It is slide 10, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". I read the covenant slide as the one this sensitivity applies to, so that is where the section convention puts it. The \"Layout reference: Case card\" slide is unchanged and still last, and I changed no other slide.\n- **Speaker notes:** I wrote a short note for the new slide, which you didn't ask for. It says the slide shows the covenant DSCR with the support cap cut by 20% (Case 2 basis), from the `Sensitivity` tab."
+        }
+      ],
+      "failed_runs": []
+    },
+    {
+      "instance": "i6_sensitivity_scale",
+      "condition": "artefact",
+      "model": "claude-opus-5-5",
+      "n": 5,
+      "strict_pass": 4,
+      "strict_pass_rate": 0.8,
+      "placement_pass": 4,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 1,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 4
+      },
+      "rule_seen_in_tool_output": 5,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 5,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 127.6,
+      "total_cost_usd": 2.61,
+      "runs": [
+        {
+          "tag": "i6_sensitivity_scale__artefact__claude-opus-5-5__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 177.9,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 10,
+          "tools": {
+            "Bash": 6,
+            "Read": 1,
+            "ToolSearch": 1,
+            "TaskStop": 1,
+            "Write": 1
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.5297264999999999,
+          "num_turns": 11,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. The deck now has 31 slides. I checked the saved file: the other 30 slides and their speaker notes are byte-identical to the original.\n\n**Where it sits:** slide 18, between \"Covenant: monthly DSCR and sponsor support\" and \"Funding: sources and uses\". That keeps it in the financing section, ahead of Recommendation. I put it after the covenant slide because that's the analysis it tests.\n\n**How it's built:** I copied the \"Layout reference: Case card\" slide, so it uses the same layout, shapes, positions and formatting as the case slides. The reference slide is untouched and still the last slide.\n\n**What's on it** (all taken from the `Sensitivity` tab):\n\n| | |\n|---|---|\n| Title | Sensitivity: DSCR with support cap minus 20% |\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n| Source line | Source: model_outputs.xlsx, tab 'Sensitivity' |\n\nI also added one line of speaker notes, as every other slide has: \"Covenant DSCR sensitivity (support cap minus 20%, Case 2 basis) from the Sensitivity tab.\"\n\n**Before the committee:**\n- **Deck rule clash:** the workbook says this sensitivity uses Case 2 (\"Delayed usage receipt\") as its basis. The Agenda slide says a sensitivity slide goes directly after the slide it "
+        },
+        {
+          "tag": "i6_sensitivity_scale__artefact__claude-opus-5-5__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 55.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 7,
+          "tools": {
+            "Bash": 6,
+            "Read": 1
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.5299488,
+          "num_turns": 8,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`.\n\n**The new slide** is slide 18, titled \"Sensitivity: DSCR with support cap minus 20%\". It sits in the financing section, right after \"Covenant: monthly DSCR and sponsor support\" and ahead of \"Funding: sources and uses\" and Recommendation. I made it by copying the \"Layout reference: Case card\" slide, so it has the same tiles, table, fonts and colours as the case slides. I only changed the text.\n\n| Tile / row | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe bottom line now reads `Source: model_outputs.xlsx, tab 'Sensitivity'`. I also added a one-line speaker note to the new slide, as the other slides have one.\n\n**What else changed:** I compared the file part by part against the original. Every existing slide is byte-identical, including the layout reference slide, which is still last. The only other changes are the entries that register the new slide in the deck. The workbook was only read.\n\nTwo things to be aware of:\n- **Placement:** the workbook says this sensitivity is on a Case 2 basis. The agenda footnote says a sensitivity slide goes directly after the slide it sensitises, which would put it after Case 2 in the Cases section. Your brief limits it to the financing section, so "
+        },
+        {
+          "tag": "i6_sensitivity_scale__artefact__claude-opus-5-5__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 18,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 191.0,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 12,
+          "tools": {
+            "Bash": 8,
+            "Read": 1,
+            "ToolSearch": 1,
+            "TaskStop": 1,
+            "Write": 1
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.6464679000000001,
+          "num_turns": 13,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. It is now slide 19, between \"Funding: sources and uses\" and Recommendation, and the deck has 31 slides.\n\n**What's on the slide:** it's a copy of the \"Layout reference: Case card\" slide, titled `Sensitivity: DSCR with support cap minus 20%`, with the same shapes, positions and formatting as the case slides. The values come straight from the `Sensitivity` tab, in the same formats the case slides use:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe bottom note now reads `Source: model_outputs.xlsx, tab 'Sensitivity'`. I also added a one-line speaker note, as every case slide has one.\n\n**Checks:** I compared every other slide with the original file and they are identical. The Layout reference slide is unchanged and is still the last slide.\n\n**Points to look at:**\n- **Placement conflict:** a footnote on the Agenda slide says a sensitivity slide goes directly after the slide it sensitises. The workbook says this sensitivity is on a \"Case 2 basis\", so that rule would put it after Case 2 in the Cases section. I followed your brief and put it in the financing section instead.\n- **Covenant result:** the post-cure DSCR of 1.14x is below the 1.25x covenant. With the cap cut by 20%, "
+        },
+        {
+          "tag": "i6_sensitivity_scale__artefact__claude-opus-5-5__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 180.0,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 10,
+          "tools": {
+            "Bash": 7,
+            "ToolSearch": 1,
+            "TaskStop": 1,
+            "Write": 1
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.5426404,
+          "num_turns": 11,
+          "final_text": "I've added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same name. A script check confirmed the text matches the brief and no other slide changed.\n\n**Where it sits:** slide 18, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\" and \"Recommendation\". The brief allowed anywhere in the financing section. I picked this spot because the Agenda footnote says a sensitivity slide goes right after the slide it tests, and this one tests the covenant. Recommendation still comes straight before Closing.\n\n**What's on it:** it's a copy of the \"Layout reference: Case card\" slide, using the same layout, shapes and formatting. The title is `Sensitivity: DSCR with support cap minus 20%`. The figures come from the `Sensitivity` tab:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe note at the bottom now reads `Source: model_outputs.xlsx, tab 'Sensitivity'`. I also gave the new slide a speaker note, following the pattern of the existing case slides.\n\n**Unchanged:** the layout reference slide is still last and untouched. Because I couldn't change other slides, the Agenda doesn't list the new slide.\n\n**Worth knowing:** under this sensitivity the post-cure DSCR is 1.14x, below the 1.25x covenant. In Case "
+        },
+        {
+          "tag": "i6_sensitivity_scale__artefact__claude-opus-5-5__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 33.3,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.3584515,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked the saved file: the new slide has the expected title, values and source line, and the slide order is as described below.\n\n**Where it sits:** slide 18, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\" and \"Recommendation\". I put it there because of the rule in the Agenda footnote: a sensitivity slide goes directly after the slide it tests.\n\n**How it was built:** it's a copy of the \"Layout reference: Case card\" slide, with the same layout, four tiles, two-column table and source line. All values come from the `Sensitivity` tab, in the same formats as the existing case slides:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe bottom line now reads `Source: model_outputs.xlsx, tab 'Sensitivity'`. I also added a speaker note to the new slide.\n\nThe layout reference slide and every other slide are unchanged, and the reference slide is still the last slide, as its own note asks. The temporary files I made while working have been deleted.\n\nOne point for the committee: with the support cap cut by 20%, the minimum post-cure DSCR is 1.14x. That is below the 1.25x covenant, so the breach is not fully cured in this case. Neithe"
+        }
+      ],
+      "failed_runs": [
+        {
+          "tag": "i6_sensitivity_scale__artefact__claude-opus-5-5__r3",
+          "strict_pass": false,
+          "failed_checks": [
+            "title_order"
+          ],
+          "position": "literal default (appended to block)",
+          "new_slide_index": 18,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 191.0,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 12,
+          "tools": {
+            "Bash": 8,
+            "Read": 1,
+            "ToolSearch": 1,
+            "TaskStop": 1,
+            "Write": 1
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.6464679000000001,
+          "num_turns": 13,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. It is now slide 19, between \"Funding: sources and uses\" and Recommendation, and the deck has 31 slides.\n\n**What's on the slide:** it's a copy of the \"Layout reference: Case card\" slide, titled `Sensitivity: DSCR with support cap minus 20%`, with the same shapes, positions and formatting as the case slides. The values come straight from the `Sensitivity` tab, in the same formats the case slides use:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe bottom note now reads `Source: model_outputs.xlsx, tab 'Sensitivity'`. I also added a one-line speaker note, as every case slide has one.\n\n**Checks:** I compared every other slide with the original file and they are identical. The Layout reference slide is unchanged and is still the last slide.\n\n**Points to look at:**\n- **Placement conflict:** a footnote on the Agenda slide says a sensitivity slide goes directly after the slide it sensitises. The workbook says this sensitivity is on a \"Case 2 basis\", so that rule would put it after Case 2 in the Cases section. I followed your brief and put it in the financing section instead.\n- **Covenant result:** the post-cure DSCR of 1.14x is below the 1.25x covenant. With the cap cut by 20%, "
+        }
+      ]
+    },
+    {
+      "instance": "i6_sensitivity_scale",
+      "condition": "artefact",
+      "model": "claude-sonnet-5-5",
+      "n": 5,
+      "strict_pass": 5,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 5,
+      "all_non_placement_pass": 5,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 5,
+        "file_opens": 5,
+        "new_slide_no_placeholders_left": 5,
+        "new_slide_present": 5,
+        "new_slide_structure": 5,
+        "new_slide_values": 5,
+        "other_slides_unchanged": 5,
+        "reference_unchanged": 5,
+        "slide_count": 5,
+        "title_order": 5
+      },
+      "rule_seen_in_tool_output": 5,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 5,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 30.1,
+      "total_cost_usd": 0.75,
+      "runs": [
+        {
+          "tag": "i6_sensitivity_scale__artefact__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 32.7,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1895766,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it under the same filename. I re-opened the saved file and checked the slide order and the new slide's contents. I didn't render the slides to look at the layout.\n\n- **Position:** it is slide 18, directly after \"Covenant: monthly DSCR and sponsor support\". That is inside the financing section and ahead of Recommendation. The deck's own convention (agenda footnote) says a sensitivity slide goes directly after the slide it sensitises, so I used the covenant slide rather than any other spot in the section.\n- **Build:** it is a copy of the Case card layout, with the same tiles, table and source-note styling.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%.\n- **Table rows:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash, 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n\nI also gave the new slide a one-line speaker note, as the existing case slides have one. The \"Layout reference: Case card\" slide is untouched and is still the last slide. I changed no other slide, so the agenda doesn't list the new slide."
+        },
+        {
+          "tag": "i6_sensitivity_scale__artefact__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 29.4,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1392281,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx`, saved in place under the same filename. I checked the saved file's text but didn't render the slide, so I haven't seen how it looks.\n\n- **Placement:** it is directly after \"Covenant: monthly DSCR and sponsor support\", which is slide 18, and before \"Funding: sources and uses\". That is inside the financing section and ahead of Recommendation. I chose that spot because the agenda footnote says a sensitivity slide goes directly after the slide it sensitises.\n- **Structure:** I copied the Case card layout from the reference slide, so it has the same four tiles, table and source note as the existing case slides.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR is 0.62x, Min post-cure DSCR is 1.14x, Sponsor support used is USD 270k, and Sponsor IRR is 11.1%.\n- **Table rows:** Total service receipts is USD 59.4m, Total debt service is USD 16.4m, and Closing cash, 31 Dec 2031 is USD 9.3m.\n- **Source line:** \"Source: model_outputs.xlsx, tab 'Sensitivity'\", replacing the reference note.\n- **Speaker note:** I also added one, \"Headline metrics from the Sensitivity tab (support cap minus 20%, Case 2 basis).\", in the style of the case slides' notes.\n- **Other slides:** I didn't change any other slide. The \"Layout reference: Case card\" slide is still the last slide.\n\nI did not update the Agenda slide's list, which is slide 2. It doesn't list individual financing slides, so it was left alo"
+        },
+        {
+          "tag": "i6_sensitivity_scale__artefact__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 26.9,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1327912,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx`, saved in place. I haven't rendered it to look at the layout. I read the text back from the saved file to check it.\n\n- **Placement:** It is slide 18, directly after \"Covenant: monthly DSCR and sponsor support\". The agenda footnote says a sensitivity slide goes directly after the slide it sensitises, and that is the DSCR slide. It sits between the \"Financing and covenant\" divider and the Recommendation slide, as the brief asks.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`\n- **Tiles:**\n  - Min operating DSCR: 0.62x\n  - Min post-cure DSCR: 1.14x\n  - Sponsor support used: USD 270k\n  - Sponsor IRR: 11.1%\n- **Table:**\n  - Total service receipts: USD 59.4m\n  - Total debt service: USD 16.4m\n  - Closing cash, 31 Dec 2031: USD 9.3m\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the case slides.\n\nI copied the Case card shapes and layout, so the structure matches the existing case slides. The \"Layout reference: Case card\" slide and the other existing slides are unchanged, and the reference slide is still last.\n\nI didn't add speaker notes (case 2 has one), and I didn't touch the agenda slide, which lists the cases but not this new slide."
+        },
+        {
+          "tag": "i6_sensitivity_scale__artefact__default__r4",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 30.0,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 3,
+          "tools": {
+            "Bash": 3
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1335763,
+          "num_turns": 4,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it in place under the same filename. I haven't rendered the deck to check how it looks. I read the text back from the saved file, and it matches the values below.\n\n- **Layout:** the slide is a copy of the \"Layout reference: Case card\" slide, with the same layout, tiles, table and source note. I also added a speaker note, as the other case slides have.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%. These use the same labels and formats as the existing case slides.\n- **Table:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash 31 Dec 2031 USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`, in place of the reference note.\n- **Position:** it is slide 18, directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". That is inside the financing section and ahead of Recommendation.\n- **Other slides:** I didn't edit any other slide. The Case card reference slide is still the last slide.\n\n**Open decision:** the agenda slide's footnote says a sensitivity slide goes directly after the slide it sensitises. The workbook labels this one \"Case 2 basis\", which would put it right after the Case 2 slide in the Cases section. Your brief said to put it in the financing section, so I followed that. If you'd rat"
+        },
+        {
+          "tag": "i6_sensitivity_scale__artefact__default__r5",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 31.3,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.1499462,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved the deck in place under the same filename. I checked the saved file by reading the new slide's text back. I haven't rendered it, so I haven't looked at it as a slide.\n\n**Placement:** it sits directly after \"Covenant: monthly DSCR and sponsor support\", which is the covenant slide it sensitises. That puts it inside the financing section, before Recommendation. It also follows the deck's own convention, stated in the agenda footnote: a sensitivity slide goes directly after the slide it sensitises.\n\n**Content:** the slide is a copy of the Case card layout. The title is exactly `Sensitivity: DSCR with support cap minus 20%`, and the values come from the `Sensitivity` tab:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe source line reads `Source: model_outputs.xlsx, tab 'Sensitivity'`, in the same style as the other case slides. The workbook labels this row \"Case 2 basis\".\n\nI didn't touch the \"Layout reference: Case card\" slide or any other slide. The new slide has no speaker notes."
+        }
+      ],
+      "failed_runs": []
+    },
+    {
+      "instance": "i6_sensitivity_scale",
+      "condition": "control",
+      "model": "claude-opus-5-5",
+      "n": 3,
+      "strict_pass": 3,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 3,
+      "all_non_placement_pass": 3,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 3,
+        "file_opens": 3,
+        "new_slide_no_placeholders_left": 3,
+        "new_slide_present": 3,
+        "new_slide_structure": 3,
+        "new_slide_values": 3,
+        "other_slides_unchanged": 3,
+        "reference_unchanged": 3,
+        "slide_count": 3,
+        "title_order": 3
+      },
+      "rule_seen_in_tool_output": 3,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 3,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 42.6,
+      "total_cost_usd": 1.22,
+      "runs": [
+        {
+          "tag": "i6_sensitivity_scale__control__claude-opus-5-5__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 42.2,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.42318339999999993,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. It is now slide 18.\n\n**Placement:** the brief requires the slide to sit between the \"Financing and covenant\" divider and Recommendation. The Agenda footnote says a sensitivity slide goes directly after the slide it sensitises. The workbook marks this sensitivity as \"Case 2 basis\", but the Case 2 slide is in the Cases section, outside the allowed range. So I put it directly after \"Covenant: monthly DSCR and sponsor support\" (slide 17), the slide in that range that covers covenant DSCR and the support cap. Funding (now slide 19), Recommendation (20) and Closing (21) follow in their original order, so Recommendation still comes right before Closing.\n\n**The new slide:** it is a copy of the \"Layout reference: Case card\" slide with the same layout, tiles, table and formatting. The values come from the `Sensitivity` tab, in the same formats as the case slides:\n- **Title:** Sensitivity: DSCR with support cap minus 20%\n- **Tiles:** Min operating DSCR 0.62x, Min post-cure DSCR 1.14x, Sponsor support used USD 270k, Sponsor IRR 11.1%\n- **Table:** Total service receipts USD 59.4m, Total debt service USD 16.4m, Closing cash, 31 Dec 2031 USD 9.3m\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`\n\nUnder this sensitivity, the minimum post-cure DSCR is 1.14x, below the 1.25x covenant. In Case 2, cure support brings it back up to 1.25x.\n\nThe layout reference slide is still the last slide an"
+        },
+        {
+          "tag": "i6_sensitivity_scale__control__claude-opus-5-5__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 44.9,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 7,
+          "tools": {
+            "Bash": 7
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.4083929,
+          "num_turns": 8,
+          "final_text": "I've added the new slide `Sensitivity: DSCR with support cap minus 20%` as slide 18 and saved the deck in place as `inputs/ic_deck_base.pptx`. I checked it by reopening the file and reading the slides back. I did not open it in PowerPoint to look at it.\n\n**Placement:** the slide sits directly after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\". That keeps it in the financing section, ahead of Recommendation. Recommendation still comes immediately before Closing.\n\n**Decision for you:** the `Sensitivity` tab labels this run \"(Case 2 basis)\". Taken literally, the Agenda rule would put the slide directly after the Case 2 slide. That slide is in the Cases section, which the brief rules out. I treated the covenant slide as the one being sensitised, since it sets out the support cap. If you'd rather it follow Case 2, it's a one-slide move, but it would sit outside the financing section.\n\n**Content:** the slide is a copy of the \"Layout reference: Case card\" slide, with the same layout, shapes, tiles and table. Values come from the `Sensitivity` tab, in the same formats as the case slides:\n\n| Field | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\nThe bottom line now reads `Source: model_outputs.xlsx, tab 'Sensitivity'`, styled like the case s"
+        },
+        {
+          "tag": "i6_sensitivity_scale__control__claude-opus-5-5__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-opus-5-5"
+          ],
+          "wall_seconds": 40.8,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 5,
+          "tools": {
+            "Bash": 5
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.3932298000000001,
+          "num_turns": 6,
+          "final_text": "I added the sensitivity slide and saved the deck in place as `inputs/ic_deck_base.pptx`. It is now slide 18, right after \"Covenant: monthly DSCR and sponsor support\" and before \"Funding: sources and uses\" and \"Recommendation\".\n\n**What's on the slide:** I duplicated the \"Layout reference: Case card\" slide. A file comparison confirms the only differences from the reference are the text values.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`\n- **Tiles:** Min operating DSCR 0.62x · Min post-cure DSCR 1.14x · Sponsor support used USD 270k · Sponsor IRR 11.1%\n- **Table:** Total service receipts USD 59.4m · Total debt service USD 16.4m · Closing cash, 31 Dec 2031 USD 9.3m\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`\n\nAll values come from the `Sensitivity` tab exactly as stored, in the same formats as the case slides. I also added a one-line speaker note, as the other case slides have.\n\n**Where I put it:** the workbook labels this sensitivity \"Case 2 basis\", but Case 2 is slide 9, in the Cases section. Putting it right after Case 2 would break your rule that it sits in the financing section. The slide it most directly tests is the covenant slide (DSCR and the support cap), so I placed it straight after that. This meets the brief's placement range and the deck rule that a sensitivity follows the slide it tests. Recommendation still comes immediately before Closing. If you meant it to follow Case 2 instead, it would have to move into the Cases section,"
+        }
+      ],
+      "failed_runs": []
+    },
+    {
+      "instance": "i6_sensitivity_scale",
+      "condition": "control",
+      "model": "claude-sonnet-5-5",
+      "n": 3,
+      "strict_pass": 3,
+      "strict_pass_rate": 1.0,
+      "placement_pass": 3,
+      "all_non_placement_pass": 3,
+      "literal_default_placement": 0,
+      "decoy_placement": 0,
+      "per_check_pass": {
+        "existing_slides_order_preserved": 3,
+        "file_opens": 3,
+        "new_slide_no_placeholders_left": 3,
+        "new_slide_present": 3,
+        "new_slide_structure": 3,
+        "new_slide_values": 3,
+        "other_slides_unchanged": 3,
+        "reference_unchanged": 3,
+        "slide_count": 3,
+        "title_order": 3
+      },
+      "rule_seen_in_tool_output": 3,
+      "rule_quoted_by_agent": 0,
+      "read_notes": 2,
+      "rendered_thumbnails": 0,
+      "timed_out": 0,
+      "mean_wall_seconds": 26.3,
+      "total_cost_usd": 0.43,
+      "runs": [
+        {
+          "tag": "i6_sensitivity_scale__control__default__r1",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 28.5,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.15839169999999997,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide and saved it over `inputs/ic_deck_base.pptx`. I re-opened the saved file and checked the slide order and the new slide's text. I did not render the slides to look at them.\n\n- **Placement:** it sits directly after \"Covenant: monthly DSCR and sponsor support\". That is the slide it sensitises, and it keeps the new slide inside the financing section as the Agenda convention requires. Recommendation still immediately precedes Closing, and the \"Layout reference: Case card\" slide is still last and unchanged.\n- **Build:** it is a duplicate of the Case card layout with the same tiles, table and source note.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles and table:** all values come from the `Sensitivity` tab, in the same formats as the case slides:\n\n| Item | Value |\n|---|---|\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n- **Speaker notes:** the new slide has none. I did not copy the reference slide's \"Locked reference slide…\" note because it would be wrong here."
+        },
+        {
+          "tag": "i6_sensitivity_scale__control__default__r2",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 28.2,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 4,
+          "tools": {
+            "Bash": 4
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": true,
+          "cost_usd": 0.14468799999999998,
+          "num_turns": 5,
+          "final_text": "I added the sensitivity slide and saved it over `inputs/ic_deck_base.pptx`. I checked it by reading the saved file back, not by opening or rendering the deck.\n\nThe slide is a copy of the Case 2 card (same layout, tiles, table and source-note shapes), so it has the same structure as the other case slides. Every value comes from the `Sensitivity` tab, in the same formats as the existing case slides:\n\n| Item | Value |\n|---|---|\n| Title | `Sensitivity: DSCR with support cap minus 20%` |\n| Min operating DSCR | 0.62x |\n| Min post-cure DSCR | 1.14x |\n| Sponsor support used | USD 270k |\n| Sponsor IRR | 11.1% |\n| Total service receipts | USD 59.4m |\n| Total debt service | USD 16.4m |\n| Closing cash, 31 Dec 2031 | USD 9.3m |\n| Source line | `Source: model_outputs.xlsx, tab 'Sensitivity'` |\n\n**Placement:** it sits directly after \"Covenant: monthly DSCR and sponsor support\", ahead of \"Funding: sources and uses\". Recommendation still immediately precedes Closing.\n\nThe workbook labels this sensitivity as \"Case 2 basis\", and its operating DSCR of 0.62x matches Case 2. The Case 2 slide, though, is in the Cases section, outside the range you gave for the new slide (financing divider to Recommendation). The covenant slide is inside that range and discusses the Case 2 delayed-receipt cure and the support cap, so I treated it as the slide being sensitised. If you want it directly after the Case 2 slide instead, that means moving it out of the financing section.\n\nI did not touch the \"Layout refer"
+        },
+        {
+          "tag": "i6_sensitivity_scale__control__default__r3",
+          "strict_pass": true,
+          "failed_checks": [],
+          "position": "expected",
+          "new_slide_index": 17,
+          "expected_index": 17,
+          "models_used": [
+            "claude-haiku-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "wall_seconds": 22.3,
+          "timed_out": false,
+          "returncode": 0,
+          "tool_calls": 2,
+          "tools": {
+            "Bash": 2
+          },
+          "rule_seen_in_tool_output": true,
+          "rule_quoted_by_agent": false,
+          "rendered_thumbnails": false,
+          "read_notes": false,
+          "cost_usd": 0.1295067,
+          "num_turns": 3,
+          "final_text": "I added the sensitivity slide to `inputs/ic_deck_base.pptx` and saved it in place. I re-opened the saved file and checked the new slide's text. I haven't looked at it rendered.\n\n- **Build:** I copied the shapes from the \"Layout reference: Case card\" slide onto a new slide with the same layout. The reference slide and every other slide are unchanged. The copy has no speaker notes, which the reference slide does have.\n- **Title:** `Sensitivity: DSCR with support cap minus 20%`.\n- **Tiles:** Min operating DSCR is 0.62x. Min post-cure DSCR is 1.14x. Sponsor support used is USD 270k. Sponsor IRR is 11.1%.\n- **Table rows:** Total service receipts is USD 59.4m. Total debt service is USD 16.4m. Closing cash, 31 Dec 2031 is USD 9.3m.\n- **Source line:** `Source: model_outputs.xlsx, tab 'Sensitivity'`.\n- **Placement:** The new slide sits directly after \"Covenant: monthly DSCR and sponsor support\", inside the financing section. Recommendation still comes straight before Closing.\n\nThe workbook labels this sensitivity \"Case 2 basis\", which could point to the Case 2 slide, but that slide is in the Cases section. Your brief says to place the new slide in the financing section, so I treated the covenant DSCR slide as the one it sensitises. If you want it after the Case 2 slide, tell me and I'll move it."
+        }
+      ],
+      "failed_runs": []
+    }
+  ]
+}
