@@ -2,7 +2,10 @@
 
 Date: 2026-10-13. Benchmark: [PPTArena](https://github.com/michaelofengenden/PPTArena) (agentic PowerPoint editing, 100 cases, 25-case hard subset), cloned at depth 1 on the run date.
 
-**Read the caveats first.** The agent under test is Claude Code, but run as subagents of a Claude Code cloud session rather than as the `claude -p` CLI process the leaderboard uses, and every score below is **Claude-judged, not the official judge**. The recorded leaderboard rows that this baseline is compared against were themselves judged by Kimi K2.6 (median of 3), not by GPT-5 or Gemini, which the repo's own scripts treat as alternatives. Two different judges with different harshness are being compared, so treat the comparison as directional only.
+**Read the caveats first.**
+
+- **Agent under test:** Claude Code, run as in-session subagents (the general-purpose agent type) of the orchestrating Claude Code cloud session, not as the `claude -p` CLI process that the leaderboard harness uses. The subagents therefore ran on that session's configured model, not on the `claude-opus-4-8` model named in the benchmark's `agents.json` and not on the CLI's default model. The exact model identifier is recorded in the orchestrating session's metadata and in the run report sent to the orchestrator; it is deliberately not written into this repository.
+- **Judge:** a fresh Claude Code subagent of the same session, so the judge is the **same model family (and the same configured model) as the agent under test**. Every score below is **Claude-judged, not the official judge**. Self-family judging can be lenient toward the agent's own conventions. - **Comparison baseline:** the recorded leaderboard rows were themselves judged by Kimi K2.6 (median of 3), not by GPT-5 or Gemini, which the repo's own scripts treat as alternatives. Two different judges with different harshness are being compared, so treat the comparison as directional only.
 
 ## 1. Summary
 

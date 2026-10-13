@@ -1,8 +1,8 @@
 {
  "meta": {
   "benchmark": "PPTArena (michaelofengenden/PPTArena, cloned 2026-10-13, depth 1)",
-  "agent_under_test": "Claude Code subagents of a Claude Code cloud session (general-purpose agent, tools Bash/Read/Write/Edit; same TASK_PROMPT text as agent_bench/run_agents.py)",
-  "judge": "Claude Code subagent reading LibreOffice-rendered PNGs plus a python-pptx structural diff; rubric text copied from src/llm/judge.py arena mode. NOT the official judge.",
+  "agent_under_test": "Claude Code subagents (general-purpose agent type, tools Bash/Read/Write/Edit/Glob/Grep) of the orchestrating Claude Code cloud session, run on that session's configured model (identifier recorded in the session metadata and run report, not in this repo); same TASK_PROMPT text as agent_bench/run_agents.py. Not the claude -p CLI harness.",
+  "judge": "Claude Code subagent of the same session and same configured model as the agent under test, reading LibreOffice-rendered PNGs plus a python-pptx structural diff; rubric text copied from src/llm/judge.py arena mode. NOT the official judge.",
   "date": "2026-10-13"
  },
  "cases": [
